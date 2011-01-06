@@ -39,6 +39,8 @@ PerformanceSet:
       type: string()
     setup_at:
       type: timestamp()
+  options:
+    orderBy: setup_at asc
   relations:
     Venue:
       local: venue_id
@@ -53,6 +55,8 @@ Performance:
     performance_at:
       type: timestamp()
       notnull: true
+  options:
+    orderBy: performance_at asc
   relations:
     PerformanceSet:
       local: performance_set_id
@@ -66,9 +70,13 @@ Venue:
       notnull: true
     capacity:
       type: integer(20)
+  options:
+    orderBy: name asc
 
 Company:
   columns:
     name:
       type: string(255)
       notnull: true
+  options:
+    orderBy: name asc
