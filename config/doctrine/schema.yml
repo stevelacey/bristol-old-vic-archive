@@ -1,0 +1,74 @@
+actAs:
+  Timestampable: ~
+
+Production:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    company_id:
+      type: integer(20)
+      notnull: true
+    booking_status:
+      type: string()
+    collaboration_nature:
+      type: string()
+    general_show_information:
+      type: string()
+  options:
+    orderBy: name asc
+  relations:
+    Company:
+      local: company_id
+      foreign: id
+      foreignAlias: Productions
+
+PerformanceSet:
+  columns:
+    production_id:
+      type: integer(20)
+      notnull: true
+    venue_id:
+      type: integer(20)
+      notnull: true
+    ticket_price:
+      type: integer(20)
+    ticket_price_concessionary:
+      type: integer(20)
+    ticket_price_notes:
+      type: string()
+    setup_at:
+      type: timestamp()
+  relations:
+    Venue:
+      local: venue_id
+      foreign: id
+      foreignAlias: PerformanceSets
+
+Performance:
+  columns:
+    performance_set_id:
+      type: integer(20)
+      notnull: true
+    performance_at:
+      type: timestamp()
+      notnull: true
+  relations:
+    PerformanceSet:
+      local: performance_set_id
+      foreign: id
+      foreignAlias: Performances
+
+Venue:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    capacity:
+      type: integer(20)
+
+Company:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
