@@ -1,6 +1,21 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/04-Settings
 
+all:
+  .settings:
+    # Form security secret (CSRF protection)
+    csrf_secret:            88a30e1e3689517ba79a2ba60d3b61c953e8bd55
+
+    # Output escaping settings
+    escaping_strategy:      true
+    escaping_method:        ESC_SPECIALCHARS
+
+    # Enable the database manager
+    use_database:           true
+
+    # Enable modules
+    enabled_modules:      [default, sfGuardAuth]
+
 prod:
   .settings:
     no_script_name:         true
@@ -21,15 +36,3 @@ test:
     web_debug:              false
     no_script_name:         false
     etag:                   false
-
-all:
-  .settings:
-    # Form security secret (CSRF protection)
-    csrf_secret:            88a30e1e3689517ba79a2ba60d3b61c953e8bd55
-
-    # Output escaping settings
-    escaping_strategy:      true
-    escaping_method:        ESC_SPECIALCHARS
-
-    # Enable the database manager
-    use_database:           true
