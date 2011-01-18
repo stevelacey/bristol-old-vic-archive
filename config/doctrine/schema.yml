@@ -23,7 +23,7 @@ Production:
       foreign: id
       foreignAlias: Productions
 
-PerformanceSet:
+Performance:
   columns:
     production_id:
       type: integer(20)
@@ -45,23 +45,23 @@ PerformanceSet:
     Venue:
       local: venue_id
       foreign: id
-      foreignAlias: PerformanceSets
+      foreignAlias: Performances
 
-Performance:
+Show:
   columns:
-    performance_set_id:
+    performance_id:
       type: integer(20)
       notnull: true
-    performance_at:
+    show_at:
       type: timestamp()
       notnull: true
   options:
     orderBy: performance_at asc
   relations:
-    PerformanceSet:
-      local: performance_set_id
+    Performance:
+      local: performance_id
       foreign: id
-      foreignAlias: Performances
+      foreignAlias: Shows
 
 Venue:
   columns:
