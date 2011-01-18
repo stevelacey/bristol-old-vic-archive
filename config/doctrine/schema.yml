@@ -87,6 +87,7 @@ Performance:
       foreignAlias: Performances
 
 Show:
+  tableName: `show`
   columns:
     performance_id:
       type: integer(20)
@@ -129,6 +130,7 @@ Person:
       foreign: id
 
 Character:
+  tableName: `character`
   columns:
     name:
       type: string(255)
