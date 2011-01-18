@@ -7,8 +7,9 @@ Production:
       type: string(255)
       notnull: true
     pvm_code: string(20)
-    genre_id: integer(20)
+    image_id: integer(20)
     production_type_id: integer(20)
+    genre_id: integer(20)
     company_id: integer(20)
     director_id: integer(20)
     producer_id: integer(20)
@@ -23,13 +24,33 @@ Production:
   options:
     orderBy: name asc
   relations:
-    Company:
-      local: company_id
+    Image:
+      local: image_id
       foreign: id
       foreignAlias: Productions
     Type:
       class: ProductionType
       local: production_type_id
+      foreign: id
+      foreignAlias: Productions
+    Genre:
+      local: genre_id
+      foreign: id
+      foreignAlias: Productions
+    Company:
+      local: company_id
+      foreign: id
+      foreignAlias: Productions
+    Director:
+      local: director_id
+      foreign: id
+      foreignAlias: Productions
+    Producer:
+      local: producer_id
+      foreign: id
+      foreignAlias: Productions
+    Technician:
+      local: technician_id
       foreign: id
       foreignAlias: Productions
 
@@ -88,6 +109,53 @@ Show:
       foreign: id
       foreignAlias: Shows
 
+Person:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    image_id: integer(20)
+    email: string(255)
+    telephone: string(255)
+    gender:
+      type: enum
+      values: [Male, Female]
+      notnull: true
+  options:
+    orderBy: name asc
+  relations:
+    Image:
+      local: image_id
+      foreign: id
+
+Character:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    gender:
+      type: enum
+      values: [Male, Female]
+      notnull: true
+    actor_id:
+      type: integer(20)
+      notnull: true
+    production_id:
+      type: integer(20)
+      notnull: true
+  options:
+    orderBy: name asc
+  relations:
+    Person:
+      local: actor_id
+      foreign: id
+      foreignAlias: Characters
+    Production:
+      local: production_id
+      foreign: id
+      foreignAlias: Characters
+
+
 Genre:
   columns:
     name:
@@ -116,3 +184,30 @@ Company:
     description: string()
   options:
     orderBy: name asc
+
+Image:
+  actAs:
+    Timestampable: ~
+    Sluggable:
+      unique: true
+      fields: [title]
+      canUpdate: true
+  columns:
+    title:
+      type: string(255)
+      notnull: true
+    caption: string(255)
+    production_id: integer(20)
+    person_id: integer(20)
+    path:
+      type: string(255)
+      notnull: true
+  relations:
+    Production:
+      local: production_id
+      foreign: id
+      foreignAlias: Images
+    Person:
+      local: person_id
+      foreign: id
+      foreignAlias: Images
