@@ -7,7 +7,7 @@ generator:
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          sf_guard_user
+    route_prefix:          user
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
@@ -25,6 +25,14 @@ generator:
         display:
           - first_name
           - last_name
-      form:    ~
+      form:
+        class: sfGuardUserAdminForm
+        display:
+          - first_name
+          - last_name
+          - email_address
+          - username
+          - password
+          - password_again
       edit:    ~
       new:     ~

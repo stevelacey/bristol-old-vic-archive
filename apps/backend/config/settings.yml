@@ -14,7 +14,7 @@ all:
     use_database:           true
 
     # Enable modules
-    enabled_modules:      [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission, sfAdminDash]
+    enabled_modules:      [default, sfGuardAuth, sfAdminDash]
 
     # Security
     login_module:           sfGuardAuth
