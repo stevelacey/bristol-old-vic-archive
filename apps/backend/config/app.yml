@@ -5,3 +5,48 @@ all:
   sf_admin_dash:
     site: Bristol Old Vic Archive
     include_jquery: false
+    categories:
+      Productions:
+        items:
+          Production:
+            name: Productions
+            url: production
+            image: addedit
+          Company:
+            name: Companies
+            url: company
+            image: support
+          Genre:
+            name: Genres
+            url: genre
+            image: categories
+          Type:
+            name: Production Types
+            url: production_type
+            image: mediamanager
+          Venue:
+            name: Venues
+            url: venue
+            image: frontpage
+      People:
+        items:
+          Personnel:
+            name: Personnel
+            url: person
+            image: addusers
+          Characters:
+            name: Characters
+            url: character
+            image: language
+      Images:
+        items:
+          Images:
+            name: Image Management
+            url: image
+            image: templatemanager
+      Users:
+        items:
+          Users:
+            name: User Management
+            url: user
+            image: users

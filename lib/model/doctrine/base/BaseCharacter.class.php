@@ -9,20 +9,20 @@
  * @property enum $gender
  * @property integer $actor_id
  * @property integer $production_id
- * @property Person $Person
+ * @property Person $Actor
  * @property Production $Production
  * 
  * @method string     getName()          Returns the current record's "name" value
  * @method enum       getGender()        Returns the current record's "gender" value
  * @method integer    getActorId()       Returns the current record's "actor_id" value
  * @method integer    getProductionId()  Returns the current record's "production_id" value
- * @method Person     getPerson()        Returns the current record's "Person" value
+ * @method Person     getActor()         Returns the current record's "Actor" value
  * @method Production getProduction()    Returns the current record's "Production" value
  * @method Character  setName()          Sets the current record's "name" value
  * @method Character  setGender()        Sets the current record's "gender" value
  * @method Character  setActorId()       Sets the current record's "actor_id" value
  * @method Character  setProductionId()  Sets the current record's "production_id" value
- * @method Character  setPerson()        Sets the current record's "Person" value
+ * @method Character  setActor()         Sets the current record's "Actor" value
  * @method Character  setProduction()    Sets the current record's "Production" value
  * 
  * @package    bristol-old-vic-archive
@@ -34,7 +34,7 @@ abstract class BaseCharacter extends sfDoctrineRecord
 {
     public function setTableDefinition()
     {
-        $this->setTableName('`character`');
+        $this->setTableName('character');
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
@@ -66,7 +66,7 @@ abstract class BaseCharacter extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Person', array(
+        $this->hasOne('Person as Actor', array(
              'local' => 'actor_id',
              'foreign' => 'id'));
 

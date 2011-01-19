@@ -11,25 +11,28 @@
  * @property string $telephone
  * @property enum $gender
  * @property Image $Image
+ * @property Doctrine_Collection $Productions
  * @property Doctrine_Collection $Characters
  * @property Doctrine_Collection $Images
  * 
- * @method string              getName()       Returns the current record's "name" value
- * @method integer             getImageId()    Returns the current record's "image_id" value
- * @method string              getEmail()      Returns the current record's "email" value
- * @method string              getTelephone()  Returns the current record's "telephone" value
- * @method enum                getGender()     Returns the current record's "gender" value
- * @method Image               getImage()      Returns the current record's "Image" value
- * @method Doctrine_Collection getCharacters() Returns the current record's "Characters" collection
- * @method Doctrine_Collection getImages()     Returns the current record's "Images" collection
- * @method Person              setName()       Sets the current record's "name" value
- * @method Person              setImageId()    Sets the current record's "image_id" value
- * @method Person              setEmail()      Sets the current record's "email" value
- * @method Person              setTelephone()  Sets the current record's "telephone" value
- * @method Person              setGender()     Sets the current record's "gender" value
- * @method Person              setImage()      Sets the current record's "Image" value
- * @method Person              setCharacters() Sets the current record's "Characters" collection
- * @method Person              setImages()     Sets the current record's "Images" collection
+ * @method string              getName()        Returns the current record's "name" value
+ * @method integer             getImageId()     Returns the current record's "image_id" value
+ * @method string              getEmail()       Returns the current record's "email" value
+ * @method string              getTelephone()   Returns the current record's "telephone" value
+ * @method enum                getGender()      Returns the current record's "gender" value
+ * @method Image               getImage()       Returns the current record's "Image" value
+ * @method Doctrine_Collection getProductions() Returns the current record's "Productions" collection
+ * @method Doctrine_Collection getCharacters()  Returns the current record's "Characters" collection
+ * @method Doctrine_Collection getImages()      Returns the current record's "Images" collection
+ * @method Person              setName()        Sets the current record's "name" value
+ * @method Person              setImageId()     Sets the current record's "image_id" value
+ * @method Person              setEmail()       Sets the current record's "email" value
+ * @method Person              setTelephone()   Sets the current record's "telephone" value
+ * @method Person              setGender()      Sets the current record's "gender" value
+ * @method Person              setImage()       Sets the current record's "Image" value
+ * @method Person              setProductions() Sets the current record's "Productions" collection
+ * @method Person              setCharacters()  Sets the current record's "Characters" collection
+ * @method Person              setImages()      Sets the current record's "Images" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -77,6 +80,10 @@ abstract class BasePerson extends sfDoctrineRecord
         $this->hasOne('Image', array(
              'local' => 'image_id',
              'foreign' => 'id'));
+
+        $this->hasMany('Production as Productions', array(
+             'local' => 'id',
+             'foreign' => 'director_id'));
 
         $this->hasMany('Character as Characters', array(
              'local' => 'id',

@@ -1,3 +1,84 @@
+company:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Company
+    module:               company
+    prefix_path:          /company
+    column:               id
+    with_wildcard_routes: true
+
+production_type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProductionType
+    module:               production_type
+    prefix_path:          /production_type
+    column:               id
+    with_wildcard_routes: true
+
+user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                sfGuardUser
+    module:               user
+    prefix_path:          /user
+    column:               id
+    with_wildcard_routes: true
+
+image:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Image
+    module:               image
+    prefix_path:          /image
+    column:               id
+    with_wildcard_routes: true
+
+genre:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Genre
+    module:               genre
+    prefix_path:          /genre
+    column:               id
+    with_wildcard_routes: true
+
+venue:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Venue
+    module:               venue
+    prefix_path:          /venue
+    column:               id
+    with_wildcard_routes: true
+
+character:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Character
+    module:               character
+    prefix_path:          /character
+    column:               id
+    with_wildcard_routes: true
+
+person:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Person
+    module:               person
+    prefix_path:          /person
+    column:               id
+    with_wildcard_routes: true
+
+production:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Production
+    module:               production
+    prefix_path:          /production
+    column:               id
+    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 

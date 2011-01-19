@@ -25,6 +25,9 @@
  * @property ProductionType $Type
  * @property Genre $Genre
  * @property Company $Company
+ * @property Person $Director
+ * @property Person $Producer
+ * @property Person $Technician
  * @property Doctrine_Collection $Characters
  * @property Doctrine_Collection $Images
  * 
@@ -48,6 +51,9 @@
  * @method ProductionType      getType()                 Returns the current record's "Type" value
  * @method Genre               getGenre()                Returns the current record's "Genre" value
  * @method Company             getCompany()              Returns the current record's "Company" value
+ * @method Person              getDirector()             Returns the current record's "Director" value
+ * @method Person              getProducer()             Returns the current record's "Producer" value
+ * @method Person              getTechnician()           Returns the current record's "Technician" value
  * @method Doctrine_Collection getCharacters()           Returns the current record's "Characters" collection
  * @method Doctrine_Collection getImages()               Returns the current record's "Images" collection
  * @method Production          setName()                 Sets the current record's "name" value
@@ -70,6 +76,9 @@
  * @method Production          setType()                 Sets the current record's "Type" value
  * @method Production          setGenre()                Sets the current record's "Genre" value
  * @method Production          setCompany()              Sets the current record's "Company" value
+ * @method Production          setDirector()             Sets the current record's "Director" value
+ * @method Production          setProducer()             Sets the current record's "Producer" value
+ * @method Production          setTechnician()           Sets the current record's "Technician" value
  * @method Production          setCharacters()           Sets the current record's "Characters" collection
  * @method Production          setImages()               Sets the current record's "Images" collection
  * 
@@ -169,6 +178,18 @@ abstract class BaseProduction extends sfDoctrineRecord
 
         $this->hasOne('Company', array(
              'local' => 'company_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Person as Director', array(
+             'local' => 'director_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Person as Producer', array(
+             'local' => 'producer_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Person as Technician', array(
+             'local' => 'technician_id',
              'foreign' => 'id'));
 
         $this->hasMany('Character as Characters', array(

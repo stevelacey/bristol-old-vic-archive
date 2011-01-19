@@ -46,7 +46,7 @@ abstract class BaseShow extends sfDoctrineRecord
 {
     public function setTableDefinition()
     {
-        $this->setTableName('`show`');
+        $this->setTableName('show');
         $this->hasColumn('performance_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,

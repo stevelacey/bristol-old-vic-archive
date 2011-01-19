@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Production
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          production
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display:
+          - =name
+          - production_type_id
+          - genre_id
+          - company_id
+      filter:
+        display:
+          - name
+          - production_type_id
+          - genre_id
+          - company_id
+      form:    ~
+      edit:    ~
+      new:     ~

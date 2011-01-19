@@ -17,4 +17,8 @@ class ProjectConfiguration extends sfProjectConfiguration {
       return 'dev';
     }
   }
+
+  public function configureDoctrine(Doctrine_Manager $manager) {
+    $manager->setAttribute(Doctrine::ATTR_QUOTE_IDENTIFIER, true);
+  }
 }

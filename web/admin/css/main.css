@@ -1,0 +1,11 @@
+html {
+  background-color: #fff;
+}
+
+body {
+  padding: 0;
+}
+
+#sf_admin_container textarea {
+  width: 400px;
+}
