@@ -37,7 +37,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage model
  * @author     Steve Lacey
- * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
+ * @version    SVN: $Id$
  */
 abstract class BasePerson extends sfDoctrineRecord
 {
@@ -47,19 +47,19 @@ abstract class BasePerson extends sfDoctrineRecord
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('image_id', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('email', 'string', 255, array(
              'type' => 'string',
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('telephone', 'string', 255, array(
              'type' => 'string',
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('gender', 'enum', null, array(
              'type' => 'enum',

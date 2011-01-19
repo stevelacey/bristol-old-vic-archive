@@ -8,7 +8,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage form
  * @author     Steve Lacey
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id$
  */
 abstract class BasePerformanceForm extends BaseFormDoctrine
 {
@@ -16,7 +16,7 @@ abstract class BasePerformanceForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                              => new sfWidgetFormInputHidden(),
-      'production_id'                   => new sfWidgetFormInputText(),
+      'production_id'                   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Production'), 'add_empty' => false)),
       'venue_id'                        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Venue'), 'add_empty' => false)),
       'adult_tickets_available'         => new sfWidgetFormInputText(),
       'adult_ticket_price'              => new sfWidgetFormInputText(),
@@ -31,16 +31,16 @@ abstract class BasePerformanceForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
-      'id'                              => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
-      'production_id'                   => new sfValidatorInteger(),
+      'id'                              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'production_id'                   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Production'))),
       'venue_id'                        => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Venue'))),
       'adult_tickets_available'         => new sfValidatorInteger(array('required' => false)),
-      'adult_ticket_price'              => new sfValidatorInteger(array('required' => false)),
+      'adult_ticket_price'              => new sfValidatorNumber(array('required' => false)),
       'child_tickets_available'         => new sfValidatorInteger(array('required' => false)),
-      'child_ticket_price'              => new sfValidatorInteger(array('required' => false)),
+      'child_ticket_price'              => new sfValidatorNumber(array('required' => false)),
       'complimentary_tickets_available' => new sfValidatorInteger(array('required' => false)),
       'student_tickets_available'       => new sfValidatorInteger(array('required' => false)),
-      'student_ticket_price'            => new sfValidatorInteger(array('required' => false)),
+      'student_ticket_price'            => new sfValidatorNumber(array('required' => false)),
       'setup_at'                        => new sfValidatorDateTime(array('required' => false)),
       'created_at'                      => new sfValidatorDateTime(),
       'updated_at'                      => new sfValidatorDateTime(),

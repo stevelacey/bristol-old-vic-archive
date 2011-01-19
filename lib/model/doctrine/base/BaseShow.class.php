@@ -40,7 +40,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage model
  * @author     Steve Lacey
- * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
+ * @version    SVN: $Id$
  */
 abstract class BaseShow extends sfDoctrineRecord
 {
@@ -50,7 +50,7 @@ abstract class BaseShow extends sfDoctrineRecord
         $this->hasColumn('performance_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('show_at', 'timestamp', null, array(
              'type' => 'timestamp',
@@ -59,31 +59,31 @@ abstract class BaseShow extends sfDoctrineRecord
              ));
         $this->hasColumn('adult_tickets_sold', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('adult_attendees', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('child_tickets_sold', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('child_attendees', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('complimentary_tickets_sold', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('student_tickets_sold', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('student_attendees', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
 
         $this->option('orderBy', 'performance_at asc');

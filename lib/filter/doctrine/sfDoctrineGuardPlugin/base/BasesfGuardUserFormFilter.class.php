@@ -6,7 +6,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage filter
  * @author     Steve Lacey
- * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id$
  */
 abstract class BasesfGuardUserFormFilter extends BaseFormFilterDoctrine
 {
@@ -67,8 +67,10 @@ abstract class BasesfGuardUserFormFilter extends BaseFormFilterDoctrine
       return;
     }
 
-    $query->leftJoin('r.sfGuardUserGroup sfGuardUserGroup')
-          ->andWhereIn('sfGuardUserGroup.group_id', $values);
+    $query
+      ->leftJoin($query->getRootAlias().'.sfGuardUserGroup sfGuardUserGroup')
+      ->andWhereIn('sfGuardUserGroup.group_id', $values)
+    ;
   }
 
   public function addPermissionsListColumnQuery(Doctrine_Query $query, $field, $values)
@@ -83,8 +85,10 @@ abstract class BasesfGuardUserFormFilter extends BaseFormFilterDoctrine
       return;
     }
 
-    $query->leftJoin('r.sfGuardUserPermission sfGuardUserPermission')
-          ->andWhereIn('sfGuardUserPermission.permission_id', $values);
+    $query
+      ->leftJoin($query->getRootAlias().'.sfGuardUserPermission sfGuardUserPermission')
+      ->andWhereIn('sfGuardUserPermission.permission_id', $values)
+    ;
   }
 
   public function getModelName()

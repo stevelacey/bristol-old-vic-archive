@@ -22,7 +22,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage model
  * @author     Steve Lacey
- * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
+ * @version    SVN: $Id$
  */
 abstract class BasesfGuardUserPermission extends sfDoctrineRecord
 {
@@ -57,7 +57,8 @@ abstract class BasesfGuardUserPermission extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 
-        $timestampable0 = new Doctrine_Template_Timestampable();
+        $timestampable0 = new Doctrine_Template_Timestampable(array(
+             ));
         $this->actAs($timestampable0);
     }
 }

@@ -34,7 +34,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage model
  * @author     Steve Lacey
- * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
+ * @version    SVN: $Id$
  */
 abstract class BaseImage extends sfDoctrineRecord
 {
@@ -44,24 +44,24 @@ abstract class BaseImage extends sfDoctrineRecord
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('caption', 'string', 255, array(
              'type' => 'string',
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('production_id', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('person_id', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('path', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => '255',
+             'length' => 255,
              ));
     }
 

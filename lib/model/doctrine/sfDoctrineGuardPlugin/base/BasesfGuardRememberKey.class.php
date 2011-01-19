@@ -22,7 +22,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage model
  * @author     Steve Lacey
- * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
+ * @version    SVN: $Id$
  */
 abstract class BasesfGuardRememberKey extends sfDoctrineRecord
 {
@@ -34,11 +34,11 @@ abstract class BasesfGuardRememberKey extends sfDoctrineRecord
              ));
         $this->hasColumn('remember_key', 'string', 32, array(
              'type' => 'string',
-             'length' => '32',
+             'length' => 32,
              ));
         $this->hasColumn('ip_address', 'string', 50, array(
              'type' => 'string',
-             'length' => '50',
+             'length' => 50,
              ));
 
         $this->option('symfony', array(
@@ -55,7 +55,8 @@ abstract class BasesfGuardRememberKey extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 
-        $timestampable0 = new Doctrine_Template_Timestampable();
+        $timestampable0 = new Doctrine_Template_Timestampable(array(
+             ));
         $this->actAs($timestampable0);
     }
 }

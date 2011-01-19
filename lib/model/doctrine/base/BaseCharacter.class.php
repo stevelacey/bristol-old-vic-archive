@@ -28,7 +28,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage model
  * @author     Steve Lacey
- * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
+ * @version    SVN: $Id$
  */
 abstract class BaseCharacter extends sfDoctrineRecord
 {
@@ -38,7 +38,7 @@ abstract class BaseCharacter extends sfDoctrineRecord
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => '255',
+             'length' => 255,
              ));
         $this->hasColumn('gender', 'enum', null, array(
              'type' => 'enum',
@@ -52,12 +52,12 @@ abstract class BaseCharacter extends sfDoctrineRecord
         $this->hasColumn('actor_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('production_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => '20',
+             'length' => 20,
              ));
 
         $this->option('orderBy', 'name asc');

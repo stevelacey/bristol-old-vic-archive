@@ -6,14 +6,14 @@
  * @package    bristol-old-vic-archive
  * @subpackage filter
  * @author     Steve Lacey
- * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id$
  */
 abstract class BasePerformanceFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
-      'production_id'                   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'production_id'                   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Production'), 'add_empty' => true)),
       'venue_id'                        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Venue'), 'add_empty' => true)),
       'adult_tickets_available'         => new sfWidgetFormFilterInput(),
       'adult_ticket_price'              => new sfWidgetFormFilterInput(),
@@ -28,15 +28,15 @@ abstract class BasePerformanceFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'production_id'                   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'production_id'                   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Production'), 'column' => 'id')),
       'venue_id'                        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Venue'), 'column' => 'id')),
       'adult_tickets_available'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'adult_ticket_price'              => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'adult_ticket_price'              => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'child_tickets_available'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'child_ticket_price'              => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'child_ticket_price'              => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'complimentary_tickets_available' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'student_tickets_available'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'student_ticket_price'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'student_ticket_price'            => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'setup_at'                        => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'created_at'                      => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'                      => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -60,7 +60,7 @@ abstract class BasePerformanceFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'                              => 'Number',
-      'production_id'                   => 'Number',
+      'production_id'                   => 'ForeignKey',
       'venue_id'                        => 'ForeignKey',
       'adult_tickets_available'         => 'Number',
       'adult_ticket_price'              => 'Number',

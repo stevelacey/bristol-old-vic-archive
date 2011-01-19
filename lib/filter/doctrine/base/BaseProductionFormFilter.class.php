@@ -6,7 +6,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage filter
  * @author     Steve Lacey
- * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id$
  */
 abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
 {
@@ -49,7 +49,7 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'collaboration_nature' => new sfValidatorPass(array('required' => false)),
       'funding'              => new sfValidatorPass(array('required' => false)),
       'notes'                => new sfValidatorPass(array('required' => false)),
-      'gross_income'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'gross_income'         => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'created_at'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));

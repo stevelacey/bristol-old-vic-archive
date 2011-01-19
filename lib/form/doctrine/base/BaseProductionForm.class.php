@@ -8,7 +8,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage form
  * @author     Steve Lacey
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id$
  */
 abstract class BaseProductionForm extends BaseFormDoctrine
 {
@@ -37,7 +37,7 @@ abstract class BaseProductionForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
-      'id'                   => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
+      'id'                   => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'                 => new sfValidatorString(array('max_length' => 255)),
       'pvm_code'             => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'image_id'             => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'required' => false)),
@@ -53,7 +53,7 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       'collaboration_nature' => new sfValidatorString(array('required' => false)),
       'funding'              => new sfValidatorString(array('required' => false)),
       'notes'                => new sfValidatorString(array('required' => false)),
-      'gross_income'         => new sfValidatorInteger(array('required' => false)),
+      'gross_income'         => new sfValidatorNumber(array('required' => false)),
       'created_at'           => new sfValidatorDateTime(),
       'updated_at'           => new sfValidatorDateTime(),
     ));

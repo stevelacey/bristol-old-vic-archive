@@ -8,26 +8,28 @@
  * @property integer $production_id
  * @property integer $venue_id
  * @property integer $adult_tickets_available
- * @property integer $adult_ticket_price
+ * @property float $adult_ticket_price
  * @property integer $child_tickets_available
- * @property integer $child_ticket_price
+ * @property float $child_ticket_price
  * @property integer $complimentary_tickets_available
  * @property integer $student_tickets_available
- * @property integer $student_ticket_price
+ * @property float $student_ticket_price
  * @property timestamp $setup_at
+ * @property Production $Production
  * @property Venue $Venue
  * @property Doctrine_Collection $Shows
  * 
  * @method integer             getProductionId()                    Returns the current record's "production_id" value
  * @method integer             getVenueId()                         Returns the current record's "venue_id" value
  * @method integer             getAdultTicketsAvailable()           Returns the current record's "adult_tickets_available" value
- * @method integer             getAdultTicketPrice()                Returns the current record's "adult_ticket_price" value
+ * @method float               getAdultTicketPrice()                Returns the current record's "adult_ticket_price" value
  * @method integer             getChildTicketsAvailable()           Returns the current record's "child_tickets_available" value
- * @method integer             getChildTicketPrice()                Returns the current record's "child_ticket_price" value
+ * @method float               getChildTicketPrice()                Returns the current record's "child_ticket_price" value
  * @method integer             getComplimentaryTicketsAvailable()   Returns the current record's "complimentary_tickets_available" value
  * @method integer             getStudentTicketsAvailable()         Returns the current record's "student_tickets_available" value
- * @method integer             getStudentTicketPrice()              Returns the current record's "student_ticket_price" value
+ * @method float               getStudentTicketPrice()              Returns the current record's "student_ticket_price" value
  * @method timestamp           getSetupAt()                         Returns the current record's "setup_at" value
+ * @method Production          getProduction()                      Returns the current record's "Production" value
  * @method Venue               getVenue()                           Returns the current record's "Venue" value
  * @method Doctrine_Collection getShows()                           Returns the current record's "Shows" collection
  * @method Performance         setProductionId()                    Sets the current record's "production_id" value
@@ -40,13 +42,14 @@
  * @method Performance         setStudentTicketsAvailable()         Sets the current record's "student_tickets_available" value
  * @method Performance         setStudentTicketPrice()              Sets the current record's "student_ticket_price" value
  * @method Performance         setSetupAt()                         Sets the current record's "setup_at" value
+ * @method Performance         setProduction()                      Sets the current record's "Production" value
  * @method Performance         setVenue()                           Sets the current record's "Venue" value
  * @method Performance         setShows()                           Sets the current record's "Shows" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
  * @author     Steve Lacey
- * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
+ * @version    SVN: $Id$
  */
 abstract class BasePerformance extends sfDoctrineRecord
 {
@@ -56,40 +59,37 @@ abstract class BasePerformance extends sfDoctrineRecord
         $this->hasColumn('production_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('venue_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('adult_tickets_available', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
-        $this->hasColumn('adult_ticket_price', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => '20',
+        $this->hasColumn('adult_ticket_price', 'float', null, array(
+             'type' => 'float',
              ));
         $this->hasColumn('child_tickets_available', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
-        $this->hasColumn('child_ticket_price', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => '20',
+        $this->hasColumn('child_ticket_price', 'float', null, array(
+             'type' => 'float',
              ));
         $this->hasColumn('complimentary_tickets_available', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
         $this->hasColumn('student_tickets_available', 'integer', 20, array(
              'type' => 'integer',
-             'length' => '20',
+             'length' => 20,
              ));
-        $this->hasColumn('student_ticket_price', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => '20',
+        $this->hasColumn('student_ticket_price', 'float', null, array(
+             'type' => 'float',
              ));
         $this->hasColumn('setup_at', 'timestamp', null, array(
              'type' => 'timestamp',
@@ -102,6 +102,10 @@ abstract class BasePerformance extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('Production', array(
+             'local' => 'production_id',
+             'foreign' => 'id'));
+
         $this->hasOne('Venue', array(
              'local' => 'venue_id',
              'foreign' => 'id'));

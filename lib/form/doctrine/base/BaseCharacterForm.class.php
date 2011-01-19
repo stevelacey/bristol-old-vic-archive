@@ -8,7 +8,7 @@
  * @package    bristol-old-vic-archive
  * @subpackage form
  * @author     Steve Lacey
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id$
  */
 abstract class BaseCharacterForm extends BaseFormDoctrine
 {
@@ -25,9 +25,9 @@ abstract class BaseCharacterForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
-      'id'            => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
+      'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'          => new sfValidatorString(array('max_length' => 255)),
-      'gender'        => new sfValidatorChoice(array('choices' => array('Male' => 'Male', 'Female' => 'Female'))),
+      'gender'        => new sfValidatorChoice(array('choices' => array(0 => 'Male', 1 => 'Female'))),
       'actor_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Actor'))),
       'production_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Production'))),
       'created_at'    => new sfValidatorDateTime(),
