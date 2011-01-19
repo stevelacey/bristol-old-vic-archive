@@ -1,0 +1,23 @@
+ProductionType:
+  Circus:
+    name: Circus
+  Comedy:
+    name: Comedy
+  Concert:
+    name: Concert
+  Dance:
+    name: Dance
+  Family:
+    name: Family
+  Interactive Performance Art:
+    name: Interactive Performance Art
+  Musical:
+    name: Musical
+  New Writing:
+    name: New Writing
+  Play:
+    name: Play
+  Poetry:
+    name: Poetry
+  Speaker:
+    name: Speaker

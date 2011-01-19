@@ -17,9 +17,9 @@ generator:
       list:
         display:
           - =name
-          - production_type_id
-          - genre_id
-          - company_id
+          - type
+          - genre
+          - company
       filter:
         display:
           - name

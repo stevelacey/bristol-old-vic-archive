@@ -1,0 +1,15 @@
+sfGuardUser:
+  Steve:
+    username: Steve
+    email_address: steve@stevelacey.net
+    password: admin
+    first_name: Steve
+    last_name: Lacey
+    is_super_admin: true
+  Carl:
+    username: Carl
+    email_address: cjwood17@googlemail.com
+    password: woody
+    first_name: Carl
+    last_name: Woody
+    is_super_admin: true

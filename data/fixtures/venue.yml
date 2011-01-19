@@ -1,0 +1,49 @@
+Venue:
+  Basement:
+    name: Basement
+    capacity: 50
+  Bristol Old Vic:
+    name: Bristol Old Vic
+  Broadmead:
+    name: Broadmead
+  Circomedia:
+    name: Circomedia
+    capacity: 100
+  Clifton Village:
+    name: Clifton Village (Promanade)
+    capacity: 20
+  Garden Room:
+    name: Garden Room
+    capacity: 30
+  Harbourside:
+    name: Harbourside
+    capacity: 500
+  Holland House Hotel:
+    name: Holland House Hotel
+    capacity: 6
+  Homes:
+    name: Homes
+  Paintshop:
+    name: Paintshop
+    capacity: 50
+  Promanade:
+    name: Promanade
+  Pub:
+    name: Pub
+  Studio:
+    name: Studio
+    capacity: 150
+  Supermarket:
+    name: Supermarket
+  The Brewery:
+    name: The Brewery
+    capacity: 20
+  Theatre:
+    name: Theatre
+    capacity: 550
+  Tobacco Factory:
+    name: Tobacco Factory
+    capacity: 50
+  Wickham Theatre:
+    name: Wickham Theatre
+    capacity: 50
