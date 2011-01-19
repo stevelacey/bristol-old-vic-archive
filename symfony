@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+register_shutdown_function(create_function('', 'touch("cache/.gitignore"); touch("log/.gitignore");'));
 chdir(dirname(__FILE__));
 require_once(dirname(__FILE__).'/config/ProjectConfiguration.class.php');
 include(sfCoreAutoload::getInstance()->getBaseDir().'/command/cli.php');
