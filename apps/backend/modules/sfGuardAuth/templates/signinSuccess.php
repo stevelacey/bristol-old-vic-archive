@@ -1,0 +1,1 @@
+<?php echo get_partial('sfAdminDash/login', array('form' => $form)) ?>
