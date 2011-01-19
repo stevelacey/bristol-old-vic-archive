@@ -4,7 +4,7 @@
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: sfAdminDash, action: dashboard }
 
 sf_guard_signin:
   url:   /login

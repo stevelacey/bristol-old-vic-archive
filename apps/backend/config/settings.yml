@@ -14,7 +14,7 @@ all:
     use_database:           true
 
     # Enable modules
-    enabled_modules:      [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission]
+    enabled_modules:      [default, sfGuardAuth, sfGuardGroup, sfGuardUser, sfGuardPermission, sfAdminDash]
 
     # Security
     login_module:           sfGuardAuth
@@ -23,9 +23,10 @@ all:
     secure_module:          sfGuardAuth
     secure_action:          secure
 
+    no_script_name:         true
+
 prod:
   .settings:
-    no_script_name:         false
     logging_enabled:        false
 
 dev:
@@ -33,7 +34,6 @@ dev:
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
     web_debug:              true
     cache:                  false
-    no_script_name:         false
     etag:                   false
 
 test:
@@ -41,5 +41,4 @@ test:
     error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
     cache:                  false
     web_debug:              false
-    no_script_name:         false
     etag:                   false
