@@ -10,6 +10,17 @@
  */
 class PerformanceForm extends BasePerformanceForm {
   public function configure() {
-    unset($this['created_at'], $this['updated_at']);
+    // Existing show forms
+    $this->embedRelation('Shows');
+
+    // Show creation form
+    $show = new Show();
+    $show->setPerformance($this->getObject());
+    $this->embedForm('Add Show', new ShowForm($show));
+
+    unset(
+      $this['production_id'],
+      $this['created_at'], $this['updated_at']
+    );
   }
 }

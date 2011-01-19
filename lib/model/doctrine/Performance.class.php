@@ -10,6 +10,8 @@
  * @author     Steve Lacey
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Performance extends BasePerformance
-{
+class Performance extends BasePerformance {
+  public function __toString() {
+    return $this->getDateTimeObject('setup_at')->format('F Y');
+  }
 }

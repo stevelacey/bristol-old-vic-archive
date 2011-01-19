@@ -10,6 +10,15 @@
  */
 class ProductionForm extends BaseProductionForm {
   public function configure() {
+
+    // Existing performance forms
+    $this->embedRelation('Performances');
+
+    // Performance creation form
+    $newPerformanceForm = new PerformanceForm();
+    $newPerformanceForm->setDefault('production_id', $this->object->getId());
+    $this->embedForm('Add Performance', $newPerformanceForm);
+
     unset($this['created_at'], $this['updated_at']);
   }
 }

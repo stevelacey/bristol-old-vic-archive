@@ -109,7 +109,7 @@ Show:
     student_tickets_sold: integer(20)
     student_attendees: integer(20)
   options:
-    orderBy: performance_at asc
+    orderBy: show_at asc
   relations:
     Performance:
       local: performance_id

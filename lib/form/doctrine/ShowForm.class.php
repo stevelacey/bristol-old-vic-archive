@@ -10,6 +10,9 @@
  */
 class ShowForm extends BaseShowForm {
   public function configure() {
-    unset($this['created_at'], $this['updated_at']);
+    unset(
+      $this['performance_id'],
+      $this['created_at'], $this['updated_at']
+    );
   }
 }

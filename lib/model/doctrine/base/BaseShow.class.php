@@ -86,7 +86,7 @@ abstract class BaseShow extends sfDoctrineRecord
              'length' => 20,
              ));
 
-        $this->option('orderBy', 'performance_at asc');
+        $this->option('orderBy', 'show_at asc');
     }
 
     public function setUp()
