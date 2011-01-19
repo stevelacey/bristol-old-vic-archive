@@ -19,6 +19,9 @@ class ProductionForm extends BaseProductionForm {
     $newPerformanceForm->setDefault('production_id', $this->object->getId());
     $this->embedForm('Add Performance', $newPerformanceForm);
 
-    unset($this['created_at'], $this['updated_at']);
+    unset(
+      $this['image_id'],
+      $this['created_at'], $this['updated_at']
+    );
   }
 }

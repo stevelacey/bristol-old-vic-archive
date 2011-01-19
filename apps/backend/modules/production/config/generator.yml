@@ -26,6 +26,30 @@ generator:
           - production_type_id
           - genre_id
           - company_id
-      form:    ~
+      form:
+        display:
+          "Basic Details":
+             - name
+             - pvm_code
+             - production_type_id
+             - genre_id
+             - company_id
+             - description
+          "Personnel":
+             - director_id
+             - producer_id
+             - technician_id
+          "Performances":
+             - Performances
+             - Add Performance
+          "Booking":
+             - booking_status
+             - contract_details
+             - collaboration_nature
+          "Financial":
+             - funding
+             - gross_income
+          "Notes":
+             - notes
       edit:    ~
       new:     ~
