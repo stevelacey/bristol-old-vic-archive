@@ -20,7 +20,7 @@ Production:
     collaboration_nature: string()
     funding: string()
     notes: string()
-    gross_income: integer(20)
+    gross_income: float
   options:
     orderBy: name asc
   relations:
@@ -74,16 +74,20 @@ Performance:
       type: integer(20)
       notnull: true
     adult_tickets_available: integer(20)
-    adult_ticket_price: integer(20)
+    adult_ticket_price: float
     child_tickets_available: integer(20)
-    child_ticket_price: integer(20)
+    child_ticket_price: float
     complimentary_tickets_available: integer(20)
     student_tickets_available: integer(20)
-    student_ticket_price: integer(20)
+    student_ticket_price: float
     setup_at: timestamp()
   options:
     orderBy: setup_at asc
   relations:
+    Production:
+      local: production_id
+      foreign: id
+      foreignAlias: Performances
     Venue:
       local: venue_id
       foreign: id
