@@ -1,9 +1,9 @@
 [submodule "plugins/sfAdminDashPlugin"]
 	path = plugins/sfAdminDashPlugin
-	url = https://github.com/kbond/sfAdminDashPlugin.git
+	url = git://github.com/kbond/sfAdminDashPlugin.git
 [submodule "plugins/sfDoctrineGuardPlugin"]
 	path = plugins/sfDoctrineGuardPlugin
-	url = https://github.com/pycmam/sfDoctrineGuardPlugin.git
+	url = git://github.com/pycmam/sfDoctrineGuardPlugin.git
 [submodule "lib/vendor/symfony"]
 	path = lib/vendor/symfony
 	url = git://github.com/symfony/symfony1.git
