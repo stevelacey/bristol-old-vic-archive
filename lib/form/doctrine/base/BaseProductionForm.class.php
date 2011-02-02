@@ -19,8 +19,6 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       'name'                 => new sfWidgetFormInputText(),
       'pvm_code'             => new sfWidgetFormInputText(),
       'image_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
-      'production_type_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Type'), 'add_empty' => true)),
-      'genre_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Genre'), 'add_empty' => true)),
       'company_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'add_empty' => true)),
       'director_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Director'), 'add_empty' => true)),
       'producer_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'add_empty' => true)),
@@ -34,6 +32,9 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       'gross_income'         => new sfWidgetFormInputText(),
       'created_at'           => new sfWidgetFormDateTime(),
       'updated_at'           => new sfWidgetFormDateTime(),
+      'genres_list'          => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Genre')),
+      'types_list'           => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Type')),
+      'sponsors_list'        => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor')),
     ));
 
     $this->setValidators(array(
@@ -41,8 +42,6 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       'name'                 => new sfValidatorString(array('max_length' => 255)),
       'pvm_code'             => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'image_id'             => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'required' => false)),
-      'production_type_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Type'), 'required' => false)),
-      'genre_id'             => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Genre'), 'required' => false)),
       'company_id'           => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'required' => false)),
       'director_id'          => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Director'), 'required' => false)),
       'producer_id'          => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'required' => false)),
@@ -56,6 +55,9 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       'gross_income'         => new sfValidatorNumber(array('required' => false)),
       'created_at'           => new sfValidatorDateTime(),
       'updated_at'           => new sfValidatorDateTime(),
+      'genres_list'          => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Genre', 'required' => false)),
+      'types_list'           => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Type', 'required' => false)),
+      'sponsors_list'        => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('production[%s]');
@@ -70,6 +72,150 @@ abstract class BaseProductionForm extends BaseFormDoctrine
   public function getModelName()
   {
     return 'Production';
+  }
+
+  public function updateDefaultsFromObject()
+  {
+    parent::updateDefaultsFromObject();
+
+    if (isset($this->widgetSchema['genres_list']))
+    {
+      $this->setDefault('genres_list', $this->object->Genres->getPrimaryKeys());
+    }
+
+    if (isset($this->widgetSchema['types_list']))
+    {
+      $this->setDefault('types_list', $this->object->Types->getPrimaryKeys());
+    }
+
+    if (isset($this->widgetSchema['sponsors_list']))
+    {
+      $this->setDefault('sponsors_list', $this->object->Sponsors->getPrimaryKeys());
+    }
+
+  }
+
+  protected function doSave($con = null)
+  {
+    $this->saveGenresList($con);
+    $this->saveTypesList($con);
+    $this->saveSponsorsList($con);
+
+    parent::doSave($con);
+  }
+
+  public function saveGenresList($con = null)
+  {
+    if (!$this->isValid())
+    {
+      throw $this->getErrorSchema();
+    }
+
+    if (!isset($this->widgetSchema['genres_list']))
+    {
+      // somebody has unset this widget
+      return;
+    }
+
+    if (null === $con)
+    {
+      $con = $this->getConnection();
+    }
+
+    $existing = $this->object->Genres->getPrimaryKeys();
+    $values = $this->getValue('genres_list');
+    if (!is_array($values))
+    {
+      $values = array();
+    }
+
+    $unlink = array_diff($existing, $values);
+    if (count($unlink))
+    {
+      $this->object->unlink('Genres', array_values($unlink));
+    }
+
+    $link = array_diff($values, $existing);
+    if (count($link))
+    {
+      $this->object->link('Genres', array_values($link));
+    }
+  }
+
+  public function saveTypesList($con = null)
+  {
+    if (!$this->isValid())
+    {
+      throw $this->getErrorSchema();
+    }
+
+    if (!isset($this->widgetSchema['types_list']))
+    {
+      // somebody has unset this widget
+      return;
+    }
+
+    if (null === $con)
+    {
+      $con = $this->getConnection();
+    }
+
+    $existing = $this->object->Types->getPrimaryKeys();
+    $values = $this->getValue('types_list');
+    if (!is_array($values))
+    {
+      $values = array();
+    }
+
+    $unlink = array_diff($existing, $values);
+    if (count($unlink))
+    {
+      $this->object->unlink('Types', array_values($unlink));
+    }
+
+    $link = array_diff($values, $existing);
+    if (count($link))
+    {
+      $this->object->link('Types', array_values($link));
+    }
+  }
+
+  public function saveSponsorsList($con = null)
+  {
+    if (!$this->isValid())
+    {
+      throw $this->getErrorSchema();
+    }
+
+    if (!isset($this->widgetSchema['sponsors_list']))
+    {
+      // somebody has unset this widget
+      return;
+    }
+
+    if (null === $con)
+    {
+      $con = $this->getConnection();
+    }
+
+    $existing = $this->object->Sponsors->getPrimaryKeys();
+    $values = $this->getValue('sponsors_list');
+    if (!is_array($values))
+    {
+      $values = array();
+    }
+
+    $unlink = array_diff($existing, $values);
+    if (count($unlink))
+    {
+      $this->object->unlink('Sponsors', array_values($unlink));
+    }
+
+    $link = array_diff($values, $existing);
+    if (count($link))
+    {
+      $this->object->link('Sponsors', array_values($link));
+    }
   }
 
 }

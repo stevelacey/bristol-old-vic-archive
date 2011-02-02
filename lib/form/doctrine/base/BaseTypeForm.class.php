@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Genre form base class.
+ * Type form base class.
  *
- * @method Genre getObject() Returns the current form's model object
+ * @method Type getObject() Returns the current form's model object
  *
  * @package    bristol-old-vic-archive
  * @subpackage form
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-abstract class BaseGenreForm extends BaseFormDoctrine
+abstract class BaseTypeForm extends BaseFormDoctrine
 {
   public function setup()
   {
@@ -26,7 +26,7 @@ abstract class BaseGenreForm extends BaseFormDoctrine
       'productions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Production', 'required' => false)),
     ));
 
-    $this->widgetSchema->setNameFormat('genre[%s]');
+    $this->widgetSchema->setNameFormat('type[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -37,7 +37,7 @@ abstract class BaseGenreForm extends BaseFormDoctrine
 
   public function getModelName()
   {
-    return 'Genre';
+    return 'Type';
   }
 
   public function updateDefaultsFromObject()

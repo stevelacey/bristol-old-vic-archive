@@ -1,32 +1,36 @@
 <?php
 
 /**
- * Genre form base class.
+ * Sponsor form base class.
  *
- * @method Genre getObject() Returns the current form's model object
+ * @method Sponsor getObject() Returns the current form's model object
  *
  * @package    bristol-old-vic-archive
  * @subpackage form
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-abstract class BaseGenreForm extends BaseFormDoctrine
+abstract class BaseSponsorForm extends BaseFormDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
       'id'               => new sfWidgetFormInputHidden(),
       'name'             => new sfWidgetFormInputText(),
+      'created_at'       => new sfWidgetFormDateTime(),
+      'updated_at'       => new sfWidgetFormDateTime(),
       'productions_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Production')),
     ));
 
     $this->setValidators(array(
       'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'             => new sfValidatorString(array('max_length' => 255)),
+      'created_at'       => new sfValidatorDateTime(),
+      'updated_at'       => new sfValidatorDateTime(),
       'productions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Production', 'required' => false)),
     ));
 
-    $this->widgetSchema->setNameFormat('genre[%s]');
+    $this->widgetSchema->setNameFormat('sponsor[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -37,7 +41,7 @@ abstract class BaseGenreForm extends BaseFormDoctrine
 
   public function getModelName()
   {
-    return 'Genre';
+    return 'Sponsor';
   }
 
   public function updateDefaultsFromObject()

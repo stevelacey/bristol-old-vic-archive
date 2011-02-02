@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Genre filter form base class.
+ * Type filter form base class.
  *
  * @package    bristol-old-vic-archive
  * @subpackage filter
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-abstract class BaseGenreFormFilter extends BaseFormFilterDoctrine
+abstract class BaseTypeFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
@@ -22,7 +22,7 @@ abstract class BaseGenreFormFilter extends BaseFormFilterDoctrine
       'productions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Production', 'required' => false)),
     ));
 
-    $this->widgetSchema->setNameFormat('genre_filters[%s]');
+    $this->widgetSchema->setNameFormat('type_filters[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -44,14 +44,14 @@ abstract class BaseGenreFormFilter extends BaseFormFilterDoctrine
     }
 
     $query
-      ->leftJoin($query->getRootAlias().'.ProductionGenre ProductionGenre')
-      ->andWhereIn('ProductionGenre.production_id', $values)
+      ->leftJoin($query->getRootAlias().'.ProductionType ProductionType')
+      ->andWhereIn('ProductionType.production_id', $values)
     ;
   }
 
   public function getModelName()
   {
-    return 'Genre';
+    return 'Type';
   }
 
   public function getFields()

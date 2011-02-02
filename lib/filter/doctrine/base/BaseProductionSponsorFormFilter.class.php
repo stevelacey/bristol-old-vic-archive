@@ -1,14 +1,14 @@
 <?php
 
 /**
- * ProductionType filter form base class.
+ * ProductionSponsor filter form base class.
  *
  * @package    bristol-old-vic-archive
  * @subpackage filter
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-abstract class BaseProductionTypeFormFilter extends BaseFormFilterDoctrine
+abstract class BaseProductionSponsorFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
@@ -18,7 +18,7 @@ abstract class BaseProductionTypeFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
     ));
 
-    $this->widgetSchema->setNameFormat('production_type_filters[%s]');
+    $this->widgetSchema->setNameFormat('production_sponsor_filters[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -29,14 +29,14 @@ abstract class BaseProductionTypeFormFilter extends BaseFormFilterDoctrine
 
   public function getModelName()
   {
-    return 'ProductionType';
+    return 'ProductionSponsor';
   }
 
   public function getFields()
   {
     return array(
       'production_id' => 'Number',
-      'type_id'       => 'Number',
+      'sponsor_id'    => 'Number',
     );
   }
 }
