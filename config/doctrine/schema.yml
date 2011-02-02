@@ -1,15 +1,12 @@
-actAs:
-  Timestampable: ~
-
 Production:
+  actAs:
+    Timestampable: ~
   columns:
     name:
       type: string(255)
       notnull: true
     pvm_code: string(20)
     image_id: integer(20)
-    production_type_id: integer(20)
-    genre_id: integer(20)
     company_id: integer(20)
     director_id: integer(20)
     producer_id: integer(20)
@@ -28,14 +25,23 @@ Production:
       local: image_id
       foreign: id
       foreignAlias: Productions
-    Type:
-      class: ProductionType
-      local: production_type_id
-      foreign: id
+    Genres:
+      class: Genre
+      refClass: ProductionGenre
+      local: production_id
+      foreign: genre_id
       foreignAlias: Productions
-    Genre:
-      local: genre_id
-      foreign: id
+    Types:
+      class: Type
+      refClass: ProductionType
+      local: production_id
+      foreign: type_id
+      foreignAlias: Productions
+    Sponsors:
+      class: Sponsor
+      refClass: ProductionSponsor
+      local: production_id
+      foreign: sponsor_id
       foreignAlias: Productions
     Company:
       local: company_id
@@ -57,15 +63,9 @@ Production:
       foreign: id
       foreignAlias: Productions
 
-ProductionType:
-  columns:
-    name:
-      type: string(255)
-      notnull: true
-  options:
-    orderBy: name asc
-
 Performance:
+  actAs:
+    Timestampable: ~
   columns:
     production_id:
       type: integer(20)
@@ -94,6 +94,8 @@ Performance:
       foreignAlias: Performances
 
 Show:
+  actAs:
+    Timestampable: ~
   columns:
     performance_id:
       type: integer(20)
@@ -117,6 +119,8 @@ Show:
       foreignAlias: Shows
 
 Person:
+  actAs:
+    Timestampable: ~
   columns:
     name:
       type: string(255)
@@ -136,6 +140,8 @@ Person:
       foreign: id
 
 Character:
+  actAs:
+    Timestampable: ~
   columns:
     name:
       type: string(255)
@@ -163,6 +169,56 @@ Character:
       foreign: id
       foreignAlias: Characters
 
+ProductionType:
+  columns:
+    production_id:
+      type: integer(20)
+      primary: true
+    type_id:
+      type: integer(20)
+      primary: true
+  relations:
+    Production:
+      class: Production
+      local: production_id
+      foreign: id
+    Type:
+      class: Type
+      local: type_id
+      foreign: id
+
+Type:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+  options:
+    orderBy: name asc
+  relations:
+    Productions:
+      class: Production
+      refClass: ProductionType
+      local: type_id
+      foreign: production_id
+      foreignAlias: Types
+
+ProductionGenre:
+  columns:
+    production_id:
+      type: integer(20)
+      primary: true
+    genre_id:
+      type: integer(20)
+      primary: true
+  relations:
+    Production:
+      class: Production
+      local: production_id
+      foreign: id
+    Genre:
+      class: Genre
+      local: genre_id
+      foreign: id
 
 Genre:
   columns:
@@ -171,8 +227,52 @@ Genre:
       notnull: true
   options:
     orderBy: name asc
+  relations:
+    Productions:
+      class: Production
+      refClass: ProductionGenre
+      local: genre_id
+      foreign: production_id
+      foreignAlias: Genres
+
+ProductionSponsor:
+  columns:
+    production_id:
+      type: integer(20)
+      primary: true
+    sponsor_id:
+      type: integer(20)
+      primary: true
+  relations:
+    Production:
+      class: Production
+      local: production_id
+      foreign: id
+    Sponsor:
+      class: Sponsor
+      local: sponsor_id
+      foreign: id
+
+Sponsor:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+  options:
+    orderBy: name asc
+  relations:
+    Productions:
+      class: Production
+      refClass: ProductionSponsor
+      local: sponsor_id
+      foreign: production_id
+      foreignAlias: Sponsors
 
 Venue:
+  actAs:
+    Timestampable: ~
   columns:
     name:
       type: string(255)
@@ -183,6 +283,8 @@ Venue:
     orderBy: name asc
 
 Company:
+  actAs:
+    Timestampable: ~
   columns:
     name:
       type: string(255)
