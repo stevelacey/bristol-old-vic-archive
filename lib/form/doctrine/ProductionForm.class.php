@@ -10,6 +10,8 @@
  */
 class ProductionForm extends BaseProductionForm {
   public function configure() {
+    $this->widgetSchema->setLabel('genres_list', 'Genres');
+    $this->widgetSchema->setLabel('types_list', 'Types');
 
     // Existing performance forms
     $this->embedRelation('Performances');
