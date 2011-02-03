@@ -17,22 +17,16 @@ generator:
       list:
         display:
           - =name
-          - type
-          - genre
           - company
       filter:
         display:
           - name
-          - production_type_id
-          - genre_id
           - company_id
       form:
         display:
           "Basic Details":
              - name
              - pvm_code
-             - production_type_id
-             - genre_id
              - company_id
              - description
           "Personnel":
