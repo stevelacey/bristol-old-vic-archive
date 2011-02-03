@@ -83,6 +83,18 @@ class Version1 extends Doctrine_Migration_Base
               'notnull' => '1',
               'length' => '255',
              ),
+             'created_at' =>
+             array(
+              'notnull' => '1',
+              'type' => 'timestamp',
+              'length' => '25',
+             ),
+             'updated_at' =>
+             array(
+              'notnull' => '1',
+              'type' => 'timestamp',
+              'length' => '25',
+             ),
              ), array(
              'primary' => 
              array(
