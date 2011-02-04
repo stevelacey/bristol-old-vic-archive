@@ -1,0 +1,33 @@
+Venue:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    email: string(255)
+    telephone: string(255)
+    mobile: string(255)
+    address_line_1: string(255)
+    address_line_2: string(255)
+    address_line_3: string(255)
+    address_line_4: string(255)
+    post_code: string(20)
+  options:
+    orderBy: name asc
+
+Layout:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    venue_id:
+      type: integer(20)
+      notnull: true
+    capacity:
+      type: integer(20)
+  options:
+    orderBy: name asc
+  relations:
+    Venue:
+      local: venue_id
+      foreign: id
+      foreignAlias: Layouts

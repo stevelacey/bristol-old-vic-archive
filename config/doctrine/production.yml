@@ -1,0 +1,121 @@
+Production:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    type_id: integer(20)
+    genre_id: integer(20)
+    layout_id: integer(20)
+    company_id: integer(20)
+    collaboration_id: integer(20)
+    image_id: integer(20)
+    director_id: integer(20)
+    producer_id: integer(20)
+    technician_id: integer(20)
+    description: string()
+    start_at: datetime()
+    end_at: datetime()
+    fundraiser:
+      type: boolean
+      default: false
+    adult_ticket_price: float
+    child_ticket_price: float
+    student_ticket_price: float
+    funding: string()
+    notes: string()
+    gross_income: float
+  options:
+    orderBy: name asc
+  relations:
+    Type:
+      local: type_id
+      foreign: id
+      foreignAlias: Productions
+    Genre:
+      local: genre_id
+      foreign: id
+      foreignAlias: Productions
+    Layout:
+      local: layout_id
+      foreign: id
+      foreignAlias: Productions
+    Company:
+      local: company_id
+      foreign: id
+      foreignAlias: Productions
+    Collaboration:
+      local: collaboration_id
+      foreign: id
+      foreignAlias: Productions
+    Image:
+      local: image_id
+      foreign: id
+      foreignAlias: Productions
+    Director:
+      class: Person
+      local: director_id
+      foreign: id
+      foreignAlias: Productions
+    Producer:
+      class: Person
+      local: producer_id
+      foreign: id
+      foreignAlias: Productions
+    Technician:
+      class: Person
+      local: technician_id
+      foreign: id
+      foreignAlias: Productions
+    Sponsors:
+      class: Sponsor
+      refClass: ProductionSponsor
+      local: production_id
+      foreign: sponsor_id
+      foreignAlias: Productions
+
+Type:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+  options:
+    orderBy: name asc
+
+Genre:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+  options:
+    orderBy: name asc
+
+Company:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    email: string(255)
+    telephone: string(255)
+    mobile: string(255)
+    address_line_1: string(255)
+    address_line_2: string(255)
+    address_line_3: string(255)
+    address_line_4: string(255)
+    post_code: string(20)
+    description: string()
+  options:
+    orderBy: name asc
+
+Collaboration:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    description:
+      type: string()
+  options:
+    orderBy: name asc

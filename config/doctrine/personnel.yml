@@ -1,0 +1,50 @@
+Person:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    image_id: integer(20)
+    email: string(255)
+    telephone: string(255)
+    gender:
+      type: enum
+      values: [Male, Female]
+      notnull: true
+  options:
+    orderBy: name asc
+  relations:
+    Image:
+      local: image_id
+      foreign: id
+
+Character:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    gender:
+      type: enum
+      values: [Male, Female]
+      notnull: true
+    actor_id:
+      type: integer(20)
+      notnull: true
+    production_id:
+      type: integer(20)
+      notnull: true
+  options:
+    orderBy: name asc
+  relations:
+    Actor:
+      class: Person
+      local: actor_id
+      foreign: id
+      foreignAlias: Characters
+    Production:
+      local: production_id
+      foreign: id
+      foreignAlias: Characters

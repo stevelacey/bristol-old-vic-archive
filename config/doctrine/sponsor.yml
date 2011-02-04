@@ -1,0 +1,34 @@
+ProductionSponsor:
+  columns:
+    production_id:
+      type: integer(20)
+      primary: true
+    sponsor_id:
+      type: integer(20)
+      primary: true
+  relations:
+    Production:
+      class: Production
+      local: production_id
+      foreign: id
+    Sponsor:
+      class: Sponsor
+      local: sponsor_id
+      foreign: id
+
+Sponsor:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+  options:
+    orderBy: name asc
+  relations:
+    Productions:
+      class: Production
+      refClass: ProductionSponsor
+      local: sponsor_id
+      foreign: production_id
+      foreignAlias: Sponsors
