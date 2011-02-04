@@ -15,13 +15,17 @@ abstract class BaseProductionTypeForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'production_id' => new sfWidgetFormInputHidden(),
-      'type_id'       => new sfWidgetFormInputHidden(),
+      'id'         => new sfWidgetFormInputHidden(),
+      'name'       => new sfWidgetFormInputText(),
+      'created_at' => new sfWidgetFormDateTime(),
+      'updated_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'production_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('production_id')), 'empty_value' => $this->getObject()->get('production_id'), 'required' => false)),
-      'type_id'       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('type_id')), 'empty_value' => $this->getObject()->get('type_id'), 'required' => false)),
+      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'name'       => new sfValidatorString(array('max_length' => 255)),
+      'created_at' => new sfValidatorDateTime(),
+      'updated_at' => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('production_type[%s]');

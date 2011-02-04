@@ -7,14 +7,11 @@
  * 
  * @property string $name
  * @property Doctrine_Collection $Productions
- * @property Doctrine_Collection $ProductionGenre
  * 
- * @method string              getName()            Returns the current record's "name" value
- * @method Doctrine_Collection getProductions()     Returns the current record's "Productions" collection
- * @method Doctrine_Collection getProductionGenre() Returns the current record's "ProductionGenre" collection
- * @method Genre               setName()            Sets the current record's "name" value
- * @method Genre               setProductions()     Sets the current record's "Productions" collection
- * @method Genre               setProductionGenre() Sets the current record's "ProductionGenre" collection
+ * @method string              getName()        Returns the current record's "name" value
+ * @method Doctrine_Collection getProductions() Returns the current record's "Productions" collection
+ * @method Genre               setName()        Sets the current record's "name" value
+ * @method Genre               setProductions() Sets the current record's "Productions" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -39,12 +36,10 @@ abstract class BaseGenre extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('Production as Productions', array(
-             'refClass' => 'ProductionGenre',
-             'local' => 'genre_id',
-             'foreign' => 'production_id'));
-
-        $this->hasMany('ProductionGenre', array(
              'local' => 'id',
              'foreign' => 'genre_id'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }
