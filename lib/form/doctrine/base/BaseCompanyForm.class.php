@@ -15,23 +15,35 @@ abstract class BaseCompanyForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'          => new sfWidgetFormInputHidden(),
-      'name'        => new sfWidgetFormInputText(),
-      'email'       => new sfWidgetFormInputText(),
-      'telephone'   => new sfWidgetFormInputText(),
-      'description' => new sfWidgetFormTextarea(),
-      'created_at'  => new sfWidgetFormDateTime(),
-      'updated_at'  => new sfWidgetFormDateTime(),
+      'id'             => new sfWidgetFormInputHidden(),
+      'name'           => new sfWidgetFormInputText(),
+      'email'          => new sfWidgetFormInputText(),
+      'telephone'      => new sfWidgetFormInputText(),
+      'mobile'         => new sfWidgetFormInputText(),
+      'address_line_1' => new sfWidgetFormInputText(),
+      'address_line_2' => new sfWidgetFormInputText(),
+      'address_line_3' => new sfWidgetFormInputText(),
+      'address_line_4' => new sfWidgetFormInputText(),
+      'post_code'      => new sfWidgetFormInputText(),
+      'description'    => new sfWidgetFormTextarea(),
+      'created_at'     => new sfWidgetFormDateTime(),
+      'updated_at'     => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'name'        => new sfValidatorString(array('max_length' => 255)),
-      'email'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'telephone'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'description' => new sfValidatorString(array('required' => false)),
-      'created_at'  => new sfValidatorDateTime(),
-      'updated_at'  => new sfValidatorDateTime(),
+      'id'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'name'           => new sfValidatorString(array('max_length' => 255)),
+      'email'          => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'telephone'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'mobile'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'address_line_1' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'address_line_2' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'address_line_3' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'address_line_4' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'post_code'      => new sfValidatorString(array('max_length' => 20, 'required' => false)),
+      'description'    => new sfValidatorString(array('required' => false)),
+      'created_at'     => new sfValidatorDateTime(),
+      'updated_at'     => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('company[%s]');

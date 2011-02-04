@@ -8,19 +8,37 @@
  * @property string $name
  * @property string $email
  * @property string $telephone
+ * @property string $mobile
+ * @property string $address_line_1
+ * @property string $address_line_2
+ * @property string $address_line_3
+ * @property string $address_line_4
+ * @property string $post_code
  * @property string $description
  * @property Doctrine_Collection $Productions
  * 
- * @method string              getName()        Returns the current record's "name" value
- * @method string              getEmail()       Returns the current record's "email" value
- * @method string              getTelephone()   Returns the current record's "telephone" value
- * @method string              getDescription() Returns the current record's "description" value
- * @method Doctrine_Collection getProductions() Returns the current record's "Productions" collection
- * @method Company             setName()        Sets the current record's "name" value
- * @method Company             setEmail()       Sets the current record's "email" value
- * @method Company             setTelephone()   Sets the current record's "telephone" value
- * @method Company             setDescription() Sets the current record's "description" value
- * @method Company             setProductions() Sets the current record's "Productions" collection
+ * @method string              getName()           Returns the current record's "name" value
+ * @method string              getEmail()          Returns the current record's "email" value
+ * @method string              getTelephone()      Returns the current record's "telephone" value
+ * @method string              getMobile()         Returns the current record's "mobile" value
+ * @method string              getAddressLine1()   Returns the current record's "address_line_1" value
+ * @method string              getAddressLine2()   Returns the current record's "address_line_2" value
+ * @method string              getAddressLine3()   Returns the current record's "address_line_3" value
+ * @method string              getAddressLine4()   Returns the current record's "address_line_4" value
+ * @method string              getPostCode()       Returns the current record's "post_code" value
+ * @method string              getDescription()    Returns the current record's "description" value
+ * @method Doctrine_Collection getProductions()    Returns the current record's "Productions" collection
+ * @method Company             setName()           Sets the current record's "name" value
+ * @method Company             setEmail()          Sets the current record's "email" value
+ * @method Company             setTelephone()      Sets the current record's "telephone" value
+ * @method Company             setMobile()         Sets the current record's "mobile" value
+ * @method Company             setAddressLine1()   Sets the current record's "address_line_1" value
+ * @method Company             setAddressLine2()   Sets the current record's "address_line_2" value
+ * @method Company             setAddressLine3()   Sets the current record's "address_line_3" value
+ * @method Company             setAddressLine4()   Sets the current record's "address_line_4" value
+ * @method Company             setPostCode()       Sets the current record's "post_code" value
+ * @method Company             setDescription()    Sets the current record's "description" value
+ * @method Company             setProductions()    Sets the current record's "Productions" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -44,6 +62,30 @@ abstract class BaseCompany extends sfDoctrineRecord
         $this->hasColumn('telephone', 'string', 255, array(
              'type' => 'string',
              'length' => 255,
+             ));
+        $this->hasColumn('mobile', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
+        $this->hasColumn('address_line_1', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
+        $this->hasColumn('address_line_2', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
+        $this->hasColumn('address_line_3', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
+        $this->hasColumn('address_line_4', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
+        $this->hasColumn('post_code', 'string', 20, array(
+             'type' => 'string',
+             'length' => 20,
              ));
         $this->hasColumn('description', 'string', null, array(
              'type' => 'string',
