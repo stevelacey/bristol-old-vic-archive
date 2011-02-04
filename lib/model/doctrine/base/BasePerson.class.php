@@ -13,7 +13,6 @@
  * @property Image $Image
  * @property Doctrine_Collection $Productions
  * @property Doctrine_Collection $Characters
- * @property Doctrine_Collection $Images
  * 
  * @method string              getName()        Returns the current record's "name" value
  * @method integer             getImageId()     Returns the current record's "image_id" value
@@ -23,7 +22,6 @@
  * @method Image               getImage()       Returns the current record's "Image" value
  * @method Doctrine_Collection getProductions() Returns the current record's "Productions" collection
  * @method Doctrine_Collection getCharacters()  Returns the current record's "Characters" collection
- * @method Doctrine_Collection getImages()      Returns the current record's "Images" collection
  * @method Person              setName()        Sets the current record's "name" value
  * @method Person              setImageId()     Sets the current record's "image_id" value
  * @method Person              setEmail()       Sets the current record's "email" value
@@ -32,7 +30,6 @@
  * @method Person              setImage()       Sets the current record's "Image" value
  * @method Person              setProductions() Sets the current record's "Productions" collection
  * @method Person              setCharacters()  Sets the current record's "Characters" collection
- * @method Person              setImages()      Sets the current record's "Images" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -88,10 +85,6 @@ abstract class BasePerson extends sfDoctrineRecord
         $this->hasMany('Character as Characters', array(
              'local' => 'id',
              'foreign' => 'actor_id'));
-
-        $this->hasMany('Image as Images', array(
-             'local' => 'id',
-             'foreign' => 'person_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);

@@ -1,0 +1,94 @@
+Layout:
+  Basement 50:
+    Venue: Basement
+    Capacity: 50
+  Basement 55:
+    Venue: Basement
+    Capacity: 55
+  Bristol Old Vic 60:
+    Venue: Bristol Old Vic
+    Capacity: 60
+  Bristol Old Vic 85:
+    Venue: Bristol Old Vic
+    Capacity: 85
+  Bristol Old Vic 150:
+    Venue: Bristol Old Vic
+    Capacity: 150
+  Broadmead 150:
+    Venue: Broadmead
+    Capacity: 150
+  Circomedia 100:
+    Venue: Circomedia
+    Capacity: 100
+  Circomedia 120:
+    Venue: Circomedia
+    Capacity: 120
+  Clifton Village 20:
+    Venue: Clifton Village
+    Capacity: 20
+  Garden Room 30:
+    Venue: Garden Room
+    Capacity: 30
+  Harbourside 500:
+    Venue: Harbourside
+    Capacity: 500
+  Holland House Hotel 6:
+    Venue: Holland House Hotel
+    Capacity: 6
+  Paintshop 80:
+    Venue: Paintshop
+    Capacity: 80
+  Paintshop 50:
+    Venue: Paintshop
+    Capacity: 50
+  Paintshop 80:
+    Venue: Paintshop
+    Capacity: 80
+  Paintshop 150:
+    Venue: Paintshop
+    Capacity: 150
+  Promanade 20:
+    Venue: Promanade
+    Capacity: 20
+  Studio 110:
+    Venue: Studio
+    Capacity: 110
+  Studio 112:
+    Venue: Studio
+    Capacity: 112
+  Studio 130:
+    Venue: Studio
+    Capacity: 130
+  Studio 150:
+    Venue: Studio
+    Capacity: 150
+  Studio 180:
+    Venue: Studio
+    Capacity: 180
+  The Brewery 20:
+    Venue: The Brewery
+    Capacity: 20
+  Theatre 6:
+    Venue: Theatre
+    Capacity: 6
+  Theatre 16:
+    Venue: Theatre
+    Capacity: 16
+  Theatre 50:
+    Venue: Theatre
+    Capacity: 50
+  Theatre 150:
+    Venue: Theatre
+    Capacity: 150
+  Theatre 519:
+    Venue: Theatre
+    Capacity: 519
+  Theatre 550:
+    Venue: Theatre
+    Capacity: 550
+  Tobacco Factory 50:
+    Venue: Tobacco Factory
+    Capacity: 50
+  Wickham Theatre 50:
+    Venue: Wickham Theatre
+    Capacity: 50

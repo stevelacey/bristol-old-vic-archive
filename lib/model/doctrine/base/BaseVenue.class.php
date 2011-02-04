@@ -7,17 +7,14 @@
  * 
  * @property string $name
  * @property string $telephone
- * @property integer $capacity
- * @property Doctrine_Collection $Performances
+ * @property Doctrine_Collection $Layouts
  * 
- * @method string              getName()         Returns the current record's "name" value
- * @method string              getTelephone()    Returns the current record's "telephone" value
- * @method integer             getCapacity()     Returns the current record's "capacity" value
- * @method Doctrine_Collection getPerformances() Returns the current record's "Performances" collection
- * @method Venue               setName()         Sets the current record's "name" value
- * @method Venue               setTelephone()    Sets the current record's "telephone" value
- * @method Venue               setCapacity()     Sets the current record's "capacity" value
- * @method Venue               setPerformances() Sets the current record's "Performances" collection
+ * @method string              getName()      Returns the current record's "name" value
+ * @method string              getTelephone() Returns the current record's "telephone" value
+ * @method Doctrine_Collection getLayouts()   Returns the current record's "Layouts" collection
+ * @method Venue               setName()      Sets the current record's "name" value
+ * @method Venue               setTelephone() Sets the current record's "telephone" value
+ * @method Venue               setLayouts()   Sets the current record's "Layouts" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -38,10 +35,6 @@ abstract class BaseVenue extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
-        $this->hasColumn('capacity', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => 20,
-             ));
 
         $this->option('orderBy', 'name asc');
     }
@@ -49,11 +42,8 @@ abstract class BaseVenue extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Performance as Performances', array(
+        $this->hasMany('Layout as Layouts', array(
              'local' => 'id',
              'foreign' => 'venue_id'));
-
-        $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($timestampable0);
     }
 }

@@ -5,7 +5,7 @@ Production:
     name:
       type: string(255)
       notnull: true
-    pvm_code: string(20)
+    layout_id: integer(20)
     type_id: integer(20)
     genre_id: integer(20)
     image_id: integer(20)
@@ -17,6 +17,14 @@ Production:
     booking_status: string()
     contract_details: string()
     collaboration_nature: string()
+    start_at: datetime()
+    end_at: datetime()
+    fundraiser:
+      type: boolean
+      default: false
+    adult_ticket_price: float
+    child_ticket_price: float
+    student_ticket_price: float
     funding: string()
     notes: string()
     gross_income: float
@@ -25,6 +33,10 @@ Production:
   relations:
     Image:
       local: image_id
+      foreign: id
+      foreignAlias: Productions
+    Layout:
+      local: layout_id
       foreign: id
       foreignAlias: Productions
     Genre:
@@ -60,61 +72,6 @@ Production:
       local: production_id
       foreign: sponsor_id
       foreignAlias: Productions
-
-Performance:
-  actAs:
-    Timestampable: ~
-  columns:
-    production_id:
-      type: integer(20)
-      notnull: true
-    venue_id:
-      type: integer(20)
-      notnull: true
-    adult_tickets_available: integer(20)
-    adult_ticket_price: float
-    child_tickets_available: integer(20)
-    child_ticket_price: float
-    complimentary_tickets_available: integer(20)
-    student_tickets_available: integer(20)
-    student_ticket_price: float
-    setup_at: timestamp()
-  options:
-    orderBy: setup_at asc
-  relations:
-    Production:
-      local: production_id
-      foreign: id
-      foreignAlias: Performances
-    Venue:
-      local: venue_id
-      foreign: id
-      foreignAlias: Performances
-
-Show:
-  actAs:
-    Timestampable: ~
-  columns:
-    performance_id:
-      type: integer(20)
-      notnull: true
-    show_at:
-      type: timestamp()
-      notnull: true
-    adult_tickets_sold: integer(20)
-    adult_attendees: integer(20)
-    child_tickets_sold: integer(20)
-    child_attendees: integer(20)
-    complimentary_tickets_sold: integer(20)
-    student_tickets_sold: integer(20)
-    student_attendees: integer(20)
-  options:
-    orderBy: show_at asc
-  relations:
-    Performance:
-      local: performance_id
-      foreign: id
-      foreignAlias: Shows
 
 Person:
   actAs:
@@ -219,16 +176,31 @@ Sponsor:
       foreignAlias: Sponsors
 
 Venue:
-  actAs:
-    Timestampable: ~
   columns:
     name:
       type: string(255)
       notnull: true
     telephone: string(255)
-    capacity: integer(20)
   options:
     orderBy: name asc
+
+Layout:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    venue_id:
+      type: integer(20)
+      notnull: true
+    capacity:
+      type: integer(20)
+  options:
+    orderBy: name asc
+  relations:
+    Venue:
+      local: venue_id
+      foreign: id
+      foreignAlias: Layouts
 
 Company:
   actAs:
@@ -260,12 +232,3 @@ Image:
     path:
       type: string(255)
       notnull: true
-  relations:
-    Production:
-      local: production_id
-      foreign: id
-      foreignAlias: Images
-    Person:
-      local: person_id
-      foreign: id
-      foreignAlias: Images

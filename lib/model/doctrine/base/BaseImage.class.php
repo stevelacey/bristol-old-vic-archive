@@ -10,26 +10,23 @@
  * @property integer $production_id
  * @property integer $person_id
  * @property string $path
- * @property Production $Production
- * @property Person $Person
  * @property Doctrine_Collection $Productions
+ * @property Doctrine_Collection $Person
  * 
  * @method string              getTitle()         Returns the current record's "title" value
  * @method string              getCaption()       Returns the current record's "caption" value
  * @method integer             getProductionId()  Returns the current record's "production_id" value
  * @method integer             getPersonId()      Returns the current record's "person_id" value
  * @method string              getPath()          Returns the current record's "path" value
- * @method Production          getProduction()    Returns the current record's "Production" value
- * @method Person              getPerson()        Returns the current record's "Person" value
  * @method Doctrine_Collection getProductions()   Returns the current record's "Productions" collection
+ * @method Doctrine_Collection getPerson()        Returns the current record's "Person" collection
  * @method Image               setTitle()         Sets the current record's "title" value
  * @method Image               setCaption()       Sets the current record's "caption" value
  * @method Image               setProductionId()  Sets the current record's "production_id" value
  * @method Image               setPersonId()      Sets the current record's "person_id" value
  * @method Image               setPath()          Sets the current record's "path" value
- * @method Image               setProduction()    Sets the current record's "Production" value
- * @method Image               setPerson()        Sets the current record's "Person" value
  * @method Image               setProductions()   Sets the current record's "Productions" collection
+ * @method Image               setPerson()        Sets the current record's "Person" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -68,15 +65,11 @@ abstract class BaseImage extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Production', array(
-             'local' => 'production_id',
-             'foreign' => 'id'));
-
-        $this->hasOne('Person', array(
-             'local' => 'person_id',
-             'foreign' => 'id'));
-
         $this->hasMany('Production as Productions', array(
+             'local' => 'id',
+             'foreign' => 'image_id'));
+
+        $this->hasMany('Person', array(
              'local' => 'id',
              'foreign' => 'image_id'));
 
