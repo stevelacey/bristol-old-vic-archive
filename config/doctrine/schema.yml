@@ -5,18 +5,16 @@ Production:
     name:
       type: string(255)
       notnull: true
-    layout_id: integer(20)
     type_id: integer(20)
     genre_id: integer(20)
-    image_id: integer(20)
+    layout_id: integer(20)
     company_id: integer(20)
+    collaboration_id: integer(20)
+    image_id: integer(20)
     director_id: integer(20)
     producer_id: integer(20)
     technician_id: integer(20)
     description: string()
-    booking_status: string()
-    contract_details: string()
-    collaboration_nature: string()
     start_at: datetime()
     end_at: datetime()
     fundraiser:
@@ -31,24 +29,28 @@ Production:
   options:
     orderBy: name asc
   relations:
-    Image:
-      local: image_id
-      foreign: id
-      foreignAlias: Productions
-    Layout:
-      local: layout_id
+    Type:
+      local: type_id
       foreign: id
       foreignAlias: Productions
     Genre:
       local: genre_id
       foreign: id
       foreignAlias: Productions
-    Type:
-      local: type_id
+    Layout:
+      local: layout_id
       foreign: id
       foreignAlias: Productions
     Company:
       local: company_id
+      foreign: id
+      foreignAlias: Productions
+    Collaboration:
+      local: collaboration_id
+      foreign: id
+      foreignAlias: Productions
+    Image:
+      local: image_id
       foreign: id
       foreignAlias: Productions
     Director:
@@ -137,6 +139,16 @@ Genre:
     name:
       type: string(255)
       notnull: true
+  options:
+    orderBy: name asc
+
+Collaboration:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+    description:
+      type: string()
   options:
     orderBy: name asc
 

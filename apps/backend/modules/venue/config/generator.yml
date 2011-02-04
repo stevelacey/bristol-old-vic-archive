@@ -18,7 +18,6 @@ generator:
         display:
           - =name
           - telephone
-          - capacity
       filter:
         display:
           - name

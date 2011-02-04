@@ -10,14 +10,8 @@
  */
 class ProductionForm extends BaseProductionForm {
   public function configure() {
-
-    // Existing performance forms
-    $this->embedRelation('Performances');
-
-    // Performance creation form
-    $newPerformanceForm = new PerformanceForm();
-    $newPerformanceForm->setDefault('production_id', $this->object->getId());
-    $this->embedForm('Add Performance', $newPerformanceForm);
+    $this->widgetSchema['start_at'] = new sfWidgetFormDate();
+    $this->widgetSchema['end_at'] = new sfWidgetFormDate();
 
     unset(
       $this['image_id'],
