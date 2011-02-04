@@ -28,8 +28,6 @@ generator:
              - name
              - pvm_code
              - company_id
-             - genres_list
-             - types_list
              - description
           "Personnel":
              - director_id
