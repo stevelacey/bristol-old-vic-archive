@@ -15,9 +15,9 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'name'                 => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'pvm_code'             => new sfWidgetFormFilterInput(),
-      'image_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
-      'production_type_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Type'), 'add_empty' => true)),
+      'type_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Type'), 'add_empty' => true)),
       'genre_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Genre'), 'add_empty' => true)),
+      'image_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
       'company_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'add_empty' => true)),
       'director_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Director'), 'add_empty' => true)),
       'producer_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'add_empty' => true)),
@@ -31,14 +31,15 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'gross_income'         => new sfWidgetFormFilterInput(),
       'created_at'           => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'           => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'sponsors_list'        => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor')),
     ));
 
     $this->setValidators(array(
       'name'                 => new sfValidatorPass(array('required' => false)),
       'pvm_code'             => new sfValidatorPass(array('required' => false)),
-      'image_id'             => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Image'), 'column' => 'id')),
-      'production_type_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Type'), 'column' => 'id')),
+      'type_id'              => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Type'), 'column' => 'id')),
       'genre_id'             => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Genre'), 'column' => 'id')),
+      'image_id'             => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Image'), 'column' => 'id')),
       'company_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Company'), 'column' => 'id')),
       'director_id'          => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Director'), 'column' => 'id')),
       'producer_id'          => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Producer'), 'column' => 'id')),
@@ -52,6 +53,7 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'gross_income'         => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'created_at'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'sponsors_list'        => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('production_filters[%s]');
@@ -61,6 +63,24 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
     $this->setupInheritance();
 
     parent::setup();
+  }
+
+  public function addSponsorsListColumnQuery(Doctrine_Query $query, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $query
+      ->leftJoin($query->getRootAlias().'.ProductionSponsor ProductionSponsor')
+      ->andWhereIn('ProductionSponsor.sponsor_id', $values)
+    ;
   }
 
   public function getModelName()
@@ -74,9 +94,9 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'id'                   => 'Number',
       'name'                 => 'Text',
       'pvm_code'             => 'Text',
-      'image_id'             => 'ForeignKey',
-      'production_type_id'   => 'ForeignKey',
+      'type_id'              => 'ForeignKey',
       'genre_id'             => 'ForeignKey',
+      'image_id'             => 'ForeignKey',
       'company_id'           => 'ForeignKey',
       'director_id'          => 'ForeignKey',
       'producer_id'          => 'ForeignKey',
@@ -90,6 +110,7 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'gross_income'         => 'Number',
       'created_at'           => 'Date',
       'updated_at'           => 'Date',
+      'sponsors_list'        => 'ManyKey',
     );
   }
 }

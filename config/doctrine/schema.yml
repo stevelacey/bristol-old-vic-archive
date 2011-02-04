@@ -6,6 +6,8 @@ Production:
       type: string(255)
       notnull: true
     pvm_code: string(20)
+    type_id: integer(20)
+    genre_id: integer(20)
     image_id: integer(20)
     company_id: integer(20)
     director_id: integer(20)
@@ -25,23 +27,13 @@ Production:
       local: image_id
       foreign: id
       foreignAlias: Productions
-    Genres:
-      class: Genre
-      refClass: ProductionGenre
-      local: production_id
-      foreign: genre_id
+    Genre:
+      local: genre_id
+      foreign: id
       foreignAlias: Productions
-    Types:
-      class: Type
-      refClass: ProductionType
-      local: production_id
-      foreign: type_id
-      foreignAlias: Productions
-    Sponsors:
-      class: Sponsor
-      refClass: ProductionSponsor
-      local: production_id
-      foreign: sponsor_id
+    Type:
+      local: type_id
+      foreign: id
       foreignAlias: Productions
     Company:
       local: company_id
@@ -61,6 +53,12 @@ Production:
       class: Person
       local: technician_id
       foreign: id
+      foreignAlias: Productions
+    Sponsors:
+      class: Sponsor
+      refClass: ProductionSponsor
+      local: production_id
+      foreign: sponsor_id
       foreignAlias: Productions
 
 Performance:
@@ -169,24 +167,6 @@ Character:
       foreign: id
       foreignAlias: Characters
 
-ProductionType:
-  columns:
-    production_id:
-      type: integer(20)
-      primary: true
-    type_id:
-      type: integer(20)
-      primary: true
-  relations:
-    Production:
-      class: Production
-      local: production_id
-      foreign: id
-    Type:
-      class: Type
-      local: type_id
-      foreign: id
-
 Type:
   columns:
     name:
@@ -194,31 +174,6 @@ Type:
       notnull: true
   options:
     orderBy: name asc
-  relations:
-    Productions:
-      class: Production
-      refClass: ProductionType
-      local: type_id
-      foreign: production_id
-      foreignAlias: Types
-
-ProductionGenre:
-  columns:
-    production_id:
-      type: integer(20)
-      primary: true
-    genre_id:
-      type: integer(20)
-      primary: true
-  relations:
-    Production:
-      class: Production
-      local: production_id
-      foreign: id
-    Genre:
-      class: Genre
-      local: genre_id
-      foreign: id
 
 Genre:
   columns:
@@ -227,13 +182,6 @@ Genre:
       notnull: true
   options:
     orderBy: name asc
-  relations:
-    Productions:
-      class: Production
-      refClass: ProductionGenre
-      local: genre_id
-      foreign: production_id
-      foreignAlias: Genres
 
 ProductionSponsor:
   columns:

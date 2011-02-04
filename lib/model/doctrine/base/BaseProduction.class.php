@@ -7,9 +7,9 @@
  * 
  * @property string $name
  * @property string $pvm_code
- * @property integer $image_id
- * @property integer $production_type_id
+ * @property integer $type_id
  * @property integer $genre_id
+ * @property integer $image_id
  * @property integer $company_id
  * @property integer $director_id
  * @property integer $producer_id
@@ -22,21 +22,23 @@
  * @property string $notes
  * @property float $gross_income
  * @property Image $Image
- * @property ProductionType $Type
  * @property Genre $Genre
+ * @property Type $Type
  * @property Company $Company
  * @property Person $Director
  * @property Person $Producer
  * @property Person $Technician
+ * @property Doctrine_Collection $Sponsors
  * @property Doctrine_Collection $Performances
  * @property Doctrine_Collection $Characters
+ * @property Doctrine_Collection $ProductionSponsor
  * @property Doctrine_Collection $Images
  * 
  * @method string              getName()                 Returns the current record's "name" value
  * @method string              getPvmCode()              Returns the current record's "pvm_code" value
- * @method integer             getImageId()              Returns the current record's "image_id" value
- * @method integer             getProductionTypeId()     Returns the current record's "production_type_id" value
+ * @method integer             getTypeId()               Returns the current record's "type_id" value
  * @method integer             getGenreId()              Returns the current record's "genre_id" value
+ * @method integer             getImageId()              Returns the current record's "image_id" value
  * @method integer             getCompanyId()            Returns the current record's "company_id" value
  * @method integer             getDirectorId()           Returns the current record's "director_id" value
  * @method integer             getProducerId()           Returns the current record's "producer_id" value
@@ -49,20 +51,22 @@
  * @method string              getNotes()                Returns the current record's "notes" value
  * @method float               getGrossIncome()          Returns the current record's "gross_income" value
  * @method Image               getImage()                Returns the current record's "Image" value
- * @method ProductionType      getType()                 Returns the current record's "Type" value
  * @method Genre               getGenre()                Returns the current record's "Genre" value
+ * @method Type                getType()                 Returns the current record's "Type" value
  * @method Company             getCompany()              Returns the current record's "Company" value
  * @method Person              getDirector()             Returns the current record's "Director" value
  * @method Person              getProducer()             Returns the current record's "Producer" value
  * @method Person              getTechnician()           Returns the current record's "Technician" value
+ * @method Doctrine_Collection getSponsors()             Returns the current record's "Sponsors" collection
  * @method Doctrine_Collection getPerformances()         Returns the current record's "Performances" collection
  * @method Doctrine_Collection getCharacters()           Returns the current record's "Characters" collection
+ * @method Doctrine_Collection getProductionSponsor()    Returns the current record's "ProductionSponsor" collection
  * @method Doctrine_Collection getImages()               Returns the current record's "Images" collection
  * @method Production          setName()                 Sets the current record's "name" value
  * @method Production          setPvmCode()              Sets the current record's "pvm_code" value
- * @method Production          setImageId()              Sets the current record's "image_id" value
- * @method Production          setProductionTypeId()     Sets the current record's "production_type_id" value
+ * @method Production          setTypeId()               Sets the current record's "type_id" value
  * @method Production          setGenreId()              Sets the current record's "genre_id" value
+ * @method Production          setImageId()              Sets the current record's "image_id" value
  * @method Production          setCompanyId()            Sets the current record's "company_id" value
  * @method Production          setDirectorId()           Sets the current record's "director_id" value
  * @method Production          setProducerId()           Sets the current record's "producer_id" value
@@ -75,14 +79,16 @@
  * @method Production          setNotes()                Sets the current record's "notes" value
  * @method Production          setGrossIncome()          Sets the current record's "gross_income" value
  * @method Production          setImage()                Sets the current record's "Image" value
- * @method Production          setType()                 Sets the current record's "Type" value
  * @method Production          setGenre()                Sets the current record's "Genre" value
+ * @method Production          setType()                 Sets the current record's "Type" value
  * @method Production          setCompany()              Sets the current record's "Company" value
  * @method Production          setDirector()             Sets the current record's "Director" value
  * @method Production          setProducer()             Sets the current record's "Producer" value
  * @method Production          setTechnician()           Sets the current record's "Technician" value
+ * @method Production          setSponsors()             Sets the current record's "Sponsors" collection
  * @method Production          setPerformances()         Sets the current record's "Performances" collection
  * @method Production          setCharacters()           Sets the current record's "Characters" collection
+ * @method Production          setProductionSponsor()    Sets the current record's "ProductionSponsor" collection
  * @method Production          setImages()               Sets the current record's "Images" collection
  * 
  * @package    bristol-old-vic-archive
@@ -104,15 +110,15 @@ abstract class BaseProduction extends sfDoctrineRecord
              'type' => 'string',
              'length' => 20,
              ));
-        $this->hasColumn('image_id', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => 20,
-             ));
-        $this->hasColumn('production_type_id', 'integer', 20, array(
+        $this->hasColumn('type_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
              ));
         $this->hasColumn('genre_id', 'integer', 20, array(
+             'type' => 'integer',
+             'length' => 20,
+             ));
+        $this->hasColumn('image_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
              ));
@@ -170,12 +176,12 @@ abstract class BaseProduction extends sfDoctrineRecord
              'local' => 'image_id',
              'foreign' => 'id'));
 
-        $this->hasOne('ProductionType as Type', array(
-             'local' => 'production_type_id',
-             'foreign' => 'id'));
-
         $this->hasOne('Genre', array(
              'local' => 'genre_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Type', array(
+             'local' => 'type_id',
              'foreign' => 'id'));
 
         $this->hasOne('Company', array(
@@ -194,11 +200,20 @@ abstract class BaseProduction extends sfDoctrineRecord
              'local' => 'technician_id',
              'foreign' => 'id'));
 
+        $this->hasMany('Sponsor as Sponsors', array(
+             'refClass' => 'ProductionSponsor',
+             'local' => 'production_id',
+             'foreign' => 'sponsor_id'));
+
         $this->hasMany('Performance as Performances', array(
              'local' => 'id',
              'foreign' => 'production_id'));
 
         $this->hasMany('Character as Characters', array(
+             'local' => 'id',
+             'foreign' => 'production_id'));
+
+        $this->hasMany('ProductionSponsor', array(
              'local' => 'id',
              'foreign' => 'production_id'));
 

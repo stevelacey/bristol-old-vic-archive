@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Genre filter form base class.
+ * Type filter form base class.
  *
  * @package    bristol-old-vic-archive
  * @subpackage filter
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-abstract class BaseGenreFormFilter extends BaseFormFilterDoctrine
+abstract class BaseTypeFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
@@ -20,7 +20,7 @@ abstract class BaseGenreFormFilter extends BaseFormFilterDoctrine
       'name' => new sfValidatorPass(array('required' => false)),
     ));
 
-    $this->widgetSchema->setNameFormat('genre_filters[%s]');
+    $this->widgetSchema->setNameFormat('type_filters[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -31,7 +31,7 @@ abstract class BaseGenreFormFilter extends BaseFormFilterDoctrine
 
   public function getModelName()
   {
-    return 'Genre';
+    return 'Type';
   }
 
   public function getFields()
