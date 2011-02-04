@@ -21,8 +21,8 @@ all:
             url: genre
             image: categories
           Type:
-            name: Production Types
-            url: production_type
+            name: Types
+            url: type
             image: mediamanager
           Venue:
             name: Venues

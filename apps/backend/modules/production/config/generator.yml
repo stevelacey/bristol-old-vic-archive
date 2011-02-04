@@ -23,7 +23,7 @@ generator:
       filter:
         display:
           - name
-          - production_type_id
+          - type_id
           - genre_id
           - company_id
       form:
@@ -31,7 +31,7 @@ generator:
           "Basic Details":
              - name
              - pvm_code
-             - production_type_id
+             - type_id
              - genre_id
              - company_id
              - description

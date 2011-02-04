@@ -1,13 +1,13 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           ProductionType
+    model_class:           Type
     theme:                 admin
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          production_type
+    route_prefix:          type
     with_doctrine_route:   true
     actions_base_class:    sfActions
 

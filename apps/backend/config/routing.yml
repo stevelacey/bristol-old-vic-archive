@@ -1,18 +1,18 @@
+type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Type
+    module:               type
+    prefix_path:          /type
+    column:               id
+    with_wildcard_routes: true
+
 company:
   class: sfDoctrineRouteCollection
   options:
     model:                Company
     module:               company
     prefix_path:          /company
-    column:               id
-    with_wildcard_routes: true
-
-production_type:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                ProductionType
-    module:               production_type
-    prefix_path:          /production_type
     column:               id
     with_wildcard_routes: true
 
