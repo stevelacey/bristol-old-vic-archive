@@ -10,6 +10,8 @@
  * @author     Steve Lacey
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Production extends BaseProduction
-{
+class Production extends BaseProduction {
+  public function getVenue() {
+    return $this->getLayout()->getVenue();
+  }
 }

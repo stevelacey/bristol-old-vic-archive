@@ -19,9 +19,12 @@ generator:
           - =name
           - type
           - genre
-          - layout
+          - venue
+          - start_at
+          - end_at
           - company
-          - collaboration
+          - director
+          - producer
       filter:
         display:
           - name
