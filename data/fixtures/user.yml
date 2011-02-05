@@ -1,13 +1,13 @@
 sfGuardUser:
   Steve:
-    username: Steve
+    username: steve
     email_address: steve@stevelacey.net
     password: admin
     first_name: Steve
     last_name: Lacey
     is_super_admin: true
   Carl:
-    username: Carl
+    username: carl
     email_address: cjwood17@googlemail.com
     password: woody
     first_name: Carl
