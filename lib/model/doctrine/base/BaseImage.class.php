@@ -7,26 +7,20 @@
  * 
  * @property string $title
  * @property string $caption
- * @property integer $production_id
- * @property integer $person_id
  * @property string $path
- * @property Doctrine_Collection $Person
+ * @property Doctrine_Collection $Character
  * @property Doctrine_Collection $Productions
  * 
- * @method string              getTitle()         Returns the current record's "title" value
- * @method string              getCaption()       Returns the current record's "caption" value
- * @method integer             getProductionId()  Returns the current record's "production_id" value
- * @method integer             getPersonId()      Returns the current record's "person_id" value
- * @method string              getPath()          Returns the current record's "path" value
- * @method Doctrine_Collection getPerson()        Returns the current record's "Person" collection
- * @method Doctrine_Collection getProductions()   Returns the current record's "Productions" collection
- * @method Image               setTitle()         Sets the current record's "title" value
- * @method Image               setCaption()       Sets the current record's "caption" value
- * @method Image               setProductionId()  Sets the current record's "production_id" value
- * @method Image               setPersonId()      Sets the current record's "person_id" value
- * @method Image               setPath()          Sets the current record's "path" value
- * @method Image               setPerson()        Sets the current record's "Person" collection
- * @method Image               setProductions()   Sets the current record's "Productions" collection
+ * @method string              getTitle()       Returns the current record's "title" value
+ * @method string              getCaption()     Returns the current record's "caption" value
+ * @method string              getPath()        Returns the current record's "path" value
+ * @method Doctrine_Collection getCharacter()   Returns the current record's "Character" collection
+ * @method Doctrine_Collection getProductions() Returns the current record's "Productions" collection
+ * @method Image               setTitle()       Sets the current record's "title" value
+ * @method Image               setCaption()     Sets the current record's "caption" value
+ * @method Image               setPath()        Sets the current record's "path" value
+ * @method Image               setCharacter()   Sets the current record's "Character" collection
+ * @method Image               setProductions() Sets the current record's "Productions" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -47,14 +41,6 @@ abstract class BaseImage extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
-        $this->hasColumn('production_id', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => 20,
-             ));
-        $this->hasColumn('person_id', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => 20,
-             ));
         $this->hasColumn('path', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
@@ -65,7 +51,7 @@ abstract class BaseImage extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Person', array(
+        $this->hasMany('Character', array(
              'local' => 'id',
              'foreign' => 'image_id'));
 

@@ -5,19 +5,26 @@ Person:
     name:
       type: string(255)
       notnull: true
-    image_id: integer(20)
     email: string(255)
     telephone: string(255)
+  options:
+    orderBy: name asc
+
+Staff:
+  inheritance:
+    type: concrete
+    extends: Person
+  columns:
+
+Performer:
+  inheritance:
+    type: concrete
+    extends: Person
+  columns:
     gender:
       type: enum
       values: [Male, Female]
       notnull: true
-  options:
-    orderBy: name asc
-  relations:
-    Image:
-      local: image_id
-      foreign: id
 
 Character:
   actAs:
@@ -30,21 +37,24 @@ Character:
       type: enum
       values: [Male, Female]
       notnull: true
-    actor_id:
+    performer_id:
       type: integer(20)
       notnull: true
     production_id:
       type: integer(20)
       notnull: true
+    image_id: integer(20)
   options:
     orderBy: name asc
   relations:
-    Actor:
-      class: Person
-      local: actor_id
+    Performer:
+      local: performer_id
       foreign: id
       foreignAlias: Characters
     Production:
       local: production_id
       foreign: id
       foreignAlias: Characters
+    Image:
+      local: image_id
+      foreign: id

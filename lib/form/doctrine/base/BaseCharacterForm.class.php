@@ -18,8 +18,9 @@ abstract class BaseCharacterForm extends BaseFormDoctrine
       'id'            => new sfWidgetFormInputHidden(),
       'name'          => new sfWidgetFormInputText(),
       'gender'        => new sfWidgetFormChoice(array('choices' => array('Male' => 'Male', 'Female' => 'Female'))),
-      'actor_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Actor'), 'add_empty' => false)),
+      'performer_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Performer'), 'add_empty' => false)),
       'production_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Production'), 'add_empty' => false)),
+      'image_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
     ));
@@ -28,8 +29,9 @@ abstract class BaseCharacterForm extends BaseFormDoctrine
       'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'          => new sfValidatorString(array('max_length' => 255)),
       'gender'        => new sfValidatorChoice(array('choices' => array(0 => 'Male', 1 => 'Female'))),
-      'actor_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Actor'))),
+      'performer_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Performer'))),
       'production_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Production'))),
+      'image_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'required' => false)),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),
     ));

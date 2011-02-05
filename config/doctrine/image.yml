@@ -10,8 +10,6 @@ Image:
       type: string(255)
       notnull: true
     caption: string(255)
-    production_id: integer(20)
-    person_id: integer(20)
     path:
       type: string(255)
       notnull: true
