@@ -1,0 +1,69 @@
+Department:
+  Creative:
+    name: Creative
+  Direction:
+    name: Direction
+  Marketing:
+    name: Marketing
+  Movement:
+    name: Movement
+  Production:
+    name: Production
+  Research:
+    name: Research
+
+Role:
+  Director:
+    name: Director
+    Department: Direction
+  Casting Director:
+    name: Casting Director
+    Department: Direction
+  Associate Director:
+    name: Associate Director
+    Department: Direction
+  Set Designer:
+    name: Set Designer
+    Department: Creative
+  Costume Designer:
+    name: Costume Designer
+    Department: Creative
+  Lighting Designer:
+    name: Lighting Designer
+    Department: Creative
+  Sound Designer:
+    name: Sound Designer
+    Department: Creative
+  Writer:
+    name: Writer
+    Department: Creative
+  Movement Director:
+    name: Movement Director
+    Department: Movement
+  Choreographer:
+    name: Choreographer
+    Department: Movement
+  Dramaturge:
+    name: Dramaturge
+    Department: Research
+  Producer:
+    name: Producer
+    Department: Production
+  Production Manager:
+    name: Production Manager
+    Department: Production
+  Stage Manager:
+    name: Stage Manager
+    Department: Production
+  Deputy Stage Manager:
+    name: Deputy Stage Manager
+    Department: Production
+  Assistant Stage Manager:
+    name: Assistant Stage Manager
+    Department: Production
+  Press:
+    name: Press
+    Department: Marketing
+  Photographer:
+    name: Photographer
+    Department: Marketing

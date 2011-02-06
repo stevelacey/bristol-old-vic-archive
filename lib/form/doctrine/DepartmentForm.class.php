@@ -8,9 +8,8 @@
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class DepartmentForm extends BaseDepartmentForm
-{
-  public function configure()
-  {
+class DepartmentForm extends BaseDepartmentForm {
+  public function configure() {
+    
   }
 }
