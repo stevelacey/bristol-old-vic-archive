@@ -12,9 +12,6 @@
  * @property integer $company_id
  * @property integer $collaboration_id
  * @property integer $image_id
- * @property integer $director_id
- * @property integer $producer_id
- * @property integer $technician_id
  * @property string $description
  * @property datetime $start_at
  * @property datetime $end_at
@@ -45,9 +42,6 @@
  * @method integer             getCompanyId()            Returns the current record's "company_id" value
  * @method integer             getCollaborationId()      Returns the current record's "collaboration_id" value
  * @method integer             getImageId()              Returns the current record's "image_id" value
- * @method integer             getDirectorId()           Returns the current record's "director_id" value
- * @method integer             getProducerId()           Returns the current record's "producer_id" value
- * @method integer             getTechnicianId()         Returns the current record's "technician_id" value
  * @method string              getDescription()          Returns the current record's "description" value
  * @method datetime            getStartAt()              Returns the current record's "start_at" value
  * @method datetime            getEndAt()                Returns the current record's "end_at" value
@@ -77,9 +71,6 @@
  * @method Production          setCompanyId()            Sets the current record's "company_id" value
  * @method Production          setCollaborationId()      Sets the current record's "collaboration_id" value
  * @method Production          setImageId()              Sets the current record's "image_id" value
- * @method Production          setDirectorId()           Sets the current record's "director_id" value
- * @method Production          setProducerId()           Sets the current record's "producer_id" value
- * @method Production          setTechnicianId()         Sets the current record's "technician_id" value
  * @method Production          setDescription()          Sets the current record's "description" value
  * @method Production          setStartAt()              Sets the current record's "start_at" value
  * @method Production          setEndAt()                Sets the current record's "end_at" value
@@ -139,18 +130,6 @@ abstract class BaseProduction extends sfDoctrineRecord
              'length' => 20,
              ));
         $this->hasColumn('image_id', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => 20,
-             ));
-        $this->hasColumn('director_id', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => 20,
-             ));
-        $this->hasColumn('producer_id', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => 20,
-             ));
-        $this->hasColumn('technician_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
              ));
