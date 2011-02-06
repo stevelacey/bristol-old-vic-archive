@@ -31,12 +31,12 @@
  * @property Company $Company
  * @property Collaboration $Collaboration
  * @property Image $Image
- * @property Person $Director
- * @property Person $Producer
- * @property Person $Technician
+ * @property Doctrine_Collection $Staff
+ * @property Doctrine_Collection $Roles
  * @property Doctrine_Collection $Sponsors
  * @property Doctrine_Collection $Characters
  * @property Doctrine_Collection $ProductionSponsor
+ * @property Doctrine_Collection $ProductionStaff
  * 
  * @method string              getName()                 Returns the current record's "name" value
  * @method integer             getTypeId()               Returns the current record's "type_id" value
@@ -64,12 +64,12 @@
  * @method Company             getCompany()              Returns the current record's "Company" value
  * @method Collaboration       getCollaboration()        Returns the current record's "Collaboration" value
  * @method Image               getImage()                Returns the current record's "Image" value
- * @method Person              getDirector()             Returns the current record's "Director" value
- * @method Person              getProducer()             Returns the current record's "Producer" value
- * @method Person              getTechnician()           Returns the current record's "Technician" value
+ * @method Doctrine_Collection getStaff()                Returns the current record's "Staff" collection
+ * @method Doctrine_Collection getRoles()                Returns the current record's "Roles" collection
  * @method Doctrine_Collection getSponsors()             Returns the current record's "Sponsors" collection
  * @method Doctrine_Collection getCharacters()           Returns the current record's "Characters" collection
  * @method Doctrine_Collection getProductionSponsor()    Returns the current record's "ProductionSponsor" collection
+ * @method Doctrine_Collection getProductionStaff()      Returns the current record's "ProductionStaff" collection
  * @method Production          setName()                 Sets the current record's "name" value
  * @method Production          setTypeId()               Sets the current record's "type_id" value
  * @method Production          setGenreId()              Sets the current record's "genre_id" value
@@ -96,12 +96,12 @@
  * @method Production          setCompany()              Sets the current record's "Company" value
  * @method Production          setCollaboration()        Sets the current record's "Collaboration" value
  * @method Production          setImage()                Sets the current record's "Image" value
- * @method Production          setDirector()             Sets the current record's "Director" value
- * @method Production          setProducer()             Sets the current record's "Producer" value
- * @method Production          setTechnician()           Sets the current record's "Technician" value
+ * @method Production          setStaff()                Sets the current record's "Staff" collection
+ * @method Production          setRoles()                Sets the current record's "Roles" collection
  * @method Production          setSponsors()             Sets the current record's "Sponsors" collection
  * @method Production          setCharacters()           Sets the current record's "Characters" collection
  * @method Production          setProductionSponsor()    Sets the current record's "ProductionSponsor" collection
+ * @method Production          setProductionStaff()      Sets the current record's "ProductionStaff" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -221,17 +221,15 @@ abstract class BaseProduction extends sfDoctrineRecord
              'local' => 'image_id',
              'foreign' => 'id'));
 
-        $this->hasOne('Person as Director', array(
-             'local' => 'director_id',
-             'foreign' => 'id'));
+        $this->hasMany('Staff', array(
+             'refClass' => 'ProductionStaff',
+             'local' => 'production_id',
+             'foreign' => 'staff_id'));
 
-        $this->hasOne('Person as Producer', array(
-             'local' => 'producer_id',
-             'foreign' => 'id'));
-
-        $this->hasOne('Person as Technician', array(
-             'local' => 'technician_id',
-             'foreign' => 'id'));
+        $this->hasMany('Role as Roles', array(
+             'refClass' => 'ProductionStaff',
+             'local' => 'production_id',
+             'foreign' => 'role_id'));
 
         $this->hasMany('Sponsor as Sponsors', array(
              'refClass' => 'ProductionSponsor',
@@ -243,6 +241,10 @@ abstract class BaseProduction extends sfDoctrineRecord
              'foreign' => 'production_id'));
 
         $this->hasMany('ProductionSponsor', array(
+             'local' => 'id',
+             'foreign' => 'production_id'));
+
+        $this->hasMany('ProductionStaff', array(
              'local' => 'id',
              'foreign' => 'production_id'));
 

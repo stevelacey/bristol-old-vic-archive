@@ -53,21 +53,15 @@ Production:
       local: image_id
       foreign: id
       foreignAlias: Productions
-    Director:
-      class: Person
-      local: director_id
-      foreign: id
-      foreignAlias: Productions
-    Producer:
-      class: Person
-      local: producer_id
-      foreign: id
-      foreignAlias: Productions
-    Technician:
-      class: Person
-      local: technician_id
-      foreign: id
-      foreignAlias: Productions
+    Staff:
+      refClass: ProductionStaff
+      local: production_id
+      foreign: staff_id
+    Roles:
+      class: Role
+      refClass: ProductionStaff
+      local: production_id
+      foreign: role_id
     Sponsors:
       class: Sponsor
       refClass: ProductionSponsor

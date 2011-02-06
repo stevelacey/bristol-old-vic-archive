@@ -1,21 +1,3 @@
-Person:
-  actAs:
-    Timestampable: ~
-  columns:
-    name:
-      type: string(255)
-      notnull: true
-    email: string(255)
-    telephone: string(255)
-  options:
-    orderBy: name asc
-
-Staff:
-  inheritance:
-    type: concrete
-    extends: Person
-  columns:
-
 Performer:
   inheritance:
     type: concrete

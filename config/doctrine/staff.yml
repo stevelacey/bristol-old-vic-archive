@@ -1,0 +1,64 @@
+Staff:
+  inheritance:
+    type: concrete
+    extends: Person
+  relations:
+    Productions:
+      class: Production
+      refClass: ProductionStaff
+      local: staff_id
+      foreign: production_id
+    Roles:
+      class: Role
+      refClass: ProductionStaff
+      local: staff_id
+      foreign: role_id
+
+ProductionStaff:
+  columns:
+    production_id:
+      type: integer(20)
+      primary: true
+    role_id:
+      type: integer(20)
+      primary: true
+    staff_id:
+      type: integer(20)
+      notnull: true
+  relations:
+    Production:
+      local: production_id
+      foreign: id
+    Role:
+      local: role_id
+      foreign: id
+    Staff:
+      local: staff_id
+      foreign: id
+
+Role:
+  columns:
+    name: string(255)
+    department_id:
+      type: integer(20)
+      notnull: true
+  relations:
+    Department:
+      local: department_id
+      foreign: id
+      foreignAlias: Roles
+    Productions:
+      class: Production
+      refClass: ProductionStaff
+      local: role_id
+      foreign: production_id
+    Staff:
+      refClass: ProductionStaff
+      local: role_id
+      foreign: role_id
+
+Department:
+  columns:
+    name:
+      type: string(255)
+      notnull: true

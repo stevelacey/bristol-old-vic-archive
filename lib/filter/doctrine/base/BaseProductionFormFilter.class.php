@@ -20,9 +20,9 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'company_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Company'), 'add_empty' => true)),
       'collaboration_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Collaboration'), 'add_empty' => true)),
       'image_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
-      'director_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Director'), 'add_empty' => true)),
-      'producer_id'          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Producer'), 'add_empty' => true)),
-      'technician_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Technician'), 'add_empty' => true)),
+      'director_id'          => new sfWidgetFormFilterInput(),
+      'producer_id'          => new sfWidgetFormFilterInput(),
+      'technician_id'        => new sfWidgetFormFilterInput(),
       'description'          => new sfWidgetFormFilterInput(),
       'start_at'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'end_at'               => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
@@ -35,6 +35,8 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'gross_income'         => new sfWidgetFormFilterInput(),
       'created_at'           => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'           => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'staff_list'           => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Staff')),
+      'roles_list'           => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Role')),
       'sponsors_list'        => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor')),
     ));
 
@@ -46,9 +48,9 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'company_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Company'), 'column' => 'id')),
       'collaboration_id'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Collaboration'), 'column' => 'id')),
       'image_id'             => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Image'), 'column' => 'id')),
-      'director_id'          => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Director'), 'column' => 'id')),
-      'producer_id'          => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Producer'), 'column' => 'id')),
-      'technician_id'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Technician'), 'column' => 'id')),
+      'director_id'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'producer_id'          => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'technician_id'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'description'          => new sfValidatorPass(array('required' => false)),
       'start_at'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'end_at'               => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -61,6 +63,8 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'gross_income'         => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'created_at'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'staff_list'           => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Staff', 'required' => false)),
+      'roles_list'           => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Role', 'required' => false)),
       'sponsors_list'        => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor', 'required' => false)),
     ));
 
@@ -71,6 +75,42 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
     $this->setupInheritance();
 
     parent::setup();
+  }
+
+  public function addStaffListColumnQuery(Doctrine_Query $query, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $query
+      ->leftJoin($query->getRootAlias().'.ProductionStaff ProductionStaff')
+      ->andWhereIn('ProductionStaff.staff_id', $values)
+    ;
+  }
+
+  public function addRolesListColumnQuery(Doctrine_Query $query, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $query
+      ->leftJoin($query->getRootAlias().'.ProductionStaff ProductionStaff')
+      ->andWhereIn('ProductionStaff.role_id', $values)
+    ;
   }
 
   public function addSponsorsListColumnQuery(Doctrine_Query $query, $field, $values)
@@ -107,9 +147,9 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'company_id'           => 'ForeignKey',
       'collaboration_id'     => 'ForeignKey',
       'image_id'             => 'ForeignKey',
-      'director_id'          => 'ForeignKey',
-      'producer_id'          => 'ForeignKey',
-      'technician_id'        => 'ForeignKey',
+      'director_id'          => 'Number',
+      'producer_id'          => 'Number',
+      'technician_id'        => 'Number',
       'description'          => 'Text',
       'start_at'             => 'Date',
       'end_at'               => 'Date',
@@ -122,6 +162,8 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'gross_income'         => 'Number',
       'created_at'           => 'Date',
       'updated_at'           => 'Date',
+      'staff_list'           => 'ManyKey',
+      'roles_list'           => 'ManyKey',
       'sponsors_list'        => 'ManyKey',
     );
   }

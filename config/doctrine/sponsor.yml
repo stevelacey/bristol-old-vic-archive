@@ -8,11 +8,9 @@ ProductionSponsor:
       primary: true
   relations:
     Production:
-      class: Production
       local: production_id
       foreign: id
     Sponsor:
-      class: Sponsor
       local: sponsor_id
       foreign: id
 

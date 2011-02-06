@@ -8,16 +8,13 @@
  * @property string $name
  * @property string $email
  * @property string $telephone
- * @property Doctrine_Collection $Productions
  * 
- * @method string              getName()        Returns the current record's "name" value
- * @method string              getEmail()       Returns the current record's "email" value
- * @method string              getTelephone()   Returns the current record's "telephone" value
- * @method Doctrine_Collection getProductions() Returns the current record's "Productions" collection
- * @method Person              setName()        Sets the current record's "name" value
- * @method Person              setEmail()       Sets the current record's "email" value
- * @method Person              setTelephone()   Sets the current record's "telephone" value
- * @method Person              setProductions() Sets the current record's "Productions" collection
+ * @method string getName()      Returns the current record's "name" value
+ * @method string getEmail()     Returns the current record's "email" value
+ * @method string getTelephone() Returns the current record's "telephone" value
+ * @method Person setName()      Sets the current record's "name" value
+ * @method Person setEmail()     Sets the current record's "email" value
+ * @method Person setTelephone() Sets the current record's "telephone" value
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -49,10 +46,6 @@ abstract class BasePerson extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Production as Productions', array(
-             'local' => 'id',
-             'foreign' => 'director_id'));
-
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }
