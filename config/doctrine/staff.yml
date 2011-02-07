@@ -18,19 +18,13 @@ ProductionStaff:
   columns:
     production_id:
       type: integer(20)
-      notnull: true
+      primary: true
     role_id:
       type: integer(20)
-      notnull: true
+      primary: true
     staff_id:
       type: integer(20)
       notnull: true
-  indexes:
-    production_id_role_id:
-      fields:
-        - production_id
-        - role_id
-      type: unique
   relations:
     Production:
       local: production_id

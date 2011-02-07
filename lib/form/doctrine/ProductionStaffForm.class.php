@@ -10,6 +10,5 @@
  */
 class ProductionStaffForm extends BaseProductionStaffForm {
   public function configure() {
-    unset($this['production_id'], $this['role_id']);
   }
 }
