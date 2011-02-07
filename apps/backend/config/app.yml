@@ -38,6 +38,15 @@ all:
             name: Characters
             url: character
             image: language
+          Departments:
+            url: department
+            image: folder-icon
+          Roles:
+            url: role
+            image: users
+          Staff:
+            url: staff
+            image: users
       Images:
         items:
           Images:

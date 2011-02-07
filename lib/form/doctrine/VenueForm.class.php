@@ -49,7 +49,7 @@ class VenueForm extends BaseVenueForm {
   }
 
   /**
-   * Updates object with provided values, dealing with evantual relation deletion
+   * Updates object with provided values, dealing with eventual relation deletion
    *
    * @see sfFormDoctrine::doUpdateObject()
    */

@@ -18,13 +18,19 @@ ProductionStaff:
   columns:
     production_id:
       type: integer(20)
-      primary: true
+      notnull: true
     role_id:
       type: integer(20)
-      primary: true
+      notnull: true
     staff_id:
       type: integer(20)
       notnull: true
+  indexes:
+    production_id_role_id:
+      fields:
+        - production_id
+        - role_id
+      type: unique
   relations:
     Production:
       local: production_id
@@ -38,7 +44,10 @@ ProductionStaff:
 
 Role:
   columns:
-    name: string(255)
+    name:
+      type: string(255)
+      unique: true
+      notnull: true
     department_id:
       type: integer(20)
       notnull: true
@@ -47,15 +56,10 @@ Role:
       local: department_id
       foreign: id
       foreignAlias: Roles
-    Productions:
-      class: Production
-      refClass: ProductionStaff
-      local: role_id
-      foreign: production_id
     Staff:
       refClass: ProductionStaff
       local: role_id
-      foreign: role_id
+      foreign: staff_id
 
 Department:
   columns:

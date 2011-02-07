@@ -22,9 +22,6 @@ abstract class BaseStaffForm extends PersonForm
     $this->widgetSchema   ['roles_list'] = new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Role'));
     $this->validatorSchema['roles_list'] = new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Role', 'required' => false));
 
-    $this->widgetSchema   ['role_list'] = new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Role'));
-    $this->validatorSchema['role_list'] = new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Role', 'required' => false));
-
     $this->widgetSchema->setNameFormat('staff[%s]');
   }
 
@@ -47,18 +44,12 @@ abstract class BaseStaffForm extends PersonForm
       $this->setDefault('roles_list', $this->object->Roles->getPrimaryKeys());
     }
 
-    if (isset($this->widgetSchema['role_list']))
-    {
-      $this->setDefault('role_list', $this->object->Role->getPrimaryKeys());
-    }
-
   }
 
   protected function doSave($con = null)
   {
     $this->saveProductionsList($con);
     $this->saveRolesList($con);
-    $this->saveRoleList($con);
 
     parent::doSave($con);
   }
@@ -136,44 +127,6 @@ abstract class BaseStaffForm extends PersonForm
     if (count($link))
     {
       $this->object->link('Roles', array_values($link));
-    }
-  }
-
-  public function saveRoleList($con = null)
-  {
-    if (!$this->isValid())
-    {
-      throw $this->getErrorSchema();
-    }
-
-    if (!isset($this->widgetSchema['role_list']))
-    {
-      // somebody has unset this widget
-      return;
-    }
-
-    if (null === $con)
-    {
-      $con = $this->getConnection();
-    }
-
-    $existing = $this->object->Role->getPrimaryKeys();
-    $values = $this->getValue('role_list');
-    if (!is_array($values))
-    {
-      $values = array();
-    }
-
-    $unlink = array_diff($existing, $values);
-    if (count($unlink))
-    {
-      $this->object->unlink('Role', array_values($unlink));
-    }
-
-    $link = array_diff($values, $existing);
-    if (count($link))
-    {
-      $this->object->link('Role', array_values($link));
     }
   }
 

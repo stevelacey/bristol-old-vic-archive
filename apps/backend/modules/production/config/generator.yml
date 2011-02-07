@@ -23,8 +23,6 @@ generator:
           - start_at
           - end_at
           - company
-          - director
-          - producer
       filter:
         display:
           - name
@@ -35,24 +33,21 @@ generator:
           - company_id
           - collaboration_id
       form:
-        display:
-          "Basic Details":
-             - name
-             - type_id
-             - genre_id
-             - layout_id
-             - company_id
-             - collaboration_id
-             - start_at
-             - end_at
-             - description
-          "Personnel":
-             - director_id
-             - producer_id
-             - technician_id
-          "Financial":
-             - gross_income
-          "Notes":
-             - notes
+        display: ~
+#          "Basic Details":
+#             - name
+#             - type_id
+#             - genre_id
+#             - layout_id
+#             - company_id
+#             - collaboration_id
+#             - start_at
+#             - end_at
+#             - description
+#          "Personnel":
+#          "Financial":
+#             - gross_income
+#          "Notes":
+#             - notes
       edit:    ~
       new:     ~

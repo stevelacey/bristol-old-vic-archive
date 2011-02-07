@@ -1,3 +1,30 @@
+staff:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Staff
+    module:               staff
+    prefix_path:          /staff
+    column:               id
+    with_wildcard_routes: true
+
+role:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Role
+    module:               role
+    prefix_path:          /role
+    column:               id
+    with_wildcard_routes: true
+
+department:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Department
+    module:               department
+    prefix_path:          /department
+    column:               id
+    with_wildcard_routes: true
+
 type:
   class: sfDoctrineRouteCollection
   options:

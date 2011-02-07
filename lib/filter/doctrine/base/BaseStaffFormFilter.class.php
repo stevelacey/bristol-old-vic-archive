@@ -20,9 +20,6 @@ abstract class BaseStaffFormFilter extends PersonFormFilter
     $this->widgetSchema   ['roles_list'] = new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Role'));
     $this->validatorSchema['roles_list'] = new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Role', 'required' => false));
 
-    $this->widgetSchema   ['role_list'] = new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Role'));
-    $this->validatorSchema['role_list'] = new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Role', 'required' => false));
-
     $this->widgetSchema->setNameFormat('staff_filters[%s]');
   }
 
@@ -62,24 +59,6 @@ abstract class BaseStaffFormFilter extends PersonFormFilter
     ;
   }
 
-  public function addRoleListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.ProductionStaff ProductionStaff')
-      ->andWhereIn('ProductionStaff.role_id', $values)
-    ;
-  }
-
   public function getModelName()
   {
     return 'Staff';
@@ -90,7 +69,6 @@ abstract class BaseStaffFormFilter extends PersonFormFilter
     return array_merge(parent::getFields(), array(
       'productions_list' => 'ManyKey',
       'roles_list' => 'ManyKey',
-      'role_list' => 'ManyKey',
     ));
   }
 }

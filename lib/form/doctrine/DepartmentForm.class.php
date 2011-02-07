@@ -10,6 +10,6 @@
  */
 class DepartmentForm extends BaseDepartmentForm {
   public function configure() {
-    
+    $this->embedRelation('Roles');
   }
 }

@@ -37,18 +37,28 @@ abstract class BaseProductionStaff extends sfDoctrineRecord
         $this->setTableName('production_staff');
         $this->hasColumn('production_id', 'integer', 20, array(
              'type' => 'integer',
-             'primary' => true,
+             'notnull' => true,
              'length' => 20,
              ));
         $this->hasColumn('role_id', 'integer', 20, array(
              'type' => 'integer',
-             'primary' => true,
+             'notnull' => true,
              'length' => 20,
              ));
         $this->hasColumn('staff_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
              'length' => 20,
+             ));
+
+
+        $this->index('production_id_role_id', array(
+             'fields' => 
+             array(
+              0 => 'production_id',
+              1 => 'role_id',
+             ),
+             'type' => 'unique',
              ));
     }
 
