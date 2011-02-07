@@ -14,6 +14,8 @@ class ProductionStaffCollectionForm extends sfForm {
     }
 
     foreach(Doctrine::getTable('Department')->findAll() as $department) {
+      $form = new sfForm();
+
       foreach($department->getRoles() as $role) {
         $productionStaff = Doctrine::getTable('ProductionStaff')->findOneByProductionRole($production, $role);
 
@@ -35,9 +37,12 @@ class ProductionStaffCollectionForm extends sfForm {
           'required' => false
         ));
 
-        $this->embedForm($role->getName(), $productionStaffForm);
+        $form->embedForm($role->getName(), $productionStaffForm);
       }
+
+      $this->embedForm($department->getName(), $form);
     }
-      $this->mergePostValidator(new ProductionStaffValidatorSchema());
+    
+    $this->mergePostValidator(new ProductionStaffValidatorSchema());
   }
 }

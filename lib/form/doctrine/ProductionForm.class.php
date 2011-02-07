@@ -28,15 +28,23 @@ class ProductionForm extends BaseProductionForm {
 
   public function saveEmbeddedForms($con = null, $forms = null) {
     if (null === $forms) {
-      $roles = $this->getValue('staff');
       $forms = $this->embeddedForms;
-      foreach ($this->embeddedForms['staff'] as $name => $form) {
-        if (!isset($roles[$name])) {
-          unset($forms['staff'][$name]);
+      $roles = $this->getValue('staff');
+
+      foreach(Doctrine::getTable('Department')->findAll() as $department) {
+        foreach ($this->embeddedForms['staff']->embeddedForms[$department->getName()] as $name => $form) {
+          if (!isset($roles[$department->getName()][$name])) {
+            unset($forms['staff']->widgetSchema[$department->getName()][$name]);
+            unset($forms['staff']->validatorSchema[$department->getName()][$name]);
+            unset($forms['staff']->defaults[$department->getName()][$name]);
+            unset($forms['staff']->taintedValues[$department->getName()][$name]);
+            unset($forms['staff']->values[$department->getName()][$name]);
+            unset($forms['staff']->embeddedForms[$department->getName()][$name]);
+          }
         }
       }
     }
-    
+
     return parent::saveEmbeddedForms($con, $forms);
   }
 }
