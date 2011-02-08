@@ -10,14 +10,12 @@
  */
 class ProductionForm extends BaseProductionForm {
   public function configure() {
-    $this->widgetSchema['start_at'] = new sfWidgetFormDate(array(
-      'label' => 'Performances start',
-      'format' => '%day%/%month%/%year%'
+    $this->widgetSchema['start_at'] = new sfWidgetFormDateUK(array(
+      'label' => 'Performances start'
     ));
     
-    $this->widgetSchema['end_at'] = new sfWidgetFormDate(array(
-      'label' => 'Performances end',
-      'format' => '%day%/%month%/%year%'
+    $this->widgetSchema['end_at'] = new sfWidgetFormDateUK(array(
+      'label' => 'Performances end'
     ));
 
     $form = new ProductionStaffCollectionForm(null, array(
