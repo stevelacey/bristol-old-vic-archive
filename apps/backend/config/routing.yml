@@ -88,15 +88,6 @@ venue:
     column:               id
     with_wildcard_routes: true
 
-character:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                Character
-    module:               character
-    prefix_path:          /character
-    column:               id
-    with_wildcard_routes: true
-
 performer:
   class: sfDoctrineRouteCollection
   options:

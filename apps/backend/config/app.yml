@@ -37,10 +37,6 @@ all:
           Performers:
             name: Performers
             url: performer
-            image: addusers
-          Characters:
-            name: Characters
-            url: character
             image: language
           Departments:
             url: department
@@ -50,7 +46,7 @@ all:
             image: users
           Staff:
             url: staff
-            image: users
+            image: addusers
       Images:
         items:
           Images:
