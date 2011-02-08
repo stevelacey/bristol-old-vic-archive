@@ -23,6 +23,13 @@ generator:
           - start_at
           - end_at
           - company
+        fields:
+          start_at:
+            label: Performance start
+            date_format: d MMMM y
+          end_at:
+            label: Performance end
+            date_format: d MMMM y
       filter:
         display:
           - name
