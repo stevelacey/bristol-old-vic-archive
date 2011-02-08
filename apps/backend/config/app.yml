@@ -47,12 +47,12 @@ all:
           Staff:
             url: staff
             image: addusers
-      Images:
-        items:
-          Images:
-            name: Image Management
-            url: image
-            image: templatemanager
+#      Images:
+#        items:
+#          Images:
+#            name: Image Management
+#            url: image
+#            image: templatemanager
       Users:
         items:
           Users:
