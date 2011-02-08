@@ -10,6 +10,12 @@
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class Performer extends BasePerformer
-{
+class Performer extends BasePerformer {
+  public function getProductions() {
+    return Doctrine::getTable('Production')->findByPerformer($this);
+  }
+
+  public function getProductionCharacters(Production $production) {
+    return Doctrine::getTable('Character')->findByProductionPerformer($production, $this);
+  }
 }
