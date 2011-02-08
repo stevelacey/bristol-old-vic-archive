@@ -28,11 +28,11 @@ all:
             name: Venues
             url: venue
             image: frontpage
-      People:
+      Personnel:
         items:
-          Personnel:
-            name: Personnel
-            url: person
+          Performers:
+            name: Performers
+            url: performer
             image: addusers
           Characters:
             name: Characters

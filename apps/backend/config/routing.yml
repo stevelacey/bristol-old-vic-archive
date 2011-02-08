@@ -88,12 +88,12 @@ character:
     column:               id
     with_wildcard_routes: true
 
-person:
+performer:
   class: sfDoctrineRouteCollection
   options:
-    model:                Person
-    module:               person
-    prefix_path:          /person
+    model:                Performer
+    module:               performer
+    prefix_path:          /performer
     column:               id
     with_wildcard_routes: true
 
