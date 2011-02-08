@@ -26,16 +26,8 @@ class ProductionStaffCollectionForm extends sfForm {
         }
 
         $productionStaffForm = new ProductionStaffForm($productionStaff);
-
-        $productionStaffForm->widgetSchema['staff_id'] = new sfWidgetFormDoctrineChoice(array(
-          'model' => 'Staff',
-          'add_empty' => true
-        ));
-
-        $productionStaffForm->validatorSchema['staff_id'] = new sfValidatorDoctrineChoice(array(
-          'model' => 'Staff',
-          'required' => false
-        ));
+        $productionStaffForm->widgetSchema['staff_id']->setOption('add_empty', true);
+        $productionStaffForm->validatorSchema['staff_id']->setOption('required', false);
 
         $form->embedForm($role->getName(), $productionStaffForm);
       }
