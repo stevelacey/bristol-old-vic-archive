@@ -16,6 +16,10 @@ all:
             name: Companies
             url: company
             image: support
+          Collaboration:
+            name: Collaboration
+            url: collaboration
+            image: support
           Genre:
             name: Genres
             url: genre
