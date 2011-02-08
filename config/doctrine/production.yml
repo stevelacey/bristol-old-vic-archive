@@ -12,15 +12,15 @@ Production:
     collaboration_id: integer(20)
     image_id: integer(20)
     description: string()
-    start_at: datetime()
-    end_at: datetime()
+    start_at: timestamp
+    end_at: timestamp
+    number_of_performances: integer(20)
     fundraiser:
       type: boolean
       default: false
     adult_ticket_price: float
     child_ticket_price: float
     student_ticket_price: float
-    funding: string()
     notes: string()
     gross_income: float
   options:
