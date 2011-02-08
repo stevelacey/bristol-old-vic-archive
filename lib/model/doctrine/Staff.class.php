@@ -10,6 +10,8 @@
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class Staff extends BaseStaff
-{
+class Staff extends BaseStaff {
+  public function getProductionRoles(Production $production) {
+    return Doctrine::getTable('Role')->findByProductionStaff($production, $this);
+  }
 }

@@ -22,7 +22,7 @@ generator:
         display:
           - name
           - gender
-          - actor_id
+          - performer_id
           - production_id
       form:    ~
       edit:    ~

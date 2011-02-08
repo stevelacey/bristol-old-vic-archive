@@ -11,7 +11,7 @@
 class RoleForm extends BaseRoleForm {
   public function configure() {
     unset(
-      $this['productions_list'], $this['staff_list']
+      $this['production_list'], $this['staff_list']
     );
   }
 }

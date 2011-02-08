@@ -10,6 +10,15 @@
  */
 class CharacterForm extends BaseCharacterForm {
   public function configure() {
-    unset($this['created_at'], $this['updated_at']);
+
+    $this->widgetSchema['performer_id'] = new sfWidgetFormDoctrineChoice(array(
+      'model' => 'Performer',
+      'add_empty' => true
+    ));
+
+    unset(
+      $this['production_id'], $this['image_id'],
+      $this['created_at'], $this['updated_at']
+    );
   }
 }

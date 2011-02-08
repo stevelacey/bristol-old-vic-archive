@@ -8,13 +8,13 @@
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class StaffForm extends BaseStaffForm
-{
+class StaffForm extends BaseStaffForm {
   /**
    * @see PersonForm
    */
-  public function configure()
-  {
+  public function configure() {
     parent::configure();
+    
+    unset($this['productions_list'], $this['roles_list']);
   }
 }

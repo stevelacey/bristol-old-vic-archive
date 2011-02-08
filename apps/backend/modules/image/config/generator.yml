@@ -18,8 +18,6 @@ generator:
       filter:
         display:
           - =title
-          - production_id
-          - person_id
       form:    ~
       edit:    ~
       new:     ~

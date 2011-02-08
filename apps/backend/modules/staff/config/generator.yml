@@ -14,8 +14,16 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:
+        display:
+          - name
+          - email
+          - telephone
+      filter:
+        display:
+          - name
+          - email
+          - telephone
       form:    ~
       edit:    ~
       new:     ~
