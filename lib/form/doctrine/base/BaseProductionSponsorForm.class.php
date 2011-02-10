@@ -17,11 +17,15 @@ abstract class BaseProductionSponsorForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'production_id' => new sfWidgetFormInputHidden(),
       'sponsor_id'    => new sfWidgetFormInputHidden(),
+      'donation'      => new sfWidgetFormInputText(),
+      'description'   => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
       'production_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('production_id')), 'empty_value' => $this->getObject()->get('production_id'), 'required' => false)),
       'sponsor_id'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('sponsor_id')), 'empty_value' => $this->getObject()->get('sponsor_id'), 'required' => false)),
+      'donation'      => new sfValidatorNumber(array('required' => false)),
+      'description'   => new sfValidatorString(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('production_sponsor[%s]');

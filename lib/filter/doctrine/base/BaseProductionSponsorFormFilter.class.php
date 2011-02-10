@@ -13,9 +13,13 @@ abstract class BaseProductionSponsorFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'donation'      => new sfWidgetFormFilterInput(),
+      'description'   => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
+      'donation'      => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'description'   => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('production_sponsor_filters[%s]');
@@ -37,6 +41,8 @@ abstract class BaseProductionSponsorFormFilter extends BaseFormFilterDoctrine
     return array(
       'production_id' => 'Number',
       'sponsor_id'    => 'Number',
+      'donation'      => 'Number',
+      'description'   => 'Text',
     );
   }
 }

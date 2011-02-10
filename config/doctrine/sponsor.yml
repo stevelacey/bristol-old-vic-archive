@@ -6,6 +6,8 @@ ProductionSponsor:
     sponsor_id:
       type: integer(20)
       primary: true
+    donation: float
+    description: string
   relations:
     Production:
       local: production_id
@@ -21,6 +23,7 @@ Sponsor:
     name:
       type: string(255)
       notnull: true
+    description: string
   options:
     orderBy: name asc
   relations:

@@ -15,6 +15,7 @@ class ProductionForm extends BaseProductionForm {
 
     $this->embedForm('staff', new ProductionStaffCollectionForm(null, array('production' => $this->getObject())));
     $this->embedForm('cast', new ProductionCastCollectionForm(null, array('production' => $this->getObject())));
+//    $this->embedForm('sponsors', new ProductionSponsorCollectionForm(null, array('production' => $this->getObject())));
 
     unset(
       $this['image_id'],

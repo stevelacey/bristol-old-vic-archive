@@ -1,16 +1,13 @@
 <?php
 
 /**
- * Type form.
+ * sponsor module helper.
  *
  * @package    bristol-old-vic-archive
- * @subpackage form
+ * @subpackage sponsor
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class TypeForm extends BaseTypeForm
+class sponsorGeneratorHelper extends BaseSponsorGeneratorHelper
 {
-  public function configure()
-  {
-  }
 }

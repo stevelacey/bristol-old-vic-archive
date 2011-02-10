@@ -7,15 +7,21 @@
  * 
  * @property integer $production_id
  * @property integer $sponsor_id
+ * @property float $donation
+ * @property string $description
  * @property Production $Production
  * @property Sponsor $Sponsor
  * 
  * @method integer           getProductionId()  Returns the current record's "production_id" value
  * @method integer           getSponsorId()     Returns the current record's "sponsor_id" value
+ * @method float             getDonation()      Returns the current record's "donation" value
+ * @method string            getDescription()   Returns the current record's "description" value
  * @method Production        getProduction()    Returns the current record's "Production" value
  * @method Sponsor           getSponsor()       Returns the current record's "Sponsor" value
  * @method ProductionSponsor setProductionId()  Sets the current record's "production_id" value
  * @method ProductionSponsor setSponsorId()     Sets the current record's "sponsor_id" value
+ * @method ProductionSponsor setDonation()      Sets the current record's "donation" value
+ * @method ProductionSponsor setDescription()   Sets the current record's "description" value
  * @method ProductionSponsor setProduction()    Sets the current record's "Production" value
  * @method ProductionSponsor setSponsor()       Sets the current record's "Sponsor" value
  * 
@@ -38,6 +44,12 @@ abstract class BaseProductionSponsor extends sfDoctrineRecord
              'type' => 'integer',
              'primary' => true,
              'length' => 20,
+             ));
+        $this->hasColumn('donation', 'float', null, array(
+             'type' => 'float',
+             ));
+        $this->hasColumn('description', 'string', null, array(
+             'type' => 'string',
              ));
     }
 
