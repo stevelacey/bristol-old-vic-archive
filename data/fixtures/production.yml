@@ -5,7 +5,6 @@ Production:
     Layout: Theatre 550
     start_at: '2008-06-29'
     end_at: '2008-06-29'
-    gross_income: null
     fundraiser: true
     notes: BOV
   Beast:
@@ -14,7 +13,6 @@ Production:
     Layout: Studio 150
     start_at: '2008-11-19'
     end_at: '2008-11-22'
-    gross_income: null
     notes: YC
   Home:
     name: Home
@@ -22,7 +20,6 @@ Production:
     Layout: Studio 150
     start_at: '2008-12-27'
     end_at: '2009-01-02'
-    gross_income: null
     notes: BOV Co Pro
   The Goodies:
     name: The Goodies
@@ -30,7 +27,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-01-22'
     end_at: '2009-01-22'
-    gross_income: null
     notes: null
   Ukulele Orchestra:
     name: Ukulele Orchestra
@@ -38,7 +34,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-01-24'
     end_at: '2009-01-24'
-    gross_income: null
     notes: null
   Eric Sykes:
     name: Eric Sykes
@@ -46,7 +41,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-01-25'
     end_at: '2009-01-25'
-    gross_income: null
     notes: null
   Samson and Delilah:
     name: Samson and Delilah
@@ -54,7 +48,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-01-28'
     end_at: '2009-01-31'
-    gross_income: null
     notes: YC
   Script in Hand:
     name: Script in Hand
@@ -62,7 +55,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-06-02'
     end_at: '2009-08-02'
-    gross_income: null
     notes: BOV
   Romeo and Juliet-BOVTS:
     name: Romeo and Juliet-BOVTS
@@ -70,7 +62,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-12-02'
     end_at: '2009-02-21'
-    gross_income: null
     notes: BOVTS
   Vagina Monologues:
     name: Vagina Monologues
@@ -78,7 +69,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-02-14'
     end_at: '2009-02-15'
-    gross_income: null
     notes: null
   Suspension:
     name: Suspension
@@ -86,7 +76,6 @@ Production:
     Layout: Studio 180
     start_at: '2009-02-27'
     end_at: '2009-03-28'
-    gross_income: null
     notes: BOV
   Catherine Johnson in Conversation:
     name: Catherine Johnson in Conversation
@@ -94,7 +83,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-07-03'
     end_at: '2009-07-03'
-    gross_income: null
     fundraiser: true
     notes: BOV
   Allan Schiller:
@@ -103,7 +91,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-03-15'
     end_at: '2009-03-15'
-    gross_income: null
     fundraiser: true
     notes: BOV
   The Lost World:
@@ -112,7 +99,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-03-04'
     end_at: '2009-04-17'
-    gross_income: null
     notes: BOV Co Pro
   BRAVE:
     name: BRAVE
@@ -120,7 +106,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-04-21'
     end_at: '2009-04-26'
-    gross_income: null
     notes: YC
   Black Tonic:
     name: Black Tonic
@@ -128,7 +113,6 @@ Production:
     Layout: Holland House Hotel 6
     start_at: '2009-01-05'
     end_at: '2009-04-05'
-    gross_income: null
     notes: Mayfest 2009
   Anima:
     name: Anima
@@ -136,7 +120,6 @@ Production:
     Layout: Circomedia 120
     start_at: '2009-02-05'
     end_at: '2009-03-05'
-    gross_income: null
     notes: null
   Taste:
     name: Taste
@@ -144,7 +127,6 @@ Production:
     Layout: Bristol Old Vic 150
     start_at: '2009-03-05'
     end_at: '2009-04-05'
-    gross_income: null
     notes: null
   Polaris:
     name: Polaris
@@ -152,7 +134,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-05-05'
     end_at: '2009-07-05'
-    gross_income: null
     notes: null
   John Moran and His N:
     name: John Moran and His N
@@ -160,7 +141,6 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2009-05-05'
     end_at: '2009-06-05'
-    gross_income: null
     notes: null
   The Smile off Your F:
     name: The Smile off Your F
@@ -168,7 +148,6 @@ Production:
     Layout: Theatre 6
     start_at: '2009-06-05'
     end_at: '2009-07-05'
-    gross_income: null
     notes: null
   Hard Hearted Hannah:
     name: Hard Hearted Hannah
@@ -176,7 +155,6 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2009-07-05'
     end_at: '2009-09-05'
-    gross_income: null
     notes: null
   If That's All There:
     name: If That's All There
@@ -184,7 +162,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-08-05'
     end_at: '2009-09-05'
-    gross_income: null
     notes: null
   King Pest & Night Fl:
     name: King Pest & Night Fl
@@ -192,7 +169,6 @@ Production:
     Layout: Paintshop 80
     start_at: '2009-08-05'
     end_at: '2009-09-05'
-    gross_income: null
     notes: null
   Paperweight:
     name: Paperweight
@@ -200,7 +176,6 @@ Production:
     Layout: Garden Room 30
     start_at: '2009-08-05'
     end_at: '2009-09-05'
-    gross_income: null
     notes: null
   Orbita:
     name: Orbita
@@ -208,7 +183,6 @@ Production:
     Layout: Wickham Theatre 50
     start_at: '2009-09-05'
     end_at: '2009-10-05'
-    gross_income: null
     notes: null
   Richard's Love:
     name: Richard's Love
@@ -216,7 +190,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-05'
     end_at: '2009-10-05'
-    gross_income: null
     notes: null
   Sir Gregory's Hutch:
     name: Sir Gregory's Hutch
@@ -224,7 +197,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-05'
     end_at: '2009-10-05'
-    gross_income: null
     notes: null
   To Have and To Honk:
     name: To Have and To Honk
@@ -232,7 +204,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-05'
     end_at: '2009-10-05'
-    gross_income: null
     notes: null
   Kellerman:
     name: Kellerman
@@ -240,7 +211,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-11-05'
     end_at: '2009-05-13'
-    gross_income: null
     notes: null
   Our Father's Ears:
     name: Our Father's Ears
@@ -248,7 +218,6 @@ Production:
     Layout: Paintshop 80
     start_at: '2009-11-05'
     end_at: '2009-12-05'
-    gross_income: null
     notes: null
   John and Jim:
     name: John and Jim
@@ -256,7 +225,6 @@ Production:
     Layout: Basement 50
     start_at: '2009-12-05'
     end_at: '2009-05-13'
-    gross_income: null
     notes: null
   The Adventures of Wo:
     name: The Adventures of Wo
@@ -264,7 +232,6 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2009-12-05'
     end_at: '2009-05-13'
-    gross_income: null
     notes: null
   My World is Empty:
     name: My World is Empty
@@ -272,7 +239,6 @@ Production:
     Layout: Clifton Village 20
     start_at: '2009-05-14'
     end_at: '2009-05-16'
-    gross_income: null
     notes: null
   Home of the Wriggler:
     name: Home of the Wriggler
@@ -280,7 +246,6 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2009-05-14'
     end_at: '2009-05-15'
-    gross_income: null
     notes: null
   The Middle Bit:
     name: The Middle Bit
@@ -288,7 +253,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-05-15'
     end_at: '2009-05-15'
-    gross_income: null
     notes: null
   The Weepers:
     name: The Weepers
@@ -296,7 +260,6 @@ Production:
     Layout: Theatre 150
     start_at: '2009-05-15'
     end_at: '2009-05-16'
-    gross_income: null
     notes: null
   H.E.L.P/H.O.P.E:
     name: H.E.L.P/H.O.P.E
@@ -304,7 +267,6 @@ Production:
     Layout: Basement 50
     start_at: '2009-05-15'
     end_at: '2009-05-15'
-    gross_income: null
     notes: null
   Overlap:
     name: Overlap
@@ -312,7 +274,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-05-16'
     end_at: '2009-05-16'
-    gross_income: null
     notes: null
   10 by 3:
     name: 10 by 3
@@ -320,7 +281,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-05-20'
     end_at: '2009-12-06'
-    gross_income: null
     notes: BOV
   Small Metal Objects:
     name: Small Metal Objects
@@ -328,7 +288,6 @@ Production:
     Layout: Broadmead 150
     start_at: '2009-05-21'
     end_at: '2009-05-24'
-    gross_income: null
     notes: BOV Co Pro
   Boxin:
     name: Boxin
@@ -336,7 +295,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-05-22'
     end_at: '2009-05-23'
-    gross_income: null
     notes: null
   Shortcuts:
     name: Shortcuts
@@ -344,7 +302,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-05-28'
     end_at: '2009-05-29'
-    gross_income: null
     notes: YC
   Call Mr Robeson:
     name: Call Mr Robeson
@@ -352,7 +309,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-04-06'
     end_at: '2009-06-06'
-    gross_income: null
     notes: null
   Phantom Limb:
     name: Phantom Limb
@@ -360,7 +316,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-05-06'
     end_at: '2009-05-06'
-    gross_income: null
     notes: null
   On The Razzle:
     name: On The Razzle
@@ -368,7 +323,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-12-06'
     end_at: '2009-06-27'
-    gross_income: null
     notes: BOVTS
   10 by 3:
     name: 10 by 3
@@ -376,7 +330,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-12-06'
     end_at: '2009-12-06'
-    gross_income: null
     notes: BOV
   Tess of The D'Urberv:
     name: Tess of The D'Urberv
@@ -384,7 +337,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-06-17'
     end_at: '2009-06-20'
-    gross_income: null
     notes: BOVTS
   Vanity Fair:
     name: Vanity Fair
@@ -392,7 +344,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-06-24'
     end_at: '2009-06-27'
-    gross_income: null
     notes: BOVTS
   Silver the Musical:
     name: Silver the Musical
@@ -400,7 +351,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-06-30'
     end_at: '2009-04-07'
-    gross_income: null
     notes: null
   Adolf Hitler:My Part:
     name: Adolf Hitler:My Part
@@ -408,7 +358,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-04-07'
     end_at: '2009-07-18'
-    gross_income: null
     notes: BOV Co Pro
   My Green Your Grey:
     name: My Green Your Grey
@@ -416,7 +365,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-01-09'
     end_at: '2009-05-09'
-    gross_income: null
     notes: BOV/TB
   Muscle:
     name: Muscle
@@ -424,7 +372,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-08-09'
     end_at: '2009-12-09'
-    gross_income: null
     notes: BOV/TB
   Escape to This:
     name: Escape to This
@@ -432,7 +379,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-09-15'
     end_at: '2009-09-19'
-    gross_income: null
     notes: null
   Buzzard:
     name: Buzzard
@@ -440,7 +386,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-09-23'
     end_at: '2009-09-26'
-    gross_income: null
     notes: BOV/TB
   Six Characters in:
     name: Six Characters in
@@ -448,7 +393,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-09-26'
     end_at: '2009-10-10'
-    gross_income: null
     notes: null
   Sugar Beast Circus:
     name: Sugar Beast Circus
@@ -456,7 +400,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-01-10'
     end_at: '2009-03-10'
-    gross_income: null
     notes: null
   Paradise:
     name: Paradise
@@ -464,7 +407,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-03-10'
     end_at: '2009-05-10'
-    gross_income: null
     notes: null
   Superstition Mountai:
     name: Superstition Mountai
@@ -472,7 +414,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-07-10'
     end_at: '2009-10-10'
-    gross_income: null
     notes: null
   Spymonkey'sMoby Dick:
     name: Spymonkey'sMoby Dick
@@ -480,7 +421,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-10-13'
     end_at: '2009-10-14'
-    gross_income: null
     notes: null
   Hamlet:
     name: Hamlet
@@ -488,7 +428,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2009-10-16'
     end_at: '2009-10-18'
-    gross_income: null
     notes: Bristol Jam 2009
   Hard Hearted Hannah:
     name: Hard Hearted Hannah
@@ -496,7 +435,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-16'
     end_at: '2009-10-17'
-    gross_income: null
     notes: null
   1234 and so on:
     name: 1234 and so on
@@ -504,7 +442,6 @@ Production:
     Layout: Paintshop 80
     start_at: '2009-10-16'
     end_at: '2009-10-16'
-    gross_income: null
     notes: null
   Basement Jam:
     name: Basement Jam
@@ -512,7 +449,6 @@ Production:
     Layout: Basement 50
     start_at: '2009-10-16'
     end_at: '2009-10-24'
-    gross_income: null
     notes: null
   Breathing Fire and:
     name: Breathing Fire and
@@ -520,7 +456,6 @@ Production:
     Layout: Paintshop 80
     start_at: '2009-10-17'
     end_at: '2009-10-17'
-    gross_income: null
     notes: null
   The Seagull:
     name: The Seagull
@@ -528,7 +463,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-17'
     end_at: '2009-10-18'
-    gross_income: null
     notes: null
   Instant Wit:
     name: Instant Wit
@@ -536,7 +470,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-18'
     end_at: '2009-10-18'
-    gross_income: null
     notes: null
   The Man Who Sat Down:
     name: The Man Who Sat Down
@@ -544,7 +477,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-18'
     end_at: '2009-10-18'
-    gross_income: null
     notes: null
   Oogly Boogly:
     name: Oogly Boogly
@@ -552,7 +484,6 @@ Production:
     Layout: Theatre 16
     start_at: '2009-10-20'
     end_at: '2009-10-21'
-    gross_income: null
     notes: null
   Phil Minton and the:
     name: Phil Minton and the
@@ -560,7 +491,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-10-20'
     end_at: '2009-10-20'
-    gross_income: null
     notes: null
   Frameworks/Liveheart:
     name: Frameworks/Liveheart
@@ -568,7 +498,6 @@ Production:
     Layout: Paintshop 80
     start_at: '2009-10-20'
     end_at: '2009-10-20'
-    gross_income: null
     notes: null
   The Suggestibles:
     name: The Suggestibles
@@ -576,7 +505,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-20'
     end_at: '2009-10-20'
-    gross_income: null
     notes: null
   Beardyman's Complete:
     name: Beardyman's Complete
@@ -584,7 +512,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-10-21'
     end_at: '2009-10-21'
-    gross_income: null
     notes: null
   Showstopper! The:
     name: Showstopper! The
@@ -592,7 +519,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-21'
     end_at: '2009-10-22'
-    gross_income: null
     notes: null
   Mixed Movement:
     name: Mixed Movement
@@ -600,7 +526,6 @@ Production:
     Layout: Theatre 50
     start_at: '2009-10-22'
     end_at: '2009-10-22'
-    gross_income: null
     notes: null
   Ken Campbell's:
     name: Ken Campbell's
@@ -608,7 +533,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-10-22'
     end_at: '2009-10-22'
-    gross_income: null
     notes: null
   The Nothing Show:
     name: The Nothing Show
@@ -616,7 +540,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-22'
     end_at: '2009-10-22'
-    gross_income: null
     notes: null
   Birdman of Alkijazz:
     name: Birdman of Alkijazz
@@ -624,7 +547,6 @@ Production:
     Layout: Paintshop 80
     start_at: '2009-10-23'
     end_at: '2009-10-23'
-    gross_income: null
     notes: null
   The Fiddle Show:
     name: The Fiddle Show
@@ -632,7 +554,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-10-23'
     end_at: '2009-10-23'
-    gross_income: null
     notes: null
   Phil Kay Winging It:
     name: 'Phil Kay: Winging It'
@@ -640,7 +561,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-10-23'
     end_at: '2009-10-23'
-    gross_income: null
     notes: null
   Portico Quartet & Sw:
     name: Portico Quartet & Sw
@@ -648,7 +568,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-10-24'
     end_at: '2009-10-24'
-    gross_income: null
     notes: null
   Beethoven's Voices - Sacconi Quartet:
     name: Beethoven's Voices - Sacconi Quartet
@@ -656,7 +575,6 @@ Production:
     Layout: Paintshop 80
     start_at: '2009-10-24'
     end_at: '2009-10-24'
-    gross_income: null
     notes: null
   Gimme Your Left Shoe:
     name: Gimme Your Left Shoe
@@ -664,7 +582,6 @@ Production:
     Layout: Paintshop 80
     start_at: '2009-10-24'
     end_at: '2009-10-24'
-    gross_income: null
     notes: null
   Improvathon:
     name: Improvathon
@@ -672,7 +589,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-24'
     end_at: '2009-10-24'
-    gross_income: null
     notes: null
   Laughing Matters:
     name: Laughing Matters
@@ -680,7 +596,6 @@ Production:
     Layout: Basement 50
     start_at: '2009-10-24'
     end_at: '2009-10-24'
-    gross_income: null
     notes: null
   Little Lupin:
     name: Little Lupin
@@ -688,7 +603,6 @@ Production:
     Layout: Promanade 20
     start_at: '2009-10-27'
     end_at: '2009-10-31'
-    gross_income: null
     notes: BOV Co Pro
   Looking for Obama:
     name: Looking for Obama
@@ -696,7 +610,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-10-28'
     end_at: '2009-10-31'
-    gross_income: null
     notes: null
   Uncle Vanya:
     name: Uncle Vanya
@@ -704,7 +617,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-10-30'
     end_at: '2009-11-21'
-    gross_income: null
     notes: BOV
   The Unthanks:
     name: The Unthanks
@@ -712,7 +624,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-01-11'
     end_at: '2009-01-11'
-    gross_income: null
     notes: null
   The Good Companions:
     name: The Good Companions
@@ -720,7 +631,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-05-11'
     end_at: '2009-12-11'
-    gross_income: null
     notes: BOVTS
   Beyond Words:
     name: Beyond Words
@@ -728,7 +638,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-11-15'
     end_at: '2009-11-15'
-    gross_income: null
     notes: null
   Our Country's Good:
     name: Our Country's Good
@@ -736,7 +645,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-11-24'
     end_at: '2009-11-28'
-    gross_income: null
     notes: YC
   The Middle Bit:
     name: The Middle Bit
@@ -744,7 +652,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-03-12'
     end_at: '2009-05-12'
-    gross_income: null
     notes: BOV/TB
   Hansel and Gretel:
     name: Hansel and Gretel
@@ -752,7 +659,6 @@ Production:
     Layout: Theatre 550
     start_at: '2009-04-12'
     end_at: '2010-01-23'
-    gross_income: null
     notes: BOV Co Pro
   How Cold My Toes:
     name: How Cold My Toes
@@ -760,7 +666,6 @@ Production:
     Layout: Studio 150
     start_at: '2009-12-15'
     end_at: '2010-01-16'
-    gross_income: null
     notes: BOV Co Pro
   The Forest:
     name: The Forest
@@ -768,7 +673,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-10-01'
     end_at: '2010-10-01'
-    gross_income: null
     notes: null
   Mouth:
     name: Mouth
@@ -776,7 +680,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-01-20'
     end_at: '2010-01-20'
-    gross_income: null
     notes: Ferment Jan 2010
   The Girl with Two Voices 1:
     name: The Girl with Two Voices 1
@@ -784,7 +687,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-20'
     end_at: '2010-01-20'
-    gross_income: null
     notes: null
   The Girl with Two Voices 2:
     name: The Girl with Two Voices 2
@@ -792,7 +694,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-01-21'
     end_at: '2010-01-21'
-    gross_income: null
     notes: null
   Triptych:
     name: Triptych
@@ -800,7 +701,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-21'
     end_at: '2010-01-21'
-    gross_income: null
     notes: null
   The Girl with Two Voices 3:
     name: The Girl with Two Voices 3
@@ -808,7 +708,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-22'
     end_at: '2010-01-22'
-    gross_income: null
     notes: null
   Grandmother's Footst:
     name: Grandmother's Footst
@@ -816,7 +715,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-23'
     end_at: '2010-01-23'
-    gross_income: null
     notes: null
   And the line goes de:
     name: And the line goes de
@@ -824,7 +722,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-01-23'
     end_at: '2010-01-23'
-    gross_income: null
     notes: null
   Coasting:
     name: Coasting
@@ -832,7 +729,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-01-23'
     end_at: '2010-01-23'
-    gross_income: null
     notes: null
   Jam for Girls/Remark:
     name: Jam for Girls/Remark
@@ -840,7 +736,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-23'
     end_at: '2010-01-23'
-    gross_income: null
     notes: null
   A movement monologue:
     name: A movement monologue
@@ -848,7 +743,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-23'
     end_at: '2010-01-23'
-    gross_income: null
     notes: null
   The Nothing Show (pa:
     name: The Nothing Show (pa
@@ -856,7 +750,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-27'
     end_at: '2010-01-27'
-    gross_income: null
     notes: null
   Rinsed &Janet Gaynor:
     name: Rinsed &Janet Gaynor
@@ -864,7 +757,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-01-27'
     end_at: '2010-01-27'
-    gross_income: null
     notes: null
   Ivan and the Dogs:
     name: Ivan and the Dogs
@@ -872,7 +764,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-01-28'
     end_at: '2010-01-28'
-    gross_income: null
     notes: null
   Who Knows Where/Jam:
     name: Who Knows Where/Jam
@@ -880,7 +771,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-01-28'
     end_at: '2010-01-28'
-    gross_income: null
     notes: null
   Noise/Kick Off:
     name: Noise/Kick Off
@@ -888,7 +778,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-28'
     end_at: '2010-01-28'
-    gross_income: null
     notes: null
   Frankenspine:
     name: Frankenspine
@@ -896,7 +785,6 @@ Production:
     Layout: Basement 55
     start_at: '2010-01-29'
     end_at: '2010-01-30'
-    gross_income: null
     notes: null
   Dancing with Deckcha:
     name: Dancing with Deckcha
@@ -904,7 +792,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-29'
     end_at: '2010-01-30'
-    gross_income: null
     notes: null
   Fishwife, fishing fo:
     name: Fishwife, fishing fo
@@ -912,7 +799,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-01-30'
     end_at: '2010-01-30'
-    gross_income: null
     notes: null
   Moarn Maggie Brown&N:
     name: Moarn Maggie Brown&N
@@ -920,7 +806,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-01-30'
     end_at: '2010-01-30'
-    gross_income: null
     notes: null
   Giorgio&Far Way Back:
     name: Giorgio&Far Way Back
@@ -928,7 +813,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-01-30'
     end_at: '2010-01-30'
-    gross_income: null
     notes: null
   Bellowhead:
     name: Bellowhead
@@ -936,7 +820,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-03-02'
     end_at: '2010-03-02'
-    gross_income: null
     notes: null
   Salad Days:
     name: Salad Days
@@ -944,7 +827,6 @@ Production:
     Layout: Theatre 550
     start_at: '2010-05-02'
     end_at: '2010-06-02'
-    gross_income: null
     notes: null
   A Sound Beneath The:
     name: A Sound Beneath The
@@ -952,7 +834,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-05-02'
     end_at: '2010-05-02'
-    gross_income: null
     notes: null
   June Tabor:
     name: June Tabor
@@ -960,7 +841,6 @@ Production:
     Layout: Theatre 550
     start_at: '2010-06-02'
     end_at: '2010-06-02'
-    gross_income: null
     notes: null
   The Country Wife:
     name: The Country Wife
@@ -968,7 +848,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-11-02'
     end_at: '2010-02-20'
-    gross_income: null
     notes: BOVTS
   THEATRE:24:
     name: THEATRE:24
@@ -976,7 +855,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-02-14'
     end_at: '2010-02-14'
-    gross_income: null
     notes: BOV
   Superstition Mountai:
     name: Superstition Mountai
@@ -984,7 +862,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-02-15'
     end_at: '2010-02-15'
-    gross_income: null
     notes: null
   Wolf Tales:
     name: Wolf Tales
@@ -992,7 +869,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-02-16'
     end_at: '2010-02-27'
-    gross_income: null
     notes: BOV CO PRO
   Vagina Monologues:
     name: Vagina Monologues
@@ -1000,7 +876,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-02-20'
     end_at: '2010-02-21'
-    gross_income: null
     notes: null
   Pedestrian:
     name: Pedestrian
@@ -1008,7 +883,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-02-24'
     end_at: '2010-02-27'
-    gross_income: null
     notes: BOV/TB
   The Tempest:
     name: The Tempest
@@ -1016,7 +890,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-04-03'
     end_at: '2010-06-03'
-    gross_income: null
     notes: null
   Juliet and Her Romeo:
     name: Juliet and Her Romeo
@@ -1024,7 +897,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-10-03'
     end_at: '2010-03-31'
-    gross_income: null
     notes: BOV
   Kursk:
     name: Kursk
@@ -1032,7 +904,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-12-03'
     end_at: '2010-03-20'
-    gross_income: null
     notes: null
   Two:
     name: Two
@@ -1040,7 +911,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-03-23'
     end_at: '2010-03-27'
-    gross_income: null
     notes: YC
   White Caps:
     name: White Caps
@@ -1048,7 +918,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-03-31'
     end_at: '2010-03-04'
-    gross_income: null
     notes: BOV CO PRO
   Earnest and the Pale:
     name: Earnest and the Pale
@@ -1056,7 +925,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-08-04'
     end_at: '2010-10-04'
-    gross_income: null
     notes: null
   Eurydice:
     name: Eurydice
@@ -1064,7 +932,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-04-13'
     end_at: '2010-07-04'
-    gross_income: null
     notes: null
   Project Underworld:
     name: Project Underworld
@@ -1072,7 +939,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-04-13'
     end_at: '2010-04-13'
-    gross_income: null
     notes: null
   Short Fuses:
     name: Short Fuses
@@ -1080,7 +946,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-04-20'
     end_at: '2010-04-24'
-    gross_income: null
     notes: BOV CO PRO
   Twelfth Night:
     name: Twelfth Night
@@ -1088,14 +953,12 @@ Production:
     Layout: Studio 150
     start_at: '2010-04-27'
     end_at: '2010-01-05'
-    gross_income: null
     notes: null
   Kitchen Sink Drama:
     name: Kitchen Sink Drama
     Type: Interactive Performance Art
     start_at: '2010-07-05'
     end_at: '2010-05-22'
-    gross_income: null
     notes: Mayfest 2010
   Love and War:
     name: Love and War
@@ -1103,14 +966,12 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2010-07-05'
     end_at: '2010-08-05'
-    gross_income: null
     notes: null
   Wondermart:
     name: Wondermart
     Type: Interactive Performance Art
     start_at: '2010-07-05'
     end_at: '2010-05-22'
-    gross_income: null
     notes: null
   Forest Fringe Microf:
     name: Forest Fringe Microf
@@ -1118,14 +979,12 @@ Production:
     Layout: Bristol Old Vic 85
     start_at: '2010-08-05'
     end_at: '2010-09-05'
-    gross_income: null
     notes: null
   Internal:
     name: Internal
     Type: Play
     start_at: '2010-09-05'
     end_at: '2010-11-05'
-    gross_income: null
     notes: null
   Live Art Speed Datin:
     name: Live Art Speed Datin
@@ -1133,7 +992,6 @@ Production:
     Layout: Bristol Old Vic 60
     start_at: '2010-09-05'
     end_at: '2010-09-05'
-    gross_income: null
     notes: null
   Boxed:
     name: Boxed
@@ -1141,7 +999,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-10-05'
     end_at: '2010-11-05'
-    gross_income: null
     notes: null
   6.0:How Heap and Peb:
     name: 6.0:How Heap and Peb
@@ -1149,7 +1006,6 @@ Production:
     Layout: The Brewery 20
     start_at: '2010-05-10'
     end_at: '2010-05-13'
-    gross_income: null
     notes: null
   John Moran and His N:
     name: John Moran and His N
@@ -1157,7 +1013,6 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2010-10-05'
     end_at: '2010-11-05'
-    gross_income: null
     notes: null
   Dogger, Fisher, Faer:
     name: Dogger, Fisher, Faer
@@ -1165,14 +1020,12 @@ Production:
     Layout: Basement 50
     start_at: '2010-11-05'
     end_at: '2010-12-05'
-    gross_income: null
     notes: null
   Pub Rock:
     name: Pub Rock
     Type: Play
     start_at: '2010-11-05'
     end_at: '2010-05-13'
-    gross_income: null
     notes: null
   The Festival:
     name: The Festival
@@ -1180,7 +1033,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-12-05'
     end_at: '2010-05-13'
-    gross_income: null
     notes: null
   Sporadical:
     name: Sporadical
@@ -1188,7 +1040,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-12-05'
     end_at: '2010-12-05'
-    gross_income: null
     notes: null
   Ausform:
     name: Ausform
@@ -1196,7 +1047,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-05-13'
     end_at: '2010-05-13'
-    gross_income: null
     notes: null
   Five Fat Fish:
     name: Five Fat Fish
@@ -1204,7 +1054,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-05-13'
     end_at: '2010-05-15'
-    gross_income: null
     notes: null
   Everything Must Go:
     name: Everything Must Go
@@ -1212,7 +1061,6 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2010-05-13'
     end_at: '2010-05-15'
-    gross_income: null
     notes: null
   No Idea:
     name: No Idea
@@ -1220,7 +1068,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-05-14'
     end_at: '2010-05-15'
-    gross_income: null
     notes: null
   Trilogy:
     name: Trilogy
@@ -1228,7 +1075,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-05-14'
     end_at: '2010-05-15'
-    gross_income: null
     notes: null
   Dean Gibbons and the:
     name: Dean Gibbons and the
@@ -1236,7 +1082,6 @@ Production:
     Layout: The Brewery 20
     start_at: '2010-05-14'
     end_at: '2010-05-15'
-    gross_income: null
     notes: null
   Where We Live and Wh:
     name: Where We Live and Wh
@@ -1244,7 +1089,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-05-15'
     end_at: '2010-05-15'
-    gross_income: null
     notes: null
   Cirque de Legume:
     name: Cirque de Legume
@@ -1252,7 +1096,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-05-16'
     end_at: '2010-05-16'
-    gross_income: null
     notes: null
   We Are Nothing Like:
     name: We Are Nothing Like
@@ -1260,7 +1103,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-05-16'
     end_at: '2010-05-16'
-    gross_income: null
     notes: null
   The Poof Downstairs:
     name: The Poof Downstairs
@@ -1268,7 +1110,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-05-16'
     end_at: '2010-05-17'
-    gross_income: null
     notes: null
   MUST:
     name: MUST
@@ -1276,7 +1117,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-05-17'
     end_at: '2010-05-18'
-    gross_income: null
     notes: null
   ...Falling for You:
     name: ...Falling for You
@@ -1284,7 +1124,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-05-18'
     end_at: '2010-05-19'
-    gross_income: null
     notes: null
   Keepers:
     name: Keepers
@@ -1292,7 +1131,6 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2010-05-18'
     end_at: '2010-05-19'
-    gross_income: null
     notes: null
   The Human Computer:
     name: The Human Computer
@@ -1300,7 +1138,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-05-19'
     end_at: '2010-05-20'
-    gross_income: null
     notes: null
   Electric Hotel:
     name: Electric Hotel
@@ -1308,14 +1145,12 @@ Production:
     Layout: Harbourside 500
     start_at: '2010-05-19'
     end_at: '2010-05-22'
-    gross_income: null
     notes: null
   SS Arcadia:
     name: SS Arcadia
     Type: Play
     start_at: '2010-05-19'
     end_at: '2010-05-22'
-    gross_income: null
     notes: null
   Triptych:
     name: Triptych
@@ -1323,7 +1158,6 @@ Production:
     Layout: The Brewery 20
     start_at: '2010-05-19'
     end_at: '2010-05-22'
-    gross_income: null
     notes: null
   Who Knows Where:
     name: Who Knows Where
@@ -1331,7 +1165,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-05-20'
     end_at: '2010-05-22'
-    gross_income: null
     notes: null
   Stay!&Around the Wor:
     name: Stay!&Around the Wor
@@ -1339,7 +1172,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-05-21'
     end_at: '2010-05-22'
-    gross_income: null
     notes: null
   Cutting the Cord:
     name: Cutting the Cord
@@ -1347,7 +1179,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-05-21'
     end_at: '2010-05-22'
-    gross_income: null
     notes: null
   Everything Falls Apa:
     name: Everything Falls Apa
@@ -1355,7 +1186,6 @@ Production:
     Layout: Tobacco Factory 50
     start_at: '2010-05-21'
     end_at: '2010-05-22'
-    gross_income: null
     notes: null
   Far Away:
     name: Far Away
@@ -1363,7 +1193,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-05-24'
     end_at: '2010-09-06'
-    gross_income: null
     notes: null
   Certain Dark Things:
     name: Certain Dark Things
@@ -1371,7 +1200,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-05-28'
     end_at: '2010-05-29'
-    gross_income: null
     notes: null
   The Final Stage (Part 1):
     name: The Final Stage (Part 1)
@@ -1379,7 +1207,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-03-06'
     end_at: '2010-05-06'
-    gross_income: null
     notes: null
   Painted Lady-The Princess Caraboo Scandal:
     name: Painted Lady-The Princess Caraboo Scandal
@@ -1387,7 +1214,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-05-06'
     end_at: '2010-05-06'
-    gross_income: null
     notes: null
   random:
     name: random
@@ -1395,7 +1221,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-08-06'
     end_at: '2010-12-06'
-    gross_income: null
     notes: null
   The Final Stage (Part 2):
     name: The Final Stage (Part 2)
@@ -1403,7 +1228,6 @@ Production:
     Layout: Circomedia 100
     start_at: '2010-10-06'
     end_at: '2010-12-06'
-    gross_income: null
     notes: null
   The Crucible:
     name: The Crucible
@@ -1411,7 +1235,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-06-14'
     end_at: '2010-06-26'
-    gross_income: null
     notes: BOVTS
   Jane Eyre:
     name: Jane Eyre
@@ -1419,7 +1242,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-06-23'
     end_at: '2010-06-26'
-    gross_income: null
     notes: BOVTS
   Apples:
     name: Apples
@@ -1427,7 +1249,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-06-28'
     end_at: '2010-06-30'
-    gross_income: null
     notes: null
   Summer House:
     name: Summer House
@@ -1435,7 +1256,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-02-07'
     end_at: '2010-02-07'
-    gross_income: null
     notes: null
   Touch and Go:
     name: Touch and Go
@@ -1443,7 +1263,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-07-07'
     end_at: '2010-10-07'
-    gross_income: null
     notes: null
   The Mighty Beast:
     name: The Mighty Beast
@@ -1451,7 +1270,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-07-07'
     end_at: '2010-08-07'
-    gross_income: null
     notes: Ferment July 2010
   I Could Have Been Be:
     name: I Could Have Been Be
@@ -1459,7 +1277,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-09-07'
     end_at: '2010-09-07'
-    gross_income: null
     notes: null
   Othello:
     name: Othello
@@ -1467,7 +1284,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-09-07'
     end_at: '2010-09-07'
-    gross_income: null
     notes: null
   Gongoozler:
     name: Gongoozler
@@ -1475,7 +1291,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-10-07'
     end_at: '2010-10-07'
-    gross_income: null
     notes: null
   Come To Where I'm Fr:
     name: Come To Where I'm Fr
@@ -1483,7 +1298,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-10-07'
     end_at: '2010-10-07'
-    gross_income: null
     notes: null
   Discombobulated:
     name: Discombobulated
@@ -1491,7 +1305,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-07-14'
     end_at: '2010-07-15'
-    gross_income: null
     notes: null
   One Hundred Percent:
     name: One Hundred Percent
@@ -1499,7 +1312,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-07-14'
     end_at: '2010-07-14'
-    gross_income: null
     notes: null
   Betwixt and Between:
     name: Betwixt and Between
@@ -1507,7 +1319,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-07-15'
     end_at: '2010-07-15'
-    gross_income: null
     notes: null
   Growing Old With You:
     name: Growing Old With You
@@ -1515,7 +1326,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-07-15'
     end_at: '2010-07-15'
-    gross_income: null
     notes: null
   Sam Halmarack & The:
     name: Sam Halmarack & The
@@ -1523,7 +1333,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-07-16'
     end_at: '2010-07-17'
-    gross_income: null
     notes: null
   Nuclear Family:
     name: Nuclear Family
@@ -1531,7 +1340,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-07-16'
     end_at: '2010-07-16'
-    gross_income: null
     notes: null
   Book Ends:
     name: Book Ends
@@ -1539,7 +1347,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-07-16'
     end_at: '2010-07-16'
-    gross_income: null
     notes: null
   The Owl:
     name: The Owl
@@ -1547,7 +1354,6 @@ Production:
     Layout: Paintshop 50
     start_at: '2010-07-17'
     end_at: '2010-07-17'
-    gross_income: null
     notes: null
   Far Way Back:
     name: Far Way Back
@@ -1555,7 +1361,6 @@ Production:
     Layout: Basement 50
     start_at: '2010-07-17'
     end_at: '2010-07-17'
-    gross_income: null
     notes: null
   Select a Quest:
     name: Select a Quest
@@ -1563,7 +1368,6 @@ Production:
     Layout: Studio 150
     start_at: '2010-07-17'
     end_at: '2010-07-17'
-    gross_income: null
     notes: null
   Prima Doona:
     name: Prima Doona
@@ -1571,7 +1375,6 @@ Production:
     Layout: Studio 112
     start_at: '2010-07-20'
     end_at: '2010-07-23'
-    gross_income: null
     notes: null
   Pedestrian:
     name: Pedestrian
@@ -1579,7 +1382,6 @@ Production:
     Layout: Studio 110
     start_at: '2010-07-28'
     end_at: '2010-07-29'
-    gross_income: null
     notes: BOV/TB
   The Red Shoes:
     name: The Red Shoes
@@ -1587,7 +1389,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-09-14'
     end_at: '2010-09-25'
-    gross_income: null
     notes: null
   Swallows and Amazons:
     name: Swallows and Amazons
@@ -1595,7 +1396,6 @@ Production:
     Layout: Theatre 519
     start_at: '2010-01-12'
     end_at: '2010-01-15'
-    gross_income: null
     notes: BOV
   Inua Ellams' Untitled:
     name: Inua Ellams' Untitled
@@ -1603,7 +1403,6 @@ Production:
     Layout: Studio 130
     start_at: '2010-09-23'
     end_at: '2010-09-25'
-    gross_income: null
     notes: null
   The Author:
     name: The Author
@@ -1611,40 +1410,34 @@ Production:
     Layout: Studio 110
     start_at: '2010-09-28'
     end_at: '2010-02-10'
-    gross_income: null
     notes: null
   White Caps:
     name: White Caps
     Type: Dance
     start_at: '2010-06-10'
     end_at: '2010-09-10'
-    gross_income: null
     notes: BOV/TB
   Under Glass:
     name: Under Glass
     Type: Dance
     start_at: '2010-09-11'
     end_at: '2010-11-13'
-    gross_income: null
     notes: null
   Ivan and the Dogs:
     name: Ivan and the Dogs
     Type: Play
     start_at: '2010-11-16'
     end_at: '2010-11-20'
-    gross_income: null
     notes: null
   Jason and Medea:
     name: Jason and Medea
     Type: Play
     start_at: '2010-11-24'
     end_at: '2010-11-27'
-    gross_income: null
     notes: YC
   Boing! Who can sleep it's Christmas Eve:
     name: Boing! Who can sleep it's Christmas Eve
     Type: Family
     start_at: '2010-07-12'
     end_at: '2011-09-10'
-    gross_income: null
     notes: BOV

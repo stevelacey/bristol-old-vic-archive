@@ -22,7 +22,6 @@ Production:
     child_ticket_price: float
     student_ticket_price: float
     notes: string()
-    gross_income: float
   options:
     orderBy: name asc
   relations:
@@ -59,12 +58,6 @@ Production:
       refClass: ProductionStaff
       local: production_id
       foreign: role_id
-    Sponsors:
-      class: Sponsor
-      refClass: ProductionSponsor
-      local: production_id
-      foreign: sponsor_id
-      foreignAlias: Productions
 
 Type:
   columns:

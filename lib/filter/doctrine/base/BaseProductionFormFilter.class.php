@@ -29,7 +29,6 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'child_ticket_price'     => new sfWidgetFormFilterInput(),
       'student_ticket_price'   => new sfWidgetFormFilterInput(),
       'notes'                  => new sfWidgetFormFilterInput(),
-      'gross_income'           => new sfWidgetFormFilterInput(),
       'created_at'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'staff_list'             => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Staff')),
@@ -54,7 +53,6 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'child_ticket_price'     => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'student_ticket_price'   => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'notes'                  => new sfValidatorPass(array('required' => false)),
-      'gross_income'           => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'created_at'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'staff_list'             => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Staff', 'required' => false)),
@@ -120,8 +118,8 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
     }
 
     $query
-      ->leftJoin($query->getRootAlias().'.ProductionSponsor ProductionSponsor')
-      ->andWhereIn('ProductionSponsor.sponsor_id', $values)
+      ->leftJoin($query->getRootAlias().'.Donation Donation')
+      ->andWhereIn('Donation.sponsor_id', $values)
     ;
   }
 
@@ -150,7 +148,6 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'child_ticket_price'     => 'Number',
       'student_ticket_price'   => 'Number',
       'notes'                  => 'Text',
-      'gross_income'           => 'Number',
       'created_at'             => 'Date',
       'updated_at'             => 'Date',
       'staff_list'             => 'ManyKey',
