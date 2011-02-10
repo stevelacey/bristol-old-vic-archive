@@ -16,27 +16,15 @@ class ProductionCastCollectionForm extends sfForm {
     $characters = $production->getCharacters();
 
     foreach($characters as $character) {
-      $characterForm = new CharacterForm($character);
-      $this->addForm($character->getName(), $character);
+      $this->embedForm($character->getName(), new CharacterForm($character));
     }
 
     for($i=$characters->count()+1; $i<=$characters->count()+10; $i++) {
       $character = new Character();
       $character->setProduction($production);;
-      $this->addForm('Performer '.$i, $character);
+      $this->embedForm('Performer '.$i, new CharacterForm($character));
     }
     
     $this->mergePostValidator(new ProductionCastValidatorSchema());
-  }
-
-  private function addForm($formName, Character $character) {
-    $characterForm = new CharacterForm($character);
-
-    $characterForm->widgetSchema['performer_id']->setOption('add_empty', true);
-
-    $characterForm->validatorSchema['name']->setOption('required', false);
-    $characterForm->validatorSchema['performer_id']->setOption('required', false);
-
-    $this->embedForm($formName, $characterForm);
   }
 }

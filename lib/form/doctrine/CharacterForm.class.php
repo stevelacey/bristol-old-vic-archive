@@ -10,11 +10,10 @@
  */
 class CharacterForm extends BaseCharacterForm {
   public function configure() {
+    $this->widgetSchema['performer_id']->setOption('add_empty', true);
 
-    $this->widgetSchema['performer_id'] = new sfWidgetFormDoctrineChoice(array(
-      'model' => 'Performer',
-      'add_empty' => true
-    ));
+    $this->validatorSchema['name']->setOption('required', false);
+    $this->validatorSchema['performer_id']->setOption('required', false);
 
     unset(
       $this['production_id'], $this['image_id'],
