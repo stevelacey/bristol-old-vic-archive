@@ -10,6 +10,7 @@
  */
 class CharacterForm extends BaseCharacterForm {
   public function configure() {
+    $this->widgetSchema['name']->setLabel('Character');
     $this->widgetSchema['performer_id']->setOption('add_empty', true);
 
     $this->validatorSchema['name']->setOption('required', false);
