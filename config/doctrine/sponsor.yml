@@ -1,21 +1,3 @@
-ProductionSponsor:
-  columns:
-    production_id:
-      type: integer(20)
-      primary: true
-    sponsor_id:
-      type: integer(20)
-      primary: true
-    donation: float
-    description: string
-  relations:
-    Production:
-      local: production_id
-      foreign: id
-    Sponsor:
-      local: sponsor_id
-      foreign: id
-
 Sponsor:
   actAs:
     Timestampable: ~
@@ -29,7 +11,27 @@ Sponsor:
   relations:
     Productions:
       class: Production
-      refClass: ProductionSponsor
+      refClass: Donation
       local: sponsor_id
       foreign: production_id
       foreignAlias: Sponsors
+
+Donation:
+  columns:
+    production_id:
+      type: integer(20)
+      notnull: true
+    sponsor_id:
+      type: integer(20)
+      notnull: true
+    donation: float
+    description: string
+  relations:
+    Production:
+      local: production_id
+      foreign: id
+      foreignAlias: Donations
+    Sponsor:
+      local: sponsor_id
+      foreign: id
+      foreignAlias: Donations

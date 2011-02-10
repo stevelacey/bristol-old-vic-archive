@@ -59,12 +59,6 @@ Production:
       refClass: ProductionStaff
       local: production_id
       foreign: role_id
-    Sponsors:
-      class: Sponsor
-      refClass: ProductionSponsor
-      local: production_id
-      foreign: sponsor_id
-      foreignAlias: Productions
 
 Type:
   columns:

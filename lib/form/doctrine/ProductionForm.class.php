@@ -15,7 +15,7 @@ class ProductionForm extends BaseProductionForm {
 
     $this->embedForm('staff', new ProductionStaffCollectionForm(null, array('production' => $this->getObject())));
     $this->embedForm('cast', new ProductionCastCollectionForm(null, array('production' => $this->getObject())));
-//    $this->embedForm('sponsors', new ProductionSponsorCollectionForm(null, array('production' => $this->getObject())));
+    $this->embedForm('donations', new ProductionDonationCollectionForm(null, array('production' => $this->getObject())));
 
     unset(
       $this['image_id'],
@@ -47,6 +47,14 @@ class ProductionForm extends BaseProductionForm {
       foreach($this->embeddedForms['cast'] as $name => $form) {
         if(!isset($cast[$name])) {
           unset($forms['cast'][$name]);
+        }
+      }
+
+      $donations = $this->getValue('donations');
+
+      foreach($this->embeddedForms['donations'] as $name => $form) {
+        if(!isset($donations[$name])) {
+          unset($forms['donations'][$name]);
         }
       }
     }

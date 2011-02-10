@@ -50,8 +50,8 @@ abstract class BaseSponsorFormFilter extends BaseFormFilterDoctrine
     }
 
     $query
-      ->leftJoin($query->getRootAlias().'.ProductionSponsor ProductionSponsor')
-      ->andWhereIn('ProductionSponsor.production_id', $values)
+      ->leftJoin($query->getRootAlias().'.Donation Donation')
+      ->andWhereIn('Donation.production_id', $values)
     ;
   }
 

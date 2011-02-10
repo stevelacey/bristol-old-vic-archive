@@ -8,16 +8,16 @@
  * @property string $name
  * @property string $description
  * @property Doctrine_Collection $Productions
- * @property Doctrine_Collection $ProductionSponsor
+ * @property Doctrine_Collection $Donations
  * 
- * @method string              getName()              Returns the current record's "name" value
- * @method string              getDescription()       Returns the current record's "description" value
- * @method Doctrine_Collection getProductions()       Returns the current record's "Productions" collection
- * @method Doctrine_Collection getProductionSponsor() Returns the current record's "ProductionSponsor" collection
- * @method Sponsor             setName()              Sets the current record's "name" value
- * @method Sponsor             setDescription()       Sets the current record's "description" value
- * @method Sponsor             setProductions()       Sets the current record's "Productions" collection
- * @method Sponsor             setProductionSponsor() Sets the current record's "ProductionSponsor" collection
+ * @method string              getName()        Returns the current record's "name" value
+ * @method string              getDescription() Returns the current record's "description" value
+ * @method Doctrine_Collection getProductions() Returns the current record's "Productions" collection
+ * @method Doctrine_Collection getDonations()   Returns the current record's "Donations" collection
+ * @method Sponsor             setName()        Sets the current record's "name" value
+ * @method Sponsor             setDescription() Sets the current record's "description" value
+ * @method Sponsor             setProductions() Sets the current record's "Productions" collection
+ * @method Sponsor             setDonations()   Sets the current record's "Donations" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -45,11 +45,11 @@ abstract class BaseSponsor extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('Production as Productions', array(
-             'refClass' => 'ProductionSponsor',
+             'refClass' => 'Donation',
              'local' => 'sponsor_id',
              'foreign' => 'production_id'));
 
-        $this->hasMany('ProductionSponsor', array(
+        $this->hasMany('Donation as Donations', array(
              'local' => 'id',
              'foreign' => 'sponsor_id'));
 
