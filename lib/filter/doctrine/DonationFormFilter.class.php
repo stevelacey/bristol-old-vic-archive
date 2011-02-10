@@ -1,14 +1,14 @@
 <?php
 
 /**
- * ProductionSponsor form.
+ * Donation filter form.
  *
  * @package    bristol-old-vic-archive
- * @subpackage form
+ * @subpackage filter
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class ProductionSponsorForm extends BaseProductionSponsorForm
+class DonationFormFilter extends BaseDonationFormFilter
 {
   public function configure()
   {

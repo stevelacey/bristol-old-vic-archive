@@ -15,11 +15,15 @@ all:
           Company:
             name: Companies
             url: company
-            image: support
+            image: impressions
           Collaboration:
             name: Collaboration
             url: collaboration
             image: support
+          Sponsor:
+            name: Sponsors
+            url: sponsor
+            image: generic
           Genre:
             name: Genres
             url: genre
