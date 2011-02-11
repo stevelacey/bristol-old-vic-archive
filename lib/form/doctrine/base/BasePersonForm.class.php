@@ -17,6 +17,7 @@ abstract class BasePersonForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
       'name'       => new sfWidgetFormInputText(),
+      'image_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
       'email'      => new sfWidgetFormInputText(),
       'telephone'  => new sfWidgetFormInputText(),
       'created_at' => new sfWidgetFormDateTime(),
@@ -26,6 +27,7 @@ abstract class BasePersonForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'       => new sfValidatorString(array('max_length' => 255)),
+      'image_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'required' => false)),
       'email'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'telephone'  => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'created_at' => new sfValidatorDateTime(),

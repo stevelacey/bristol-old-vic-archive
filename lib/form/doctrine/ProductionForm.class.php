@@ -10,15 +10,19 @@
  */
 class ProductionForm extends BaseProductionForm {
   public function configure() {
+    /* Labels */
     $this->widgetSchema['start_at'] = new sfWidgetFormDateUK(array('label' => 'Performances start'));
     $this->widgetSchema['end_at'] = new sfWidgetFormDateUK(array('label' => 'Performances end'));
 
+    /* Collection Forms */
+    $this->embedForm('images', new ProductionImageCollectionForm(null, array('production' => $this->getObject())));
     $this->embedForm('staff', new ProductionStaffCollectionForm(null, array('production' => $this->getObject())));
     $this->embedForm('cast', new ProductionCastCollectionForm(null, array('production' => $this->getObject())));
     $this->embedForm('donations', new ProductionDonationCollectionForm(null, array('production' => $this->getObject())));
 
+    /* Remove Fields */
     unset(
-      $this['image_id'],
+      $this['shot_image_id'], $this['set_design_id'],
       $this['staff_list'], $this['sponsors_list'], $this['roles_list'],
       $this['created_at'], $this['updated_at']
     );
@@ -42,19 +46,13 @@ class ProductionForm extends BaseProductionForm {
         }
       }
 
-      $cast = $this->getValue('cast');
+      foreach(array('images', 'cast', 'donations') as $formName) {
+        $value = $this->getValue($formName);
 
-      foreach($this->embeddedForms['cast'] as $name => $form) {
-        if(!isset($cast[$name])) {
-          unset($forms['cast'][$name]);
-        }
-      }
-
-      $donations = $this->getValue('donations');
-
-      foreach($this->embeddedForms['donations'] as $name => $form) {
-        if(!isset($donations[$name])) {
-          unset($forms['donations'][$name]);
+        foreach($this->embeddedForms[$formName] as $name => $form) {
+          if(!isset($value[$name])) {
+            unset($forms[$formName][$name]);
+          }
         }
       }
     }

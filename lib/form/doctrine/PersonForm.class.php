@@ -10,6 +10,24 @@
  */
 class PersonForm extends BasePersonForm {
   public function configure() {
-    unset($this['created_at'], $this['updated_at']);
+    $this->embedRelation('Image');
+    $this->mergePostValidator(new ImageValidatorSchema());
+
+    unset($this['image_id'], $this['created_at'], $this['updated_at']);
+  }
+
+  public function saveEmbeddedForms($con = null, $forms = null) {
+    if (null === $forms) {
+      $forms = $this->embeddedForms;
+      $value = $this->getValue('Image');
+
+      foreach($this->embeddedForms['Image'] as $name => $form) {
+        if(!isset($value[$name])) {
+          unset($forms['Image'][$name]);
+        }
+      }
+    }
+
+    return parent::saveEmbeddedForms($con, $forms);
   }
 }

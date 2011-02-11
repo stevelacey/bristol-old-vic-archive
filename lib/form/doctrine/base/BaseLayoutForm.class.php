@@ -18,6 +18,7 @@ abstract class BaseLayoutForm extends BaseFormDoctrine
       'id'       => new sfWidgetFormInputHidden(),
       'name'     => new sfWidgetFormInputText(),
       'venue_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Venue'), 'add_empty' => false)),
+      'image_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
       'capacity' => new sfWidgetFormInputText(),
     ));
 
@@ -25,6 +26,7 @@ abstract class BaseLayoutForm extends BaseFormDoctrine
       'id'       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'     => new sfValidatorString(array('max_length' => 255)),
       'venue_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Venue'))),
+      'image_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'required' => false)),
       'capacity' => new sfValidatorInteger(array('required' => false)),
     ));
 

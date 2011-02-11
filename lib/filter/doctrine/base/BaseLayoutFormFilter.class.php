@@ -15,12 +15,14 @@ abstract class BaseLayoutFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'name'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'venue_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Venue'), 'add_empty' => true)),
+      'image_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
       'capacity' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'name'     => new sfValidatorPass(array('required' => false)),
       'venue_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Venue'), 'column' => 'id')),
+      'image_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Image'), 'column' => 'id')),
       'capacity' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
@@ -44,6 +46,7 @@ abstract class BaseLayoutFormFilter extends BaseFormFilterDoctrine
       'id'       => 'Number',
       'name'     => 'Text',
       'venue_id' => 'ForeignKey',
+      'image_id' => 'ForeignKey',
       'capacity' => 'Number',
     );
   }

@@ -11,7 +11,8 @@
  * @property integer $layout_id
  * @property integer $company_id
  * @property integer $collaboration_id
- * @property integer $image_id
+ * @property integer $shot_image_id
+ * @property integer $set_design_image_id
  * @property string $description
  * @property timestamp $start_at
  * @property timestamp $end_at
@@ -26,7 +27,8 @@
  * @property Layout $Layout
  * @property Company $Company
  * @property Collaboration $Collaboration
- * @property Image $Image
+ * @property Image $Shot
+ * @property Image $SetDesign
  * @property Doctrine_Collection $Staff
  * @property Doctrine_Collection $Roles
  * @property Doctrine_Collection $Characters
@@ -40,7 +42,8 @@
  * @method integer             getLayoutId()               Returns the current record's "layout_id" value
  * @method integer             getCompanyId()              Returns the current record's "company_id" value
  * @method integer             getCollaborationId()        Returns the current record's "collaboration_id" value
- * @method integer             getImageId()                Returns the current record's "image_id" value
+ * @method integer             getShotImageId()            Returns the current record's "shot_image_id" value
+ * @method integer             getSetDesignImageId()       Returns the current record's "set_design_image_id" value
  * @method string              getDescription()            Returns the current record's "description" value
  * @method timestamp           getStartAt()                Returns the current record's "start_at" value
  * @method timestamp           getEndAt()                  Returns the current record's "end_at" value
@@ -55,7 +58,8 @@
  * @method Layout              getLayout()                 Returns the current record's "Layout" value
  * @method Company             getCompany()                Returns the current record's "Company" value
  * @method Collaboration       getCollaboration()          Returns the current record's "Collaboration" value
- * @method Image               getImage()                  Returns the current record's "Image" value
+ * @method Image               getShot()                   Returns the current record's "Shot" value
+ * @method Image               getSetDesign()              Returns the current record's "SetDesign" value
  * @method Doctrine_Collection getStaff()                  Returns the current record's "Staff" collection
  * @method Doctrine_Collection getRoles()                  Returns the current record's "Roles" collection
  * @method Doctrine_Collection getCharacters()             Returns the current record's "Characters" collection
@@ -68,7 +72,8 @@
  * @method Production          setLayoutId()               Sets the current record's "layout_id" value
  * @method Production          setCompanyId()              Sets the current record's "company_id" value
  * @method Production          setCollaborationId()        Sets the current record's "collaboration_id" value
- * @method Production          setImageId()                Sets the current record's "image_id" value
+ * @method Production          setShotImageId()            Sets the current record's "shot_image_id" value
+ * @method Production          setSetDesignImageId()       Sets the current record's "set_design_image_id" value
  * @method Production          setDescription()            Sets the current record's "description" value
  * @method Production          setStartAt()                Sets the current record's "start_at" value
  * @method Production          setEndAt()                  Sets the current record's "end_at" value
@@ -83,7 +88,8 @@
  * @method Production          setLayout()                 Sets the current record's "Layout" value
  * @method Production          setCompany()                Sets the current record's "Company" value
  * @method Production          setCollaboration()          Sets the current record's "Collaboration" value
- * @method Production          setImage()                  Sets the current record's "Image" value
+ * @method Production          setShot()                   Sets the current record's "Shot" value
+ * @method Production          setSetDesign()              Sets the current record's "SetDesign" value
  * @method Production          setStaff()                  Sets the current record's "Staff" collection
  * @method Production          setRoles()                  Sets the current record's "Roles" collection
  * @method Production          setCharacters()             Sets the current record's "Characters" collection
@@ -126,7 +132,11 @@ abstract class BaseProduction extends sfDoctrineRecord
              'type' => 'integer',
              'length' => 20,
              ));
-        $this->hasColumn('image_id', 'integer', 20, array(
+        $this->hasColumn('shot_image_id', 'integer', 20, array(
+             'type' => 'integer',
+             'length' => 20,
+             ));
+        $this->hasColumn('set_design_image_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
              ));
@@ -188,8 +198,12 @@ abstract class BaseProduction extends sfDoctrineRecord
              'local' => 'collaboration_id',
              'foreign' => 'id'));
 
-        $this->hasOne('Image', array(
-             'local' => 'image_id',
+        $this->hasOne('Image as Shot', array(
+             'local' => 'shot_image_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Image as SetDesign', array(
+             'local' => 'set_design_image_id',
              'foreign' => 'id'));
 
         $this->hasMany('Staff', array(

@@ -10,7 +10,8 @@ Production:
     layout_id: integer(20)
     company_id: integer(20)
     collaboration_id: integer(20)
-    image_id: integer(20)
+    shot_image_id: integer(20)
+    set_design_image_id: integer(20)
     description: string()
     start_at: timestamp
     end_at: timestamp
@@ -45,10 +46,14 @@ Production:
       local: collaboration_id
       foreign: id
       foreignAlias: Productions
-    Image:
-      local: image_id
+    Shot:
+      class: Image
+      local: shot_image_id
       foreign: id
-      foreignAlias: Productions
+    SetDesign:
+      class: Image
+      local: set_design_image_id
+      foreign: id
     Staff:
       refClass: ProductionStaff
       local: production_id

@@ -22,6 +22,7 @@ Layout:
     venue_id:
       type: integer(20)
       notnull: true
+    image_id: integer(20)
     capacity:
       type: integer(20)
   options:
@@ -31,3 +32,6 @@ Layout:
       local: venue_id
       foreign: id
       foreignAlias: Layouts
+    Image:
+      local: image_id
+      foreign: id
