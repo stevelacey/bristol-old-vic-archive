@@ -6,6 +6,20 @@ homepage:
   url:   /
   param: { module: default, action: index }
 
+image:
+  class: sfDoctrineRoute
+  url: /images/uploads/:dimensions/:slug.:sf_format
+  options:
+    model: Image
+    type: object
+    generate_shortest_url: false
+  param:
+    module: image
+    action: show
+    sf_format: png
+  requirements:
+    dimensions: \d+x\d+
+
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

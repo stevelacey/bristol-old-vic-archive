@@ -9,7 +9,6 @@ Image:
     title:
       type: string(255)
       notnull: true
-    caption: string(255)
     path:
       type: string(255)
       notnull: true

@@ -10,6 +10,30 @@
  */
 class ImageForm extends BaseImageForm {
   public function configure() {
-    unset($this['created_at'], $this['updated_at']);
+    sfProjectConfiguration::getActive()->loadHelpers('Partial');
+
+    $this->validatorSchema['title']->setOption('required', false);
+
+    $this->setWidget('path', new sfWidgetFormInputFileEditable(
+      array(
+        'file_src'    => '/uploads/images/'.$this->getObject()->getPath(),
+        'edit_mode'   => !$this->isNew(),
+        'is_image'    => true,
+        'template'    => get_partial('image/form_preview', array('image' => $this->getObject()))
+	    )
+    ));
+
+    $this->setValidator('path', new sfValidatorFile(
+      array(
+        'mime_types' => 'web_images',
+        'path' => sfConfig::get('sf_upload_dir').'/images',
+        'required' => false,
+      )
+    ));
+
+    unset(
+      $this['slug'],
+      $this['created_at'], $this['updated_at']
+    );
   }
 }
