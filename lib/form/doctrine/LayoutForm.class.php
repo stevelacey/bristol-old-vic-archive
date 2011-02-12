@@ -18,6 +18,8 @@ class LayoutForm extends BaseLayoutForm {
 
       $this->validatorSchema['delete'] = new sfValidatorPass();
     }
+
+    $this->getObject()->setUpdatedAt(date('c')); // Hack to force new images on existing object to be bound.
     
     unset($this['image_id'], $this['venue_id']);
   }

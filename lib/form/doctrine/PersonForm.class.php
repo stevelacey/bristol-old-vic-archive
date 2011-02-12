@@ -13,6 +13,8 @@ class PersonForm extends BasePersonForm {
     $this->embedRelation('Image');
     $this->mergePostValidator(new ImageValidatorSchema());
 
+    $this->getObject()->setUpdatedAt(date('c')); // Hack to force new images on existing object to be bound.
+
     unset($this['image_id'], $this['created_at'], $this['updated_at']);
   }
 

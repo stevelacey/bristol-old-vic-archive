@@ -20,6 +20,8 @@ class ProductionForm extends BaseProductionForm {
     $this->embedForm('cast', new ProductionCastCollectionForm(null, array('production' => $this->getObject())));
     $this->embedForm('donations', new ProductionDonationCollectionForm(null, array('production' => $this->getObject())));
 
+    $this->getObject()->setUpdatedAt(date('c')); // Hack to force new images on existing object to be bound.
+
     /* Remove Fields */
     unset(
       $this['shot_image_id'], $this['set_design_id'],
