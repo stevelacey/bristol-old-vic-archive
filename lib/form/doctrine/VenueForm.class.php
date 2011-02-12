@@ -24,6 +24,8 @@ class VenueForm extends BaseVenueForm {
     $newLayout->setVenue($this->getObject());
     $newLayoutForm = new LayoutForm($newLayout);
     $this->embedForm('New Layout', $newLayoutForm);
+
+    unset($this['created_at'], $this['updated_at']);
   }
 
   /**

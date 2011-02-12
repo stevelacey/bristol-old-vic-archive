@@ -21,6 +21,9 @@ class LayoutForm extends BaseLayoutForm {
 
     $this->getObject()->setUpdatedAt(date('c')); // Hack to force new images on existing object to be bound.
     
-    unset($this['image_id'], $this['venue_id']);
+    unset(
+      $this['image_id'], $this['venue_id'],
+      $this['created_at'], $this['updated_at']
+    );
   }
 }
