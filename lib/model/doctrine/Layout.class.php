@@ -11,7 +11,7 @@
  * @version    SVN: $Id$
  */
 class Layout extends BaseLayout {
-  public function __toString() {
+  public function getVenueLayoutString() {
     return $this->getVenue().': '.$this->getName().' ('.$this->getCapacity().')';
   }
 }

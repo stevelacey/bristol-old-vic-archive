@@ -10,6 +10,14 @@
  */
 class ProductionForm extends BaseProductionForm {
   public function configure() {
+    /* Widgets */
+    $this->widgetSchema['layout_id'] = new sfWidgetFormDoctrineChoice(array(
+      'model' => 'Layout',
+      'method' => 'getVenueLayoutString',
+      'add_empty' => true,
+      'table_method' => 'findAllOrderedByVenue'
+    ));
+
     /* Labels */
     $this->widgetSchema['start_at'] = new sfWidgetFormDateUK(array('label' => 'Performances start'));
     $this->widgetSchema['end_at'] = new sfWidgetFormDateUK(array('label' => 'Performances end'));
