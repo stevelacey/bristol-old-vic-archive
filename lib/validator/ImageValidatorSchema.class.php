@@ -15,26 +15,26 @@ class ImageValidatorSchema extends sfValidatorSchema {
         continue;
       }
       
-      $errorSchemaLocal = new sfValidatorErrorSchema($this);
-      
-      // path is filled but no title
-      if ($this->getOption('require_title') && $value['path'] && !$value['title']) {
-        $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'title');
-      }
-
-      // title is filled but no path
-      if (!$value['id'] && $value['title'] && !$value['path']) {
-        $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'path');
-      }
-
       // no title and no path, remove the empty values
-      if (!$value['path'] && !$value['title']) {
+      if (($this->getOption('require_title') && !$value['title'] && !$value['path']) || (!$this->getOption('require_title') && !$value['path'])) {
         unset($values[$key]);
-      }
+      } else {
+        $errorSchemaLocal = new sfValidatorErrorSchema($this);
 
-      // some error for this embedded-form
-      if (count($errorSchemaLocal)) {
-        $errorSchema->addError($errorSchemaLocal, (string) $key);
+        // path is filled but no title
+        if ($value['path'] && $this->getOption('require_title') && !$value['title']) {
+          $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'title');
+        }
+
+        // the image is new and there is no path
+        if (!$value['id'] && !$value['path']) {
+          $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'path');
+        }
+
+        // some error for this embedded-form
+        if (count($errorSchemaLocal)) {
+          $errorSchema->addError($errorSchemaLocal, (string) $key);
+        }
       }
     }
 

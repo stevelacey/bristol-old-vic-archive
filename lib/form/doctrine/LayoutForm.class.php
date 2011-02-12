@@ -10,14 +10,15 @@
  */
 class LayoutForm extends BaseLayoutForm {
   public function configure() {
-    $this->embedRelation('Image');
-    $this->mergePostValidator(new ImageValidatorSchema());
+    $this->validatorSchema['name']->setOption('required', false);
 
-    if(!$this->isNew() && !$this->getObject()->getProductions()->count()) {
-      $this->widgetSchema['delete'] = new sfWidgetFormInputCheckbox();
+    $form = new ImageForm($this->getObject()->getImage());
+    $form->getWidgetSchema()->getFormFormatter()->setRowFormat('<div>%field%%help%%error%%hidden_fields%</div>');
+    unset($form['title']);
 
-      $this->validatorSchema['delete'] = new sfValidatorPass();
-    }
+    $this->embedForm('image', $form);
+
+    $this->mergePostValidator(new ImageValidatorSchema(null, array('require_title' => false)));
 
     $this->getObject()->setUpdatedAt(date('c')); // Hack to force new images on existing object to be bound.
     
@@ -25,5 +26,20 @@ class LayoutForm extends BaseLayoutForm {
       $this['image_id'], $this['venue_id'],
       $this['created_at'], $this['updated_at']
     );
+  }
+
+  public function saveEmbeddedForms($con = null, $forms = null) {
+    if (null === $forms) {
+      $forms = $this->embeddedForms;
+      $value = $this->getValue('image');
+
+      foreach($this->embeddedForms['image'] as $name => $form) {
+        if(!isset($value[$name])) {
+          unset($forms['image']);
+        }
+      }
+    }
+
+    return parent::saveEmbeddedForms($con, $forms);
   }
 }

@@ -9,88 +9,44 @@
  * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 class VenueForm extends BaseVenueForm {
-  /**
-   * Layouts scheduled for deletion
-   * @var array
-   */
-  protected $scheduledForDeletion = array();
-
   public function configure() {
-    // Existing layout forms
-    $this->embedRelation('Layouts');
-
-    // Layout creation form
-    $newLayout = new Layout();
-    $newLayout->setVenue($this->getObject());
-    $newLayoutForm = new LayoutForm($newLayout);
-    $this->embedForm('New Layout', $newLayoutForm);
-
+    $this->embedForm('layouts', new VenueLayoutCollectionForm(null, array('venue' => $this->getObject())));
     unset($this['created_at'], $this['updated_at']);
   }
 
-  /**
-   * Here we just drop the layout embedded creation form if no value has been
-   * provided for it (it somewhat simulates a non-required embedded form)
-   *
-   * @see sfForm::doBind()
-   */
-  protected function doBind(array $values) {
-    if ('' === trim($values['New Layout']['name'])) {
-      unset($values['New Layout'], $this['New Layout']);
-    }
+  public function saveEmbeddedForms($con = null, $forms = null) {
+    if (null === $forms) {
+      $forms = $this->embeddedForms;
+      $layouts = $this->getValue('layouts');
 
-    if (isset($values['Layouts'])) {
-      foreach ($values['Layouts'] as $i => $layoutValues) {
-        if (isset($layoutValues['delete']) && $layoutValues['id']) {
-          $this->scheduledForDeletion[$i] = $layoutValues['id'];
+      foreach($this->embeddedForms['layouts'] as $name => $form) {
+        if(!isset($layouts[$name])) {
+          unset($forms['layouts'][$name]);
         }
       }
     }
 
-    parent::doBind($values);
+    return parent::saveEmbeddedForms($con, $forms);
   }
 
-  /**
-   * Updates object with provided values, dealing with eventual relation deletion
-   *
-   * @see sfFormDoctrine::doUpdateObject()
-   */
-  protected function doUpdateObject($values) {
-    if (count($this->scheduledForDeletion)) {
-      foreach ($this->scheduledForDeletion as $index => $id) {
-        unset($values['Layouts'][$index]);
-        unset($this->object['Layouts'][$index]);
-        Doctrine::getTable('Layout')->findOneById($id)->delete();
-      }
-    }
-
-    $this->getObject()->fromArray($values);
-  }
-
-  /**
-   * Saves embedded form objects.
-   *
-   * @param mixed $con   An optional connection object
-   * @param array $forms An array of forms
-   */
-  public function saveEmbeddedForms($con = null, $forms = null) {
+  protected function doSave($con = null) {
     if (null === $con) {
       $con = $this->getConnection();
     }
 
-    if (null === $forms) {
-      $forms = $this->embeddedForms;
-    }
+    $this->updateObject();
 
-    foreach ($forms as $form) {
-      if ($form instanceof sfFormObject) {
-        if (!in_array($form->getObject()->getId(), $this->scheduledForDeletion)) {
-          $form->saveEmbeddedForms($con);
-          $form->getObject()->save($con);
-        }
-      } else {
-        $this->saveEmbeddedForms($con, $form->getEmbeddedForms());
+    foreach($this->getObject()->getLayouts() as $layout) {
+      $image = $layout->getImage();
+
+      if($image instanceOf Image && $image->getPath()) {
+        $image->setTitle($layout->getName());
       }
     }
+
+    $this->getObject()->save($con);
+
+    // embedded forms
+    $this->saveEmbeddedForms($con);
   }
 }

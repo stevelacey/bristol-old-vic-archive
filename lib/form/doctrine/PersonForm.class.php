@@ -10,17 +10,11 @@
  */
 class PersonForm extends BasePersonForm {
   public function configure() {
-    $image = $this->getObject()->getImage();
-
-    if(!$image instanceOf Image) {
-      $image = new Image();
-    }
-
-    $form = new ImageForm($image);
+    $form = new ImageForm($this->getObject()->getImage());
     $form->getWidgetSchema()->getFormFormatter()->setRowFormat('<div>%field%%help%%error%%hidden_fields%</div>');
     unset($form['title']);
 
-    $this->embedForm('Image', $form);
+    $this->embedForm('image', $form);
 
     $this->mergePostValidator(new ImageValidatorSchema(null, array('require_title' => false)));
 
@@ -32,11 +26,11 @@ class PersonForm extends BasePersonForm {
   public function saveEmbeddedForms($con = null, $forms = null) {
     if (null === $forms) {
       $forms = $this->embeddedForms;
-      $value = $this->getValue('Image');
+      $value = $this->getValue('image');
 
-      foreach($this->embeddedForms['Image'] as $name => $form) {
+      foreach($this->embeddedForms['image'] as $name => $form) {
         if(!isset($value[$name])) {
-          unset($forms['Image'][$name]);
+          unset($forms['image']);
         }
       }
     }
@@ -51,13 +45,13 @@ class PersonForm extends BasePersonForm {
 
     $this->updateObject();
 
-    $this->getObject()->save($con);
-
     $image = $this->getObject()->getImage();
 
-    if($image instanceOf Image) {
+    if($image instanceOf Image && $image->getPath()) {
       $image->setTitle($this->getObject()->getName());
     }
+
+    $this->getObject()->save($con);
 
     // embedded forms
     $this->saveEmbeddedForms($con);
