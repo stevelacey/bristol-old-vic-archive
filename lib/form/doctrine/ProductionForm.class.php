@@ -24,7 +24,7 @@ class ProductionForm extends BaseProductionForm {
 
     /* Remove Fields */
     unset(
-      $this['shot_image_id'], $this['set_design_id'],
+      $this['shot_image_id'], $this['set_design_image_id'],
       $this['staff_list'], $this['sponsors_list'], $this['roles_list'],
       $this['created_at'], $this['updated_at']
     );
