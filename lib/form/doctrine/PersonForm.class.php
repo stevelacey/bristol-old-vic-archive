@@ -19,8 +19,11 @@ class PersonForm extends BasePersonForm {
 
     $form = new ImageForm($image);
     unset($form['title']);
+    $form->getWidgetSchema()->getFormFormatter()->setRowFormat('<div>%field%%help%%error%%hidden_fields%</div>');
 
     $this->embedForm('Image', $form);
+
+
     $this->mergePostValidator(new ImageValidatorSchema(null, array('require_title' => false)));
 
     $this->getObject()->setUpdatedAt(date('c')); // Hack to force new images on existing object to be bound.
