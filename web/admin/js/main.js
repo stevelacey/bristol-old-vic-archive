@@ -3,7 +3,7 @@ $(function() {
 });
 
 function fancybox() {
-  $("a[href $= '.jpg'], a[href $= '.jpeg'], a[href $= '.png'], a[href $= '.gif']").fancybox({
+  $("a[href *= '.jpg'], a[href *= '.jpeg'], a[href *= '.png'], a[href *= '.gif']").fancybox({
     'zoomOpacity': true,
     'overlayShow': false,
     'zoomSpeedIn': 500,

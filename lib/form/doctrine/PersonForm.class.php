@@ -10,7 +10,6 @@
  */
 class PersonForm extends BasePersonForm {
   public function configure() {
-
     $image = $this->getObject()->getImage();
 
     if(!$image instanceOf Image) {
@@ -18,11 +17,10 @@ class PersonForm extends BasePersonForm {
     }
 
     $form = new ImageForm($image);
-    unset($form['title']);
     $form->getWidgetSchema()->getFormFormatter()->setRowFormat('<div>%field%%help%%error%%hidden_fields%</div>');
+    unset($form['title']);
 
     $this->embedForm('Image', $form);
-
 
     $this->mergePostValidator(new ImageValidatorSchema(null, array('require_title' => false)));
 
