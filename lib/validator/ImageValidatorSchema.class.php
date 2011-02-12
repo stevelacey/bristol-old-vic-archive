@@ -2,6 +2,7 @@
 
 class ImageValidatorSchema extends sfValidatorSchema {
   protected function configure($options = array(), $messages = array()) {
+    $this->addOption('require_title', true);
     $this->addMessage('title', 'The title is required.');
     $this->addMessage('path', 'The path is required.');
   }
@@ -17,7 +18,7 @@ class ImageValidatorSchema extends sfValidatorSchema {
       $errorSchemaLocal = new sfValidatorErrorSchema($this);
       
       // path is filled but no title
-      if ($value['path'] && !$value['title']) {
+      if ($this->getOption('require_title') && $value['path'] && !$value['title']) {
         $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'title');
       }
 

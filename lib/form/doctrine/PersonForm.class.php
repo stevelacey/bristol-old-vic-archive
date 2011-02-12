@@ -10,8 +10,18 @@
  */
 class PersonForm extends BasePersonForm {
   public function configure() {
-    $this->embedRelation('Image');
-    $this->mergePostValidator(new ImageValidatorSchema());
+
+    $image = $this->getObject()->getImage();
+
+    if(!$image instanceOf Image) {
+      $image = new Image();
+    }
+
+    $form = new ImageForm($image);
+    unset($form['title']);
+
+    $this->embedForm('Image', $form);
+    $this->mergePostValidator(new ImageValidatorSchema(null, array('require_title' => false)));
 
     $this->getObject()->setUpdatedAt(date('c')); // Hack to force new images on existing object to be bound.
 
@@ -31,5 +41,24 @@ class PersonForm extends BasePersonForm {
     }
 
     return parent::saveEmbeddedForms($con, $forms);
+  }
+
+  protected function doSave($con = null) {
+    if (null === $con) {
+      $con = $this->getConnection();
+    }
+
+    $this->updateObject();
+
+    $this->getObject()->save($con);
+
+    $image = $this->getObject()->getImage();
+
+    if($image instanceOf Image) {
+      $image->setTitle($this->getObject()->getName());
+    }
+
+    // embedded forms
+    $this->saveEmbeddedForms($con);
   }
 }
