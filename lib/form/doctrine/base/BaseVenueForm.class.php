@@ -25,6 +25,8 @@ abstract class BaseVenueForm extends BaseFormDoctrine
       'address_line_3' => new sfWidgetFormInputText(),
       'address_line_4' => new sfWidgetFormInputText(),
       'post_code'      => new sfWidgetFormInputText(),
+      'created_at'     => new sfWidgetFormDateTime(),
+      'updated_at'     => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -38,6 +40,8 @@ abstract class BaseVenueForm extends BaseFormDoctrine
       'address_line_3' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'address_line_4' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'post_code'      => new sfValidatorString(array('max_length' => 20, 'required' => false)),
+      'created_at'     => new sfValidatorDateTime(),
+      'updated_at'     => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('venue[%s]');

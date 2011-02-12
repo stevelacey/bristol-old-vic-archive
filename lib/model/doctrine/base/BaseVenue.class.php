@@ -94,5 +94,8 @@ abstract class BaseVenue extends sfDoctrineRecord
         $this->hasMany('Layout as Layouts', array(
              'local' => 'id',
              'foreign' => 'venue_id'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }

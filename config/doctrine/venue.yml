@@ -1,4 +1,6 @@
 Venue:
+  actAs:
+    Timestampable: ~
   columns:
     name:
       type: string(255)
@@ -15,6 +17,8 @@ Venue:
     orderBy: name asc
 
 Layout:
+  actAs:
+    Timestampable: ~
   columns:
     name:
       type: string(255)

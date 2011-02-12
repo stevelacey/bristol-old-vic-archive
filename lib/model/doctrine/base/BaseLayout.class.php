@@ -74,5 +74,8 @@ abstract class BaseLayout extends sfDoctrineRecord
         $this->hasMany('Production as Productions', array(
              'local' => 'id',
              'foreign' => 'layout_id'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $this->actAs($timestampable0);
     }
 }
