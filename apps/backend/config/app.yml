@@ -63,3 +63,9 @@ all:
             name: User Management
             url: user
             image: users
+
+  sfImageTransformPlugin:
+    default_adapter: ImageMagick # GD or ImageMagick
+    mime_type:
+      auto_detect: true
+      library: gd_mime_type #  gd_mime_type (GD), Fileinfo (PECL), MIME_Type (PEAR)
