@@ -46,3 +46,25 @@ body {
   width: 40%;
   float: left;
 }
+
+#sf_admin_theme_footer {
+  height: 20px;
+  padding: 10px 30px;
+}
+
+#sf_admin_theme_footer cite {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+
+#sf_admin_theme_footer span {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+#sf_admin_theme_footer a {
+  color: #333;
+  text-decoration: none;
+}
