@@ -3,51 +3,8 @@ html {
 }
 
 body {
-  padding: 0;
-}
-
-body {
   min-width: 1024px;
-}
-
-#sf_admin_container textarea {
-  width: 400px;
-}
-
-.sf_admin_data h3{
-  margin-top:10px;
-  border-bottom:solid 1px #efefef;
-  margin-left:2em;
-  padding-bottom:5px;
-}
-
-#sf_admin_container ul li a {
-	padding-left:0;
-	background:none;
-	margin-left:0;
-}
-
-
-.sf_admin_data ul li {
-  position: relative;
-  color: #797979;
-  list-style-type:none;
-  background:none;
-  margin-bottom:30px;
-
-}
-
-.sf_admin_data ul li time {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color:#acacac;
-  text-transform:uppercase;
-  font-size:0.7em;
-}
-
-.sf_admin_data p {
-  padding: 5px;
+  padding: 0;
 }
 
 .company .sf_admin_form,
@@ -55,7 +12,7 @@ body {
 .sponsor .sf_admin_form,
 .staff .sf_admin_form,
 .venue .sf_admin_form {
-  width: 60%;
+  width: 65%;
   float: left;
 }
 
@@ -64,18 +21,64 @@ body {
 .sponsor .sf_admin_data,
 .staff .sf_admin_data,
 .venue .sf_admin_data {
-  width: 30%;
+  width: 35%;
   float: left;
 
 }
 
-#sf_admin_container h2 {
-	background:none;
-	margin-left:2em;
-	margin-bottom:0.9em;
-	font-style:normal;
-	font-size:1.8em;
-	color:#C64934;
+#sf_admin_container textarea {
+  width: 400px;
+}
+
+#sf_admin_container .sf_admin_data > * {
+  margin-left: 30px;
+}
+
+#sf_admin_container .sf_admin_data h2 {
+  background: none;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 1.75em;
+  font-style: normal;
+  color: #C64934;
+}
+
+#sf_admin_container .sf_admin_data h3 {
+  margin-top: 10px;
+  border-bottom: solid 1px #efefef;
+  padding-bottom: 5px;
+}
+
+.sf_admin_data ul, .sf_admin_data p {
+  padding-bottom: 10px;
+}
+
+.sf_admin_data ul li {
+  position: relative;
+  color: #797979;
+  list-style-type: none;
+  background: none;
+  margin-bottom: 10px;
+}
+
+#sf_admin_container ul li a {
+  padding-left: 0;
+  background: none;
+  margin-left: 0;
+}
+
+.sf_admin_data ul li ul {
+  margin-left: 1em;
+}
+
+.sf_admin_data ul li time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #acacac;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  line-height: 2em;
 }
 
 #sf_admin_theme_footer {
