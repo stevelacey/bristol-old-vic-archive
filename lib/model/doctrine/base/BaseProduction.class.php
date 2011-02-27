@@ -172,7 +172,7 @@ abstract class BaseProduction extends sfDoctrineRecord
              'length' => '',
              ));
 
-        $this->option('orderBy', 'name asc');
+        $this->option('orderBy', 'start_at desc');
     }
 
     public function setUp()

@@ -24,7 +24,7 @@ Production:
     student_ticket_price: float
     notes: string()
   options:
-    orderBy: name asc
+    orderBy: start_at desc
   relations:
     Type:
       local: type_id
