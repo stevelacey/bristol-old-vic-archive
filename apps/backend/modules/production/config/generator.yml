@@ -18,7 +18,6 @@ generator:
         display:
           - =name
           - type
-          - genre
           - venue
           - start_at
           - end_at

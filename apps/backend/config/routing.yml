@@ -79,6 +79,20 @@ image:
     column:               id
     with_wildcard_routes: true
 
+image_show:
+  class: sfDoctrineRoute
+  url: /images/uploads/:dimensions/:slug.:sf_format
+  options:
+    model: Image
+    type: object
+    generate_shortest_url: false
+  param:
+    module: image
+    action: show
+    sf_format: png
+  requirements:
+    dimensions: \d+x\d+
+
 genre:
   class: sfDoctrineRouteCollection
   options:
