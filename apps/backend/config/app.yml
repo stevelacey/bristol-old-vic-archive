@@ -2,6 +2,9 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 all:
+  data:
+    date_format: "F Y"
+
   sf_admin_dash:
     site: Bristol Old Vic Archive
     include_jquery: false
@@ -51,12 +54,6 @@ all:
           Staff:
             url: staff
             image: addusers
-#      Images:
-#        items:
-#          Images:
-#            name: Image Management
-#            url: image
-#            image: templatemanager
       Users:
         items:
           Users:

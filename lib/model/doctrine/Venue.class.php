@@ -10,6 +10,12 @@
  * @author     Steve Lacey
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Venue extends BaseVenue
-{
+class Venue extends BaseVenue {
+  public function getProductions() {
+    return Doctrine_Query::create()->
+      from('Production p')->
+      leftJoin('p.Layout l')->
+      where('l.venue_id = ?', $this->getId())->
+      execute();
+  }
 }

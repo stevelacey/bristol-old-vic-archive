@@ -18,7 +18,7 @@ abstract class BaseDonationForm extends BaseFormDoctrine
       'id'            => new sfWidgetFormInputHidden(),
       'production_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Production'), 'add_empty' => false)),
       'sponsor_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Sponsor'), 'add_empty' => false)),
-      'donation'      => new sfWidgetFormInputText(),
+      'amount'        => new sfWidgetFormInputText(),
       'description'   => new sfWidgetFormTextarea(),
     ));
 
@@ -26,7 +26,7 @@ abstract class BaseDonationForm extends BaseFormDoctrine
       'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'production_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Production'))),
       'sponsor_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Sponsor'))),
-      'donation'      => new sfValidatorNumber(array('required' => false)),
+      'amount'        => new sfValidatorNumber(array('required' => false)),
       'description'   => new sfValidatorString(array('required' => false)),
     ));
 

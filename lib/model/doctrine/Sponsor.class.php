@@ -10,6 +10,8 @@
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class Sponsor extends BaseSponsor
-{
+class Sponsor extends BaseSponsor {
+  public function getProductionDonations(Production $production) {
+    return Doctrine::getTable('Donation')->findByProductionSponsor($production, $this);
+  }
 }

@@ -6,6 +6,43 @@ body {
   padding: 0;
 }
 
+body {
+  min-width: 1024px;
+}
+
 #sf_admin_container textarea {
   width: 400px;
+}
+
+.sf_admin_data ul li {
+  position: relative;
+  color: #555;
+}
+
+.sf_admin_data ul li time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sf_admin_data p {
+  padding: 5px;
+}
+
+.company .sf_admin_form,
+.performer .sf_admin_form,
+.sponsor .sf_admin_form,
+.staff .sf_admin_form,
+.venue .sf_admin_form {
+  width: 60%;
+  float: left;
+}
+
+.company .sf_admin_data,
+.performer .sf_admin_data,
+.sponsor .sf_admin_data,
+.staff .sf_admin_data,
+.venue .sf_admin_data {
+  width: 40%;
+  float: left;
 }

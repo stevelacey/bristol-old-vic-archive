@@ -24,7 +24,7 @@ Donation:
     sponsor_id:
       type: integer(20)
       notnull: true
-    donation: float
+    amount: float
     description: string
   relations:
     Production:
