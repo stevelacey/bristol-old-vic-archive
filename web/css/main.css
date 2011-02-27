@@ -14,15 +14,36 @@ body {
   width: 400px;
 }
 
+.sf_admin_data h3{
+  margin-top:10px;
+  border-bottom:solid 1px #efefef;
+  margin-left:2em;
+  padding-bottom:5px;
+}
+
+#sf_admin_container ul li a {
+	padding-left:0;
+	background:none;
+	margin-left:0;
+}
+
+
 .sf_admin_data ul li {
   position: relative;
-  color: #555;
+  color: #797979;
+  list-style-type:none;
+  background:none;
+  margin-bottom:30px;
+
 }
 
 .sf_admin_data ul li time {
   position: absolute;
   top: 0;
   right: 0;
+  color:#acacac;
+  text-transform:uppercase;
+  font-size:0.7em;
 }
 
 .sf_admin_data p {
@@ -43,8 +64,18 @@ body {
 .sponsor .sf_admin_data,
 .staff .sf_admin_data,
 .venue .sf_admin_data {
-  width: 40%;
+  width: 30%;
   float: left;
+
+}
+
+#sf_admin_container h2 {
+	background:none;
+	margin-left:2em;
+	margin-bottom:0.9em;
+	font-style:normal;
+	font-size:1.8em;
+	color:#C64934;
 }
 
 #sf_admin_theme_footer {
