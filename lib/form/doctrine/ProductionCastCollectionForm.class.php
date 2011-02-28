@@ -22,7 +22,7 @@ class ProductionCastCollectionForm extends sfForm {
     for($i=$characters->count()+1; $i<=$characters->count()+10; $i++) {
       $character = new Character();
       $character->setProduction($production);;
-      $this->embedForm('Performer '.$i, new CharacterForm($character));
+      $this->embedForm('Character '.$i, new CharacterForm($character));
     }
     
     $this->mergePostValidator(new ProductionCastValidatorSchema());
