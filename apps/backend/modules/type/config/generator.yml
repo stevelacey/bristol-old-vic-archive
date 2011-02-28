@@ -15,11 +15,13 @@ generator:
       actions: ~
       fields: ~
       list:
+        title: Types
         display:
           - =name
       filter:
         display:
           - name
       form:    ~
-      edit:    ~
+      edit:
+        title: %%name%%
       new:     ~

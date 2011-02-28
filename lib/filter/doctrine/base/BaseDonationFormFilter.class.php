@@ -14,15 +14,15 @@ abstract class BaseDonationFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'production_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Production'), 'add_empty' => true)),
-      'sponsor_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Sponsor'), 'add_empty' => true)),
-      'donation'      => new sfWidgetFormFilterInput(),
+      'funder_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Funder'), 'add_empty' => true)),
+      'amount'        => new sfWidgetFormFilterInput(),
       'description'   => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'production_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Production'), 'column' => 'id')),
-      'sponsor_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Sponsor'), 'column' => 'id')),
-      'donation'      => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'funder_id'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Funder'), 'column' => 'id')),
+      'amount'        => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'description'   => new sfValidatorPass(array('required' => false)),
     ));
 
@@ -45,8 +45,8 @@ abstract class BaseDonationFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'            => 'Number',
       'production_id' => 'ForeignKey',
-      'sponsor_id'    => 'ForeignKey',
-      'donation'      => 'Number',
+      'funder_id'     => 'ForeignKey',
+      'amount'        => 'Number',
       'description'   => 'Text',
     );
   }

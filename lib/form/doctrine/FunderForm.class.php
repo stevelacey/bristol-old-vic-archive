@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Sponsor form.
+ * Funder form.
  *
  * @package    bristol-old-vic-archive
  * @subpackage form
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class SponsorForm extends BaseSponsorForm {
+class FunderForm extends BaseFunderForm {
   public function configure() {
     unset(
       $this['productions_list'],

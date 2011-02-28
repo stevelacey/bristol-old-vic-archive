@@ -1,4 +1,4 @@
-Sponsor:
+Funder:
   actAs:
     Timestampable: ~
   columns:
@@ -12,26 +12,26 @@ Sponsor:
     Productions:
       class: Production
       refClass: Donation
-      local: sponsor_id
+      local: funder_id
       foreign: production_id
-      foreignAlias: Sponsors
+      foreignAlias: Funders
 
 Donation:
   columns:
     production_id:
       type: integer(20)
       notnull: true
-    sponsor_id:
+    funder_id:
       type: integer(20)
       notnull: true
-    donation: float
+    amount: float
     description: string
   relations:
     Production:
       local: production_id
       foreign: id
       foreignAlias: Donations
-    Sponsor:
-      local: sponsor_id
+    Funder:
+      local: funder_id
       foreign: id
       foreignAlias: Donations

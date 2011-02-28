@@ -3,7 +3,7 @@
 class ProductionDonationValidatorSchema extends sfValidatorSchema {
   protected function configure($options = array(), $messages = array()) {
     $this->addMessage('description', 'The description is required.');
-    $this->addMessage('sponsor_id', 'The sponsor is required.');
+    $this->addMessage('funder_id', 'The funder is required.');
   }
 
   protected function doClean($values) {
@@ -12,18 +12,18 @@ class ProductionDonationValidatorSchema extends sfValidatorSchema {
     foreach ($values as $key => $value) {
       $errorSchemaLocal = new sfValidatorErrorSchema($this);
 
-      // description is filled but no sponsor_id
-      if ($value['description'] && !$value['sponsor_id']) {
-        $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'sponsor_id');
+      // description is filled but no funder_id
+      if ($value['description'] && !$value['funder_id']) {
+        $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'funder_id');
       }
 
-      // donation is filled but no sponsor_id
-      if ($value['donation'] && !$value['sponsor_id']) {
-        $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'sponsor_id');
+      // donation is filled but no funder_id
+      if ($value['donation'] && !$value['funder_id']) {
+        $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'funder_id');
       }
 
-      // no description, donation or sponsor_id, remove the empty values
-      if (!$value['donation'] && !$value['description'] && !$value['sponsor_id']) {
+      // no description, donation or funder_id, remove the empty values
+      if (!$value['donation'] && !$value['description'] && !$value['funder_id']) {
         unset($values[$key]);
       }
 

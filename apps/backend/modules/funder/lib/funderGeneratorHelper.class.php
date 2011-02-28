@@ -1,13 +1,13 @@
 <?php
 
 /**
- * sponsor module helper.
+ * funder module helper.
  *
  * @package    bristol-old-vic-archive
- * @subpackage sponsor
+ * @subpackage funder
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-class sponsorGeneratorHelper extends BaseSponsorGeneratorHelper
+class funderGeneratorHelper extends BaseFunderGeneratorHelper
 {
 }

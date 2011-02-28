@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        title: Users
         display:
           - =name
           - username
@@ -35,5 +36,6 @@ generator:
           - password
           - password_again
           - is_active
-      edit:    ~
+      edit:
+        title: %%name%%
       new:     ~

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Sponsor form base class.
+ * Funder form base class.
  *
- * @method Sponsor getObject() Returns the current form's model object
+ * @method Funder getObject() Returns the current form's model object
  *
  * @package    bristol-old-vic-archive
  * @subpackage form
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-abstract class BaseSponsorForm extends BaseFormDoctrine
+abstract class BaseFunderForm extends BaseFormDoctrine
 {
   public function setup()
   {
@@ -32,7 +32,7 @@ abstract class BaseSponsorForm extends BaseFormDoctrine
       'productions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Production', 'required' => false)),
     ));
 
-    $this->widgetSchema->setNameFormat('sponsor[%s]');
+    $this->widgetSchema->setNameFormat('funder[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -43,7 +43,7 @@ abstract class BaseSponsorForm extends BaseFormDoctrine
 
   public function getModelName()
   {
-    return 'Sponsor';
+    return 'Funder';
   }
 
   public function updateDefaultsFromObject()

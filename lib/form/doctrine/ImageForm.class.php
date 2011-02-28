@@ -16,6 +16,7 @@ class ImageForm extends BaseImageForm {
 
     $this->setWidget('path', new sfWidgetFormInputFileEditable(
       array(
+        'label'        => 'Image',
         'file_src'    => '/uploads/images/'.$this->getObject()->getPath(),
         'edit_mode'   => !$this->isNew(),
         'is_image'    => true,

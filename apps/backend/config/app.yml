@@ -2,44 +2,47 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 all:
+  organisation:
+    name: Bristol Old Vic
+    website: http://www.bristololdvic.org.uk
+
+  developer:
+    name: Steve Lacey
+    website: http://www.stevelacey.net
+
+  data:
+    date_format: "F Y"
+
   sf_admin_dash:
     site: Bristol Old Vic Archive
     include_jquery: false
     categories:
       Productions:
         items:
-          Production:
-            name: Productions
+          Productions:
             url: production
             image: addedit
-          Company:
-            name: Companies
+          Companies:
             url: company
             image: impressions
-          Collaboration:
-            name: Collaboration
+          Collaborations:
             url: collaboration
             image: support
-          Sponsor:
-            name: Sponsors
-            url: sponsor
+          Funders:
+            url: funder
             image: generic
-          Genre:
-            name: Genres
+          Genres:
             url: genre
             image: categories
-          Type:
-            name: Types
+          Types:
             url: type
             image: mediamanager
-          Venue:
-            name: Venues
+          Venues:
             url: venue
             image: frontpage
       Personnel:
         items:
           Performers:
-            name: Performers
             url: performer
             image: language
           Departments:
@@ -48,19 +51,12 @@ all:
           Roles:
             url: role
             image: users
-          Staff:
+          Staff / Creative:
             url: staff
             image: addusers
-#      Images:
-#        items:
-#          Images:
-#            name: Image Management
-#            url: image
-#            image: templatemanager
       Users:
         items:
           Users:
-            name: User Management
             url: user
             image: users
 

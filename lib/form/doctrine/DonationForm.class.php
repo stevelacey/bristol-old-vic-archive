@@ -10,9 +10,9 @@
  */
 class DonationForm extends BaseDonationForm {
   public function configure() {
-    $this->widgetSchema['sponsor_id']->setOption('add_empty', true);
+    $this->widgetSchema['funder_id']->setOption('add_empty', true);
 
-    $this->validatorSchema['sponsor_id']->setOption('required', false);
+    $this->validatorSchema['funder_id']->setOption('required', false);
     $this->validatorSchema['description']->setOption('required', false);
 
     unset(

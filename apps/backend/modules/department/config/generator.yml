@@ -15,9 +15,11 @@ generator:
       actions: ~
       fields:  ~
       list:
+        title: Departments
         display:
           - =name
       filter:  ~
       form:    ~
-      edit:    ~
+      edit:
+        title: %%name%%
       new:     ~

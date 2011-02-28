@@ -21,6 +21,9 @@ class ProductionForm extends BaseProductionForm {
     /* Labels */
     $this->widgetSchema['start_at'] = new sfWidgetFormDateUK(array('label' => 'Performances start'));
     $this->widgetSchema['end_at'] = new sfWidgetFormDateUK(array('label' => 'Performances end'));
+    $this->widgetSchema['matinee_performance_time']->setLabel('Matinee');
+    $this->widgetSchema['evening_performance_time']->setLabel('Evening');
+    $this->widgetSchema['various_performance_times']->setLabel('Various times');
 
     /* Collection Forms */
     $this->embedForm('images', new ProductionImageCollectionForm(null, array('production' => $this->getObject())));
@@ -33,7 +36,7 @@ class ProductionForm extends BaseProductionForm {
     /* Remove Fields */
     unset(
       $this['shot_image_id'], $this['set_design_image_id'],
-      $this['staff_list'], $this['sponsors_list'], $this['roles_list'],
+      $this['staff_list'], $this['funders_list'], $this['roles_list'],
       $this['created_at'], $this['updated_at']
     );
   }

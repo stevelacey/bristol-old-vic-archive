@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        title: Performers
         display:
           - =name
           - gender
@@ -25,5 +26,6 @@ generator:
           - name
           - gender
       form:    ~
-      edit:    ~
+      edit:
+        title: %%name%%
       new:     ~
