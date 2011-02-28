@@ -69,5 +69,6 @@ generator:
              - cast
           "Donations":
              - donations
-      
-     
+      edit:
+        title: %%name%%
+      new:     ~
