@@ -37,7 +37,7 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       'updated_at'             => new sfWidgetFormDateTime(),
       'staff_list'             => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Staff')),
       'roles_list'             => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Role')),
-      'sponsors_list'          => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor')),
+      'funders_list'           => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Funder')),
     ));
 
     $this->setValidators(array(
@@ -63,7 +63,7 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       'updated_at'             => new sfValidatorDateTime(),
       'staff_list'             => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Staff', 'required' => false)),
       'roles_list'             => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Role', 'required' => false)),
-      'sponsors_list'          => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor', 'required' => false)),
+      'funders_list'           => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Funder', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('production[%s]');
@@ -94,9 +94,9 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       $this->setDefault('roles_list', $this->object->Roles->getPrimaryKeys());
     }
 
-    if (isset($this->widgetSchema['sponsors_list']))
+    if (isset($this->widgetSchema['funders_list']))
     {
-      $this->setDefault('sponsors_list', $this->object->Sponsors->getPrimaryKeys());
+      $this->setDefault('funders_list', $this->object->Funders->getPrimaryKeys());
     }
 
   }
@@ -105,7 +105,7 @@ abstract class BaseProductionForm extends BaseFormDoctrine
   {
     $this->saveStaffList($con);
     $this->saveRolesList($con);
-    $this->saveSponsorsList($con);
+    $this->saveFundersList($con);
 
     parent::doSave($con);
   }
@@ -186,14 +186,14 @@ abstract class BaseProductionForm extends BaseFormDoctrine
     }
   }
 
-  public function saveSponsorsList($con = null)
+  public function saveFundersList($con = null)
   {
     if (!$this->isValid())
     {
       throw $this->getErrorSchema();
     }
 
-    if (!isset($this->widgetSchema['sponsors_list']))
+    if (!isset($this->widgetSchema['funders_list']))
     {
       // somebody has unset this widget
       return;
@@ -204,8 +204,8 @@ abstract class BaseProductionForm extends BaseFormDoctrine
       $con = $this->getConnection();
     }
 
-    $existing = $this->object->Sponsors->getPrimaryKeys();
-    $values = $this->getValue('sponsors_list');
+    $existing = $this->object->Funders->getPrimaryKeys();
+    $values = $this->getValue('funders_list');
     if (!is_array($values))
     {
       $values = array();
@@ -214,13 +214,13 @@ abstract class BaseProductionForm extends BaseFormDoctrine
     $unlink = array_diff($existing, $values);
     if (count($unlink))
     {
-      $this->object->unlink('Sponsors', array_values($unlink));
+      $this->object->unlink('Funders', array_values($unlink));
     }
 
     $link = array_diff($values, $existing);
     if (count($link))
     {
-      $this->object->link('Sponsors', array_values($link));
+      $this->object->link('Funders', array_values($link));
     }
   }
 

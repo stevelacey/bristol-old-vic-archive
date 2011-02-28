@@ -1,9 +1,9 @@
-sponsor:
+funder:
   class: sfDoctrineRouteCollection
   options:
-    model:                Sponsor
-    module:               sponsor
-    prefix_path:          /sponsor
+    model:                Funder
+    module:               funder
+    prefix_path:          /funder
     column:               id
     with_wildcard_routes: true
 
@@ -67,15 +67,6 @@ user:
     model:                sfGuardUser
     module:               user
     prefix_path:          /user
-    column:               id
-    with_wildcard_routes: true
-
-image:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                Image
-    module:               image
-    prefix_path:          /image
     column:               id
     with_wildcard_routes: true
 

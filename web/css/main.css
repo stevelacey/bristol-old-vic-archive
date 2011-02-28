@@ -9,7 +9,7 @@ body {
 
 .company .sf_admin_form,
 .performer .sf_admin_form,
-.sponsor .sf_admin_form,
+.funder .sf_admin_form,
 .staff .sf_admin_form,
 .venue .sf_admin_form {
   width: 65%;
@@ -18,7 +18,7 @@ body {
 
 .company .sf_admin_data,
 .performer .sf_admin_data,
-.sponsor .sf_admin_data,
+.funder .sf_admin_data,
 .staff .sf_admin_data,
 .venue .sf_admin_data {
   width: 35%;

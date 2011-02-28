@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Sponsor filter form base class.
+ * Funder filter form base class.
  *
  * @package    bristol-old-vic-archive
  * @subpackage filter
  * @author     Steve Lacey
  * @version    SVN: $Id$
  */
-abstract class BaseSponsorFormFilter extends BaseFormFilterDoctrine
+abstract class BaseFunderFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
@@ -28,7 +28,7 @@ abstract class BaseSponsorFormFilter extends BaseFormFilterDoctrine
       'productions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Production', 'required' => false)),
     ));
 
-    $this->widgetSchema->setNameFormat('sponsor_filters[%s]');
+    $this->widgetSchema->setNameFormat('funder_filters[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -57,7 +57,7 @@ abstract class BaseSponsorFormFilter extends BaseFormFilterDoctrine
 
   public function getModelName()
   {
-    return 'Sponsor';
+    return 'Funder';
   }
 
   public function getFields()

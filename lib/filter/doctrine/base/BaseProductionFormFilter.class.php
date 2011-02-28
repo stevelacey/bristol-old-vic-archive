@@ -34,7 +34,7 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'updated_at'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'staff_list'             => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Staff')),
       'roles_list'             => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Role')),
-      'sponsors_list'          => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor')),
+      'funders_list'           => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Funder')),
     ));
 
     $this->setValidators(array(
@@ -59,7 +59,7 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'updated_at'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'staff_list'             => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Staff', 'required' => false)),
       'roles_list'             => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Role', 'required' => false)),
-      'sponsors_list'          => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Sponsor', 'required' => false)),
+      'funders_list'           => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Funder', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('production_filters[%s]');
@@ -107,7 +107,7 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
     ;
   }
 
-  public function addSponsorsListColumnQuery(Doctrine_Query $query, $field, $values)
+  public function addFundersListColumnQuery(Doctrine_Query $query, $field, $values)
   {
     if (!is_array($values))
     {
@@ -121,7 +121,7 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
 
     $query
       ->leftJoin($query->getRootAlias().'.Donation Donation')
-      ->andWhereIn('Donation.sponsor_id', $values)
+      ->andWhereIn('Donation.funder_id', $values)
     ;
   }
 
@@ -155,7 +155,7 @@ abstract class BaseProductionFormFilter extends BaseFormFilterDoctrine
       'updated_at'             => 'Date',
       'staff_list'             => 'ManyKey',
       'roles_list'             => 'ManyKey',
-      'sponsors_list'          => 'ManyKey',
+      'funders_list'           => 'ManyKey',
     );
   }
 }

@@ -31,9 +31,9 @@
  * @property Image $SetDesign
  * @property Doctrine_Collection $Staff
  * @property Doctrine_Collection $Roles
- * @property Doctrine_Collection $Characters
- * @property Doctrine_Collection $Sponsors
+ * @property Doctrine_Collection $Funders
  * @property Doctrine_Collection $Donations
+ * @property Doctrine_Collection $Characters
  * @property Doctrine_Collection $ProductionStaff
  * 
  * @method string              getName()                   Returns the current record's "name" value
@@ -62,9 +62,9 @@
  * @method Image               getSetDesign()              Returns the current record's "SetDesign" value
  * @method Doctrine_Collection getStaff()                  Returns the current record's "Staff" collection
  * @method Doctrine_Collection getRoles()                  Returns the current record's "Roles" collection
- * @method Doctrine_Collection getCharacters()             Returns the current record's "Characters" collection
- * @method Doctrine_Collection getSponsors()               Returns the current record's "Sponsors" collection
+ * @method Doctrine_Collection getFunders()                Returns the current record's "Funders" collection
  * @method Doctrine_Collection getDonations()              Returns the current record's "Donations" collection
+ * @method Doctrine_Collection getCharacters()             Returns the current record's "Characters" collection
  * @method Doctrine_Collection getProductionStaff()        Returns the current record's "ProductionStaff" collection
  * @method Production          setName()                   Sets the current record's "name" value
  * @method Production          setTypeId()                 Sets the current record's "type_id" value
@@ -92,9 +92,9 @@
  * @method Production          setSetDesign()              Sets the current record's "SetDesign" value
  * @method Production          setStaff()                  Sets the current record's "Staff" collection
  * @method Production          setRoles()                  Sets the current record's "Roles" collection
- * @method Production          setCharacters()             Sets the current record's "Characters" collection
- * @method Production          setSponsors()               Sets the current record's "Sponsors" collection
+ * @method Production          setFunders()                Sets the current record's "Funders" collection
  * @method Production          setDonations()              Sets the current record's "Donations" collection
+ * @method Production          setCharacters()             Sets the current record's "Characters" collection
  * @method Production          setProductionStaff()        Sets the current record's "ProductionStaff" collection
  * 
  * @package    bristol-old-vic-archive
@@ -216,16 +216,16 @@ abstract class BaseProduction extends sfDoctrineRecord
              'local' => 'production_id',
              'foreign' => 'role_id'));
 
-        $this->hasMany('Character as Characters', array(
+        $this->hasMany('Funder as Funders', array(
+             'refClass' => 'Donation',
+             'local' => 'production_id',
+             'foreign' => 'funder_id'));
+
+        $this->hasMany('Donation as Donations', array(
              'local' => 'id',
              'foreign' => 'production_id'));
 
-        $this->hasMany('Sponsor as Sponsors', array(
-             'refClass' => 'Donation',
-             'local' => 'production_id',
-             'foreign' => 'sponsor_id'));
-
-        $this->hasMany('Donation as Donations', array(
+        $this->hasMany('Character as Characters', array(
              'local' => 'id',
              'foreign' => 'production_id'));
 

@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        title: Staff / Creative Team
         display:
           - name
           - email
@@ -25,5 +26,7 @@ generator:
           - email
           - telephone
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: %%name%%
+      new:
+        title: New Staff / Creative Team Member

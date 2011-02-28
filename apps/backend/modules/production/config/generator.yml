@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
+        title: Productions
         display:
           - =name
           - type
@@ -55,5 +56,6 @@ generator:
 #             - gross_income
 #          "Notes":
 #             - notes
-      edit:    ~
+      edit:
+        title: %%name%%
       new:     ~
