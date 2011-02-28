@@ -2,6 +2,11 @@
    Report styling
    Written by Carl Wood */
 
+body {
+	background: url("/images/bristol-old-vic.png") no-repeat;
+  padding-top: 60px;
+}
+
 div#sf_admin_theme_header, div#sf_admin_header, div#sf_admin_menu , div#sf_admin_path, #sf_admin_bar tfoot,  ul.sf_admin_actions, ul.sf_admin_td_actions, th#sf_admin_list_th_actions, input#staff_image_path, .sf_admin_batch_checkbox, #sf_admin_list_batch_checkbox, #sf_admin_theme_footer{
 	display:none;
 }
@@ -22,10 +27,6 @@ a {
 }
 
 /* End printing rules */
-
-body {
-	background:url('/images/bov.png') top;
-}
 
 #sf_admin_content th, #sf_admin_content tr {
 	background:#fff;
