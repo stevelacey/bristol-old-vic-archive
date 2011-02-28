@@ -42,6 +42,16 @@ div#sf_admin_theme_header, div#sf_admin_header, div#sf_admin_menu , div#sf_admin
 	float: none;
 	margin-left: 0;
 }
+
+#sf_admin_content {
+  position: relative;
+}
+
+.sf_admin_form_field_image img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
  
 #sf_admin_content table {
   width: 100%;
