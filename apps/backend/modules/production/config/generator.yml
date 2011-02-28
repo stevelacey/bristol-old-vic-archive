@@ -70,25 +70,4 @@ generator:
           "Donations":
              - donations
       
-      edit:    ~
-=======
-        display: ~
-#          "Basic Details":
-#             - name
-#             - type_id
-#             - genre_id
-#             - layout_id
-#             - company_id
-#             - collaboration_id
-#             - start_at
-#             - end_at
-#             - description
-#          "Personnel":
-#          "Financial":
-#             - gross_income
-#          "Notes":
-#             - notes
-      edit:
-        title: %%name%%
->>>>>>> d138da2c4a26244fd363bb53d52c20c486c7e4f2
-      new:     ~
+     
