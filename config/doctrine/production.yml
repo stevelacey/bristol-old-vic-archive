@@ -16,6 +16,11 @@ Production:
     start_at: timestamp
     end_at: timestamp
     number_of_performances: integer(20)
+    matinee_performance_time: time
+    evening_performance_time: time
+    various_performance_times:
+      type: boolean
+      default: false
     fundraiser:
       type: boolean
       default: false
