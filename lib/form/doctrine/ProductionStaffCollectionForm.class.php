@@ -16,6 +16,9 @@ class ProductionStaffCollectionForm extends sfForm {
     foreach(Doctrine::getTable('Department')->findAll() as $department) {
       $form = new sfForm();
 
+      $form->widgetSchema->setFormFormatterName('list');
+      $form->widgetSchema->getFormFormatter()->setRowFormat('<li>%field%%help%%error%%hidden_fields%</li>');
+      
       foreach($department->getRoles() as $role) {
         $productionStaff = Doctrine::getTable('ProductionStaff')->findOneByProductionRole($production, $role);
 
@@ -26,9 +29,15 @@ class ProductionStaffCollectionForm extends sfForm {
         }
 
         $productionStaffForm = new ProductionStaffForm($productionStaff);
-        $productionStaffForm->widgetSchema['staff_id']->setOption('add_empty', true);
-        $productionStaffForm->validatorSchema['staff_id']->setOption('required', false);
+        $productionStaffForm->widgetSchema->setFormFormatterName('list');
+        $productionStaffForm->widgetSchema->getFormFormatter()->setDecoratorFormat('%content%');
 
+        $productionStaffForm->widgetSchema->getFormFormatter()->setRowFormat('%label%%field%%help%%error%%hidden_fields%');
+        $productionStaffForm->widgetSchema['staff_id']->setOption('add_empty', true);
+        $productionStaffForm->widgetSchema['staff_id']->setLabel($role->getName());
+
+        $productionStaffForm->validatorSchema['staff_id']->setOption('required', false);
+        
         $form->embedForm($role->getName(), $productionStaffForm);
       }
 

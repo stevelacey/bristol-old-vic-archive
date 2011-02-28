@@ -30,6 +30,27 @@ body {
   width: 400px;
 }
 
+#sf_admin_container .sf_admin_form_field_staff .content ul {
+  margin: 0.5em 1em;
+}
+
+#sf_admin_container .sf_admin_form_field_staff .content ul li {
+  height: 3em;
+  list-style: none;
+}
+
+#sf_admin_container .sf_admin_form_field_staff .content ul li label {
+  display: block;
+  float: left !important;
+  min-width: 150px;
+  line-height: 2.6em;
+}
+
+#sf_admin_container .sf_admin_form_field_staff .content ul li select {
+  min-width: 180px;
+  float: left;
+}
+
 #sf_admin_container .sf_admin_data > * {
   margin-left: 30px;
 }
