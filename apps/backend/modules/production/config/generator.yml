@@ -48,19 +48,19 @@ generator:
              - layout_id
              - company_id
              - collaboration_id
+             - fundraiser
              - description
-          "Date / Time and Tickets":
+          "Performances":
              - start_at
              - end_at
              - number_of_performances
              - matinee_performance_time
              - evening_performance_time
              - various_performance_times
-             - fundraiser
+          "Ticket Prices":
              - adult_ticket_price
              - child_ticket_price
              - student_ticket_price
-             - notes
           "Images":
              - images
           "Staff":
@@ -69,6 +69,8 @@ generator:
              - cast
           "Donations":
              - donations
+          "Notes":
+             - notes
       edit:
         title: %%name%%
       new:     ~
