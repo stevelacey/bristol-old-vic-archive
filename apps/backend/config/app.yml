@@ -21,16 +21,16 @@ all:
         items:
           Productions:
             url: production
-            image: addedit
+            image: production
           Companies:
             url: company
-            image: impressions
+            image: companies
           Collaborations:
             url: collaboration
-            image: support
+            image: collaboration
           Funders:
             url: funder
-            image: generic
+            image: funder
           Genres:
             url: genre
             image: categories
@@ -47,10 +47,10 @@ all:
             image: language
           Departments:
             url: department
-            image: folder-icon
+            image: departments
           Roles:
             url: role
-            image: users
+            image: roles
           Staff / Creative:
             url: staff
             image: addusers
