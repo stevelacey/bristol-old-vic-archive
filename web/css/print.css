@@ -64,6 +64,8 @@ ul {
 #production_images_production_shot_path,
 #production_images_set_design_path,
 
+input[type="file"],
+
 .sf_admin_batch_checkbox,
 #sf_admin_list_batch_checkbox,
 #sfWebDebug,
