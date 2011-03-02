@@ -77,6 +77,10 @@ ul {
 	background: #fff;
 }
 
+.sf_admin_list {
+  margin-right: 0 !important;
+}
+
 .sf_admin_list table {
   width: 100%;
 }
