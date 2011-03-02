@@ -32,6 +32,10 @@ thead {
   text-align: left;
 }
 
+tbody {
+  vertical-align: top;
+}
+
 tfoot {
   text-align: right;
 }
@@ -57,6 +61,9 @@ ul {
 .sf_admin_form_field_image label,
 .sf_admin_form_field_image input,
 
+#production_images_production_shot_path,
+#production_images_set_design_path,
+
 .sf_admin_batch_checkbox,
 #sf_admin_list_batch_checkbox,
 #sfWebDebug,
@@ -75,6 +82,7 @@ ul {
 
 #sf_admin_content th, #sf_admin_content tr {
 	background: #fff;
+  text-align: left;
 }
 
 .sf_admin_list {
