@@ -14,6 +14,7 @@
  * @property string $address_line_3
  * @property string $address_line_4
  * @property string $post_code
+ * @property string $notes
  * @property Doctrine_Collection $Layouts
  * 
  * @method string              getName()           Returns the current record's "name" value
@@ -25,6 +26,7 @@
  * @method string              getAddressLine3()   Returns the current record's "address_line_3" value
  * @method string              getAddressLine4()   Returns the current record's "address_line_4" value
  * @method string              getPostCode()       Returns the current record's "post_code" value
+ * @method string              getNotes()          Returns the current record's "notes" value
  * @method Doctrine_Collection getLayouts()        Returns the current record's "Layouts" collection
  * @method Venue               setName()           Sets the current record's "name" value
  * @method Venue               setEmail()          Sets the current record's "email" value
@@ -35,6 +37,7 @@
  * @method Venue               setAddressLine3()   Sets the current record's "address_line_3" value
  * @method Venue               setAddressLine4()   Sets the current record's "address_line_4" value
  * @method Venue               setPostCode()       Sets the current record's "post_code" value
+ * @method Venue               setNotes()          Sets the current record's "notes" value
  * @method Venue               setLayouts()        Sets the current record's "Layouts" collection
  * 
  * @package    bristol-old-vic-archive
@@ -83,6 +86,10 @@ abstract class BaseVenue extends sfDoctrineRecord
         $this->hasColumn('post_code', 'string', 20, array(
              'type' => 'string',
              'length' => 20,
+             ));
+        $this->hasColumn('notes', 'string', null, array(
+             'type' => 'string',
+             'length' => '',
              ));
 
         $this->option('orderBy', 'name asc');
