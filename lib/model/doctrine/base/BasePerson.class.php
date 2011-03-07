@@ -7,20 +7,14 @@
  * 
  * @property string $name
  * @property integer $image_id
- * @property string $email
- * @property string $telephone
  * @property Image $Image
  * 
- * @method string  getName()      Returns the current record's "name" value
- * @method integer getImageId()   Returns the current record's "image_id" value
- * @method string  getEmail()     Returns the current record's "email" value
- * @method string  getTelephone() Returns the current record's "telephone" value
- * @method Image   getImage()     Returns the current record's "Image" value
- * @method Person  setName()      Sets the current record's "name" value
- * @method Person  setImageId()   Sets the current record's "image_id" value
- * @method Person  setEmail()     Sets the current record's "email" value
- * @method Person  setTelephone() Sets the current record's "telephone" value
- * @method Person  setImage()     Sets the current record's "Image" value
+ * @method string  getName()     Returns the current record's "name" value
+ * @method integer getImageId()  Returns the current record's "image_id" value
+ * @method Image   getImage()    Returns the current record's "Image" value
+ * @method Person  setName()     Sets the current record's "name" value
+ * @method Person  setImageId()  Sets the current record's "image_id" value
+ * @method Person  setImage()    Sets the current record's "Image" value
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -40,14 +34,6 @@ abstract class BasePerson extends sfDoctrineRecord
         $this->hasColumn('image_id', 'integer', 20, array(
              'type' => 'integer',
              'length' => 20,
-             ));
-        $this->hasColumn('email', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
-             ));
-        $this->hasColumn('telephone', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
              ));
 
         $this->option('orderBy', 'name asc');

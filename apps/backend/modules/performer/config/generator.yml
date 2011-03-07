@@ -19,8 +19,6 @@ generator:
         display:
           - =name
           - gender
-          - email
-          - telephone
       filter:
         display:
           - name
