@@ -21,8 +21,8 @@ generator:
           - type
           - venue
           - start_at
-          - end_at
           - company
+          - collaboration
         fields:
           start_at:
             label: Performance start
