@@ -39,6 +39,7 @@ generator:
           - layout_id
           - company_id
           - collaboration_id
+          - created_at
       form:
         display: 
           "Basic Details":
