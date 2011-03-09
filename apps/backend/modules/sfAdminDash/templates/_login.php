@@ -1,6 +1,7 @@
 <?php use_helper('I18N') ?>
-
-<div id="ctr" align="center">
+ <div align="center"><img alt="Bristol Old Vic" class="logo" src="<?php echo image_path(sfAdminDash::getProperty('web_dir', '/sfAdminDashPlugin').'/images/bov.png'); ?>"</div>
+ <h2 class="login-tagline">Archive</h2>
+ <div id="ctr" align="center">
   <div class="login">
     <div class="login-form">
       <form action="<?php echo url_for(sfAdminDash::getProperty('login_route', '@sf_guard_signin')); ?>" method="post">
