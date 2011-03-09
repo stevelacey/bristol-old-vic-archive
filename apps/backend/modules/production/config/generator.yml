@@ -74,6 +74,7 @@ generator:
              - donations
           "Notes":
              - notes
+             - complete
       edit:
         title: %%name%%
       new:     ~
