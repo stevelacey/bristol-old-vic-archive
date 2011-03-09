@@ -37,7 +37,7 @@ all:
             image: funder
           Genres:
             url: genre
-            image: categories
+            image: genre
           Types:
             url: type
             image: mediamanager
@@ -58,11 +58,17 @@ all:
           Staff / Creative:
             url: staff
             image: addusers
-      Users:
-        items:
           Users:
             url: user
             image: users
+      Users:
+        items:
+           User Manual:
+             url: /docs/user-manual.pdf
+             image: manual
+           Technical Document:
+             url: /docs/technical-document.pdf
+             image: technical
 
   sfImageTransformPlugin:
     default_adapter: ImageMagick # GD or ImageMagick
