@@ -3,6 +3,9 @@
 
 all:
   .settings:
+    default_culture: en_GB
+    i18n: true
+
     # Form security secret (CSRF protection)
     csrf_secret:            2391820503e564cc1db471f7b88ea3dc1990f642
 
@@ -14,7 +17,7 @@ all:
     use_database:           true
 
     # Enable modules
-    enabled_modules:      [default, sfGuardAuth, sfAdminDash]
+    enabled_modules:      [default, sfGuardAuth, sfGuardForgotPassword, sfAdminDash]
 
     # Security
     login_module:           sfGuardAuth
@@ -25,7 +28,7 @@ all:
 
     no_script_name:         true
 
-prod:
+live:
   .settings:
     logging_enabled:        false
 

@@ -6,6 +6,9 @@ all:
     name: Bristol Old Vic
     website: http://www.bristololdvic.org.uk
 
+  sf_guard_plugin:
+    default_from_email: no-reply@bristololdvic.org
+
   developer:
     name: Steve Lacey
     website: http://www.stevelacey.net
