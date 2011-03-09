@@ -13,6 +13,10 @@ all:
   data:
     date_format: "F Y"
 
+  forms:
+    min_production_character_forms: 5
+    min_production_character_blank_forms: 2
+
   sf_admin_dash:
     site: Bristol Old Vic Archive
     include_jquery: false
