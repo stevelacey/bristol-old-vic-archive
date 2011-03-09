@@ -20,10 +20,12 @@
  * @property time $matinee_performance_time
  * @property time $evening_performance_time
  * @property boolean $various_performance_times
+ * @property enum $seating
  * @property boolean $fundraiser
- * @property float $adult_ticket_price
- * @property float $child_ticket_price
- * @property float $student_ticket_price
+ * @property float $full_ticket_min_price
+ * @property float $full_ticket_max_price
+ * @property float $concessionary_ticket_min_price
+ * @property float $concessionary_ticket_max_price
  * @property string $notes
  * @property Type $Type
  * @property Genre $Genre
@@ -39,72 +41,76 @@
  * @property Doctrine_Collection $Characters
  * @property Doctrine_Collection $ProductionStaff
  * 
- * @method string              getName()                      Returns the current record's "name" value
- * @method integer             getTypeId()                    Returns the current record's "type_id" value
- * @method integer             getGenreId()                   Returns the current record's "genre_id" value
- * @method integer             getLayoutId()                  Returns the current record's "layout_id" value
- * @method integer             getCompanyId()                 Returns the current record's "company_id" value
- * @method integer             getCollaborationId()           Returns the current record's "collaboration_id" value
- * @method integer             getShotImageId()               Returns the current record's "shot_image_id" value
- * @method integer             getSetDesignImageId()          Returns the current record's "set_design_image_id" value
- * @method string              getDescription()               Returns the current record's "description" value
- * @method timestamp           getStartAt()                   Returns the current record's "start_at" value
- * @method timestamp           getEndAt()                     Returns the current record's "end_at" value
- * @method integer             getNumberOfPerformances()      Returns the current record's "number_of_performances" value
- * @method time                getMatineePerformanceTime()    Returns the current record's "matinee_performance_time" value
- * @method time                getEveningPerformanceTime()    Returns the current record's "evening_performance_time" value
- * @method boolean             getVariousPerformanceTimes()   Returns the current record's "various_performance_times" value
- * @method boolean             getFundraiser()                Returns the current record's "fundraiser" value
- * @method float               getAdultTicketPrice()          Returns the current record's "adult_ticket_price" value
- * @method float               getChildTicketPrice()          Returns the current record's "child_ticket_price" value
- * @method float               getStudentTicketPrice()        Returns the current record's "student_ticket_price" value
- * @method string              getNotes()                     Returns the current record's "notes" value
- * @method Type                getType()                      Returns the current record's "Type" value
- * @method Genre               getGenre()                     Returns the current record's "Genre" value
- * @method Layout              getLayout()                    Returns the current record's "Layout" value
- * @method Company             getCompany()                   Returns the current record's "Company" value
- * @method Collaboration       getCollaboration()             Returns the current record's "Collaboration" value
- * @method Image               getShot()                      Returns the current record's "Shot" value
- * @method Image               getSetDesign()                 Returns the current record's "SetDesign" value
- * @method Doctrine_Collection getStaff()                     Returns the current record's "Staff" collection
- * @method Doctrine_Collection getRoles()                     Returns the current record's "Roles" collection
- * @method Doctrine_Collection getFunders()                   Returns the current record's "Funders" collection
- * @method Doctrine_Collection getDonations()                 Returns the current record's "Donations" collection
- * @method Doctrine_Collection getCharacters()                Returns the current record's "Characters" collection
- * @method Doctrine_Collection getProductionStaff()           Returns the current record's "ProductionStaff" collection
- * @method Production          setName()                      Sets the current record's "name" value
- * @method Production          setTypeId()                    Sets the current record's "type_id" value
- * @method Production          setGenreId()                   Sets the current record's "genre_id" value
- * @method Production          setLayoutId()                  Sets the current record's "layout_id" value
- * @method Production          setCompanyId()                 Sets the current record's "company_id" value
- * @method Production          setCollaborationId()           Sets the current record's "collaboration_id" value
- * @method Production          setShotImageId()               Sets the current record's "shot_image_id" value
- * @method Production          setSetDesignImageId()          Sets the current record's "set_design_image_id" value
- * @method Production          setDescription()               Sets the current record's "description" value
- * @method Production          setStartAt()                   Sets the current record's "start_at" value
- * @method Production          setEndAt()                     Sets the current record's "end_at" value
- * @method Production          setNumberOfPerformances()      Sets the current record's "number_of_performances" value
- * @method Production          setMatineePerformanceTime()    Sets the current record's "matinee_performance_time" value
- * @method Production          setEveningPerformanceTime()    Sets the current record's "evening_performance_time" value
- * @method Production          setVariousPerformanceTimes()   Sets the current record's "various_performance_times" value
- * @method Production          setFundraiser()                Sets the current record's "fundraiser" value
- * @method Production          setAdultTicketPrice()          Sets the current record's "adult_ticket_price" value
- * @method Production          setChildTicketPrice()          Sets the current record's "child_ticket_price" value
- * @method Production          setStudentTicketPrice()        Sets the current record's "student_ticket_price" value
- * @method Production          setNotes()                     Sets the current record's "notes" value
- * @method Production          setType()                      Sets the current record's "Type" value
- * @method Production          setGenre()                     Sets the current record's "Genre" value
- * @method Production          setLayout()                    Sets the current record's "Layout" value
- * @method Production          setCompany()                   Sets the current record's "Company" value
- * @method Production          setCollaboration()             Sets the current record's "Collaboration" value
- * @method Production          setShot()                      Sets the current record's "Shot" value
- * @method Production          setSetDesign()                 Sets the current record's "SetDesign" value
- * @method Production          setStaff()                     Sets the current record's "Staff" collection
- * @method Production          setRoles()                     Sets the current record's "Roles" collection
- * @method Production          setFunders()                   Sets the current record's "Funders" collection
- * @method Production          setDonations()                 Sets the current record's "Donations" collection
- * @method Production          setCharacters()                Sets the current record's "Characters" collection
- * @method Production          setProductionStaff()           Sets the current record's "ProductionStaff" collection
+ * @method string              getName()                           Returns the current record's "name" value
+ * @method integer             getTypeId()                         Returns the current record's "type_id" value
+ * @method integer             getGenreId()                        Returns the current record's "genre_id" value
+ * @method integer             getLayoutId()                       Returns the current record's "layout_id" value
+ * @method integer             getCompanyId()                      Returns the current record's "company_id" value
+ * @method integer             getCollaborationId()                Returns the current record's "collaboration_id" value
+ * @method integer             getShotImageId()                    Returns the current record's "shot_image_id" value
+ * @method integer             getSetDesignImageId()               Returns the current record's "set_design_image_id" value
+ * @method string              getDescription()                    Returns the current record's "description" value
+ * @method timestamp           getStartAt()                        Returns the current record's "start_at" value
+ * @method timestamp           getEndAt()                          Returns the current record's "end_at" value
+ * @method integer             getNumberOfPerformances()           Returns the current record's "number_of_performances" value
+ * @method time                getMatineePerformanceTime()         Returns the current record's "matinee_performance_time" value
+ * @method time                getEveningPerformanceTime()         Returns the current record's "evening_performance_time" value
+ * @method boolean             getVariousPerformanceTimes()        Returns the current record's "various_performance_times" value
+ * @method enum                getSeating()                        Returns the current record's "seating" value
+ * @method boolean             getFundraiser()                     Returns the current record's "fundraiser" value
+ * @method float               getFullTicketMinPrice()             Returns the current record's "full_ticket_min_price" value
+ * @method float               getFullTicketMaxPrice()             Returns the current record's "full_ticket_max_price" value
+ * @method float               getConcessionaryTicketMinPrice()    Returns the current record's "concessionary_ticket_min_price" value
+ * @method float               getConcessionaryTicketMaxPrice()    Returns the current record's "concessionary_ticket_max_price" value
+ * @method string              getNotes()                          Returns the current record's "notes" value
+ * @method Type                getType()                           Returns the current record's "Type" value
+ * @method Genre               getGenre()                          Returns the current record's "Genre" value
+ * @method Layout              getLayout()                         Returns the current record's "Layout" value
+ * @method Company             getCompany()                        Returns the current record's "Company" value
+ * @method Collaboration       getCollaboration()                  Returns the current record's "Collaboration" value
+ * @method Image               getShot()                           Returns the current record's "Shot" value
+ * @method Image               getSetDesign()                      Returns the current record's "SetDesign" value
+ * @method Doctrine_Collection getStaff()                          Returns the current record's "Staff" collection
+ * @method Doctrine_Collection getRoles()                          Returns the current record's "Roles" collection
+ * @method Doctrine_Collection getFunders()                        Returns the current record's "Funders" collection
+ * @method Doctrine_Collection getDonations()                      Returns the current record's "Donations" collection
+ * @method Doctrine_Collection getCharacters()                     Returns the current record's "Characters" collection
+ * @method Doctrine_Collection getProductionStaff()                Returns the current record's "ProductionStaff" collection
+ * @method Production          setName()                           Sets the current record's "name" value
+ * @method Production          setTypeId()                         Sets the current record's "type_id" value
+ * @method Production          setGenreId()                        Sets the current record's "genre_id" value
+ * @method Production          setLayoutId()                       Sets the current record's "layout_id" value
+ * @method Production          setCompanyId()                      Sets the current record's "company_id" value
+ * @method Production          setCollaborationId()                Sets the current record's "collaboration_id" value
+ * @method Production          setShotImageId()                    Sets the current record's "shot_image_id" value
+ * @method Production          setSetDesignImageId()               Sets the current record's "set_design_image_id" value
+ * @method Production          setDescription()                    Sets the current record's "description" value
+ * @method Production          setStartAt()                        Sets the current record's "start_at" value
+ * @method Production          setEndAt()                          Sets the current record's "end_at" value
+ * @method Production          setNumberOfPerformances()           Sets the current record's "number_of_performances" value
+ * @method Production          setMatineePerformanceTime()         Sets the current record's "matinee_performance_time" value
+ * @method Production          setEveningPerformanceTime()         Sets the current record's "evening_performance_time" value
+ * @method Production          setVariousPerformanceTimes()        Sets the current record's "various_performance_times" value
+ * @method Production          setSeating()                        Sets the current record's "seating" value
+ * @method Production          setFundraiser()                     Sets the current record's "fundraiser" value
+ * @method Production          setFullTicketMinPrice()             Sets the current record's "full_ticket_min_price" value
+ * @method Production          setFullTicketMaxPrice()             Sets the current record's "full_ticket_max_price" value
+ * @method Production          setConcessionaryTicketMinPrice()    Sets the current record's "concessionary_ticket_min_price" value
+ * @method Production          setConcessionaryTicketMaxPrice()    Sets the current record's "concessionary_ticket_max_price" value
+ * @method Production          setNotes()                          Sets the current record's "notes" value
+ * @method Production          setType()                           Sets the current record's "Type" value
+ * @method Production          setGenre()                          Sets the current record's "Genre" value
+ * @method Production          setLayout()                         Sets the current record's "Layout" value
+ * @method Production          setCompany()                        Sets the current record's "Company" value
+ * @method Production          setCollaboration()                  Sets the current record's "Collaboration" value
+ * @method Production          setShot()                           Sets the current record's "Shot" value
+ * @method Production          setSetDesign()                      Sets the current record's "SetDesign" value
+ * @method Production          setStaff()                          Sets the current record's "Staff" collection
+ * @method Production          setRoles()                          Sets the current record's "Roles" collection
+ * @method Production          setFunders()                        Sets the current record's "Funders" collection
+ * @method Production          setDonations()                      Sets the current record's "Donations" collection
+ * @method Production          setCharacters()                     Sets the current record's "Characters" collection
+ * @method Production          setProductionStaff()                Sets the current record's "ProductionStaff" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -173,17 +179,29 @@ abstract class BaseProduction extends sfDoctrineRecord
              'type' => 'boolean',
              'default' => false,
              ));
+        $this->hasColumn('seating', 'enum', null, array(
+             'type' => 'enum',
+             'values' => 
+             array(
+              0 => 'Reserved',
+              1 => 'Partially Reserved',
+              2 => 'Not Reserved',
+             ),
+             ));
         $this->hasColumn('fundraiser', 'boolean', null, array(
              'type' => 'boolean',
              'default' => false,
              ));
-        $this->hasColumn('adult_ticket_price', 'float', null, array(
+        $this->hasColumn('full_ticket_min_price', 'float', null, array(
              'type' => 'float',
              ));
-        $this->hasColumn('child_ticket_price', 'float', null, array(
+        $this->hasColumn('full_ticket_max_price', 'float', null, array(
              'type' => 'float',
              ));
-        $this->hasColumn('student_ticket_price', 'float', null, array(
+        $this->hasColumn('concessionary_ticket_min_price', 'float', null, array(
+             'type' => 'float',
+             ));
+        $this->hasColumn('concessionary_ticket_max_price', 'float', null, array(
              'type' => 'float',
              ));
         $this->hasColumn('notes', 'string', null, array(
