@@ -21,12 +21,16 @@ Production:
     various_performance_times:
       type: boolean
       default: false
+    seating:
+      type: enum
+      values: [Reserved, Partially Reserved, Not Reserved]
     fundraiser:
       type: boolean
       default: false
-    adult_ticket_price: float
-    child_ticket_price: float
-    student_ticket_price: float
+    full_ticket_min_price: float
+    full_ticket_max_price: float
+    concessionary_ticket_min_price: float
+    concessionary_ticket_max_price: float
     notes: string()
   options:
     orderBy: start_at desc

@@ -58,10 +58,12 @@ generator:
              - matinee_performance_time
              - evening_performance_time
              - various_performance_times
+             - seating
           "Ticket Prices":
-             - adult_ticket_price
-             - child_ticket_price
-             - student_ticket_price
+             - full_ticket_min_price
+             - full_ticket_max_price
+             - concessionary_ticket_min_price
+             - concessionary_ticket_max_price
           "Images":
              - images
           "Staff":
