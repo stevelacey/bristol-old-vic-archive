@@ -32,6 +32,9 @@ Production:
     concessionary_ticket_min_price: float
     concessionary_ticket_max_price: float
     notes: string()
+    complete:
+      type: boolean
+      default: false
   options:
     orderBy: start_at desc
   relations:

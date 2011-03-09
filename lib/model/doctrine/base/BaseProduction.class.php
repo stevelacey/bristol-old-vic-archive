@@ -27,6 +27,7 @@
  * @property float $concessionary_ticket_min_price
  * @property float $concessionary_ticket_max_price
  * @property string $notes
+ * @property boolean $complete
  * @property Type $Type
  * @property Genre $Genre
  * @property Layout $Layout
@@ -63,6 +64,7 @@
  * @method float               getConcessionaryTicketMinPrice()    Returns the current record's "concessionary_ticket_min_price" value
  * @method float               getConcessionaryTicketMaxPrice()    Returns the current record's "concessionary_ticket_max_price" value
  * @method string              getNotes()                          Returns the current record's "notes" value
+ * @method boolean             getComplete()                       Returns the current record's "complete" value
  * @method Type                getType()                           Returns the current record's "Type" value
  * @method Genre               getGenre()                          Returns the current record's "Genre" value
  * @method Layout              getLayout()                         Returns the current record's "Layout" value
@@ -98,6 +100,7 @@
  * @method Production          setConcessionaryTicketMinPrice()    Sets the current record's "concessionary_ticket_min_price" value
  * @method Production          setConcessionaryTicketMaxPrice()    Sets the current record's "concessionary_ticket_max_price" value
  * @method Production          setNotes()                          Sets the current record's "notes" value
+ * @method Production          setComplete()                       Sets the current record's "complete" value
  * @method Production          setType()                           Sets the current record's "Type" value
  * @method Production          setGenre()                          Sets the current record's "Genre" value
  * @method Production          setLayout()                         Sets the current record's "Layout" value
@@ -207,6 +210,10 @@ abstract class BaseProduction extends sfDoctrineRecord
         $this->hasColumn('notes', 'string', null, array(
              'type' => 'string',
              'length' => '',
+             ));
+        $this->hasColumn('complete', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => false,
              ));
 
         $this->option('orderBy', 'start_at desc');

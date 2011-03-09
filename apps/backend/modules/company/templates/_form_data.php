@@ -5,7 +5,7 @@
         <?php foreach($company->getProductions() as $production) : ?>
           <li>
             <h3><?php echo link_to($production, 'production_edit', $production) ?></h3>
-            <time><?php echo $production->getStartDate(sfConfig::get('app_data_date_format')) ?></time>
+            <?php include_partial('production/date', array('production' => $production)) ?>
           </li>
         <?php endforeach ?>
       </ul>

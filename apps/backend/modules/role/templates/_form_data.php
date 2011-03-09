@@ -1,20 +1,15 @@
-  <div class="sf_admin_data">
-    <h2>Staff</h2>
-    <?php if($role->getStaff()->count()) : ?>
-      <ul>
+<div class="sf_admin_data">
+  <h2>Staff</h2>
+  <?php if($role->getStaff()->count()) : ?>
+    <ul>
+      <?php foreach($role->getStaff() as $staff) : ?>
         <li>
-          <?php echo link_to($staff, 'staff_edit', $staff) ?>
-          <ul>
-            <?php foreach($staff->getProductions() as $production) : ?>
-              <li>
-                <h3><?php echo link_to($production, 'production_edit', $production) ?></h3>
-                <time><?php echo $production->getStartDate(sfConfig::get('app_data_date_format')) ?></time>
-              </li>
-            <?php endforeach ?>
-          </ul>
+          <h3><?php echo link_to($staff, 'staff_edit', $staff) ?></h3>
+          <?php include_partial('production/short_list', array('productions' => $staff->getProductions())) ?>
         </li>
-      </ul>
-    <?php else : ?>
-      <p>No associated staff.</p>
-    <?php endif ?>
-  </div>
+      <?php endforeach ?>
+    </ul>
+  <?php else : ?>
+    <p>No associated staff.</p>
+  <?php endif ?>
+</div>

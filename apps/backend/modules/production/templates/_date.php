@@ -1,0 +1,1 @@
+<time datetime="<?php echo $production->getStartDate('c') ?>"><?php echo $production->getStartDate(sfConfig::get('app_data_date_format')) ?></time>
