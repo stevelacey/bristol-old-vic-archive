@@ -52,8 +52,10 @@ if ($sf_user->isAuthenticated()): ?>
 
 <?php else : ?>
 
-  <div align="center"><img alt="Bristol Old Vic" class="logo" src="<?php echo image_path(sfAdminDash::getProperty('web_dir', '/sfAdminDashPlugin').'/images/bov.png'); ?>"</div>
-  <h2 class="login-tagline">Archive</h2>
+  <div align="center">
+    <?php echo link_to(image_tag(image_path(sfAdminDash::getProperty('web_dir', '/sfAdminDashPlugin').'/images/bov.png'), array('alt' => 'Bristol Old Vic')), '@homepage', array('class' => 'logo', 'title' => 'Bristol Old Vic')) ?>
+    <h2 class="login-tagline">Archive</h2>
+  </div>
 
 <?php endif // if user is authenticated ?>
 
