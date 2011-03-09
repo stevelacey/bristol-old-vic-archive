@@ -102,6 +102,11 @@ body {
   line-height: 2em;
 }
 
+div.helper p{
+    font-style:italic;
+    color:#797979;
+}
+
 #sf_admin_theme_footer {
   height: 20px;
   padding: 10px 30px;

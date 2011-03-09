@@ -61,13 +61,13 @@ all:
           Users:
             url: user
             image: users
-      Users:
+      Documentation:
         items:
            User Manual:
-             url: /docs/user-manual.pdf
+             url: docs/user-manual.pdf
              image: manual
            Technical Document:
-             url: /docs/technical-document.pdf
+             url: docs/technical-document.pdf
              image: technical
 
   sfImageTransformPlugin:
