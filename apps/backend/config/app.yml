@@ -40,7 +40,7 @@ all:
             image: genre
           Types:
             url: type
-            image: mediamanager
+            image: types
           Venues:
             url: venue
             image: frontpage
