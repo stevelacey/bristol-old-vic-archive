@@ -1,0 +1,1 @@
+<?php echo get_partial('sfAdminDash/change_password', array('user' => $user, 'form' => $form)) ?>
