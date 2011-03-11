@@ -18,6 +18,8 @@ class ProductionForm extends BaseProductionForm {
       'table_method' => 'findAllOrderedByVenue'
     ));
 
+    $this->widgetSchema['seating']->setOption('expanded', true);
+
     /* Labels */
     $this->widgetSchema['start_at'] = new sfWidgetFormDateUK(array('label' => 'Performances start'));
     $this->widgetSchema['end_at'] = new sfWidgetFormDateUK(array('label' => 'Performances end'));
