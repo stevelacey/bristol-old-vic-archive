@@ -3,8 +3,8 @@
     <h2>[?php echo __($fieldset, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]</h2>
   [?php endif; ?]
 
-  [?php if (is_readable('<?php echo sfConfig::get('sf_app_module_dir').'/'.$this->getModuleName() ?>/templates/_'.preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)).'_help.php')): ?]
-    [?php include_partial('<?php echo $this->getModuleName() ?>/'.preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)).'_help') ?]
+  [?php if (is_readable('<?php echo sfConfig::get('sf_app_module_dir').'/'.$this->getModuleName() ?>/templates/_'.preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)).'_header.php')): ?]
+    [?php include_partial('<?php echo $this->getModuleName() ?>/'.preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)).'_header') ?]
   [?php endif ?]
 
   [?php foreach ($fields as $name => $field): ?]
@@ -19,4 +19,8 @@
       'class'      => 'sf_admin_form_row sf_admin_'.strtolower($field->getType()).' sf_admin_form_field_'.$name,
     )) ?]
   [?php endforeach; ?]
+
+  [?php if (is_readable('<?php echo sfConfig::get('sf_app_module_dir').'/'.$this->getModuleName() ?>/templates/_'.preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)).'_footer.php')): ?]
+    [?php include_partial('<?php echo $this->getModuleName() ?>/'.preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)).'_footer') ?]
+  [?php endif ?]
 </fieldset>
