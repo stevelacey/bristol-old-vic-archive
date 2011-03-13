@@ -3,6 +3,10 @@
     <h2>[?php echo __($fieldset, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]</h2>
   [?php endif; ?]
 
+  [?php if (is_readable('<?php echo sfConfig::get('sf_app_module_dir').'/'.$this->getModuleName() ?>/templates/_'.preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)).'_help.php')): ?]
+    [?php include_partial('<?php echo $this->getModuleName() ?>/'.preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)).'_help') ?]
+  [?php endif ?]
+
   [?php foreach ($fields as $name => $field): ?]
     [?php if ((isset($form[$name]) && $form[$name]->isHidden()) || (!isset($form[$name]) && $field->isReal())) continue ?]
     [?php include_partial('<?php echo $this->getModuleName() ?>/form_field', array(
