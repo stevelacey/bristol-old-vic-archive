@@ -13,6 +13,7 @@ Venue:
     address_line_3: string(255)
     address_line_4: string(255)
     post_code: string(20)
+    notes: string()
   options:
     orderBy: name asc
 

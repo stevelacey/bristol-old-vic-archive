@@ -17,13 +17,13 @@ class ProductionDonationValidatorSchema extends sfValidatorSchema {
         $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'funder_id');
       }
 
-      // donation is filled but no funder_id
-      if ($value['donation'] && !$value['funder_id']) {
+      // amount is filled but no funder_id
+      if ($value['amount'] && !$value['funder_id']) {
         $errorSchemaLocal->addError(new sfValidatorError($this, 'required'), 'funder_id');
       }
 
-      // no description, donation or funder_id, remove the empty values
-      if (!$value['donation'] && !$value['description'] && !$value['funder_id']) {
+      // no description, amount or funder_id, remove the empty values
+      if (!$value['amount'] && !$value['description'] && !$value['funder_id']) {
         unset($values[$key]);
       }
 

@@ -6,8 +6,6 @@ Person:
       type: string(255)
       notnull: true
     image_id: integer(20)
-    email: string(255)
-    telephone: string(255)
   options:
     orderBy: name asc
   relations:

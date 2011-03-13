@@ -1,5 +1,7 @@
 <?php use_helper('I18N') ?>
 
+<?php include_partial('sfAdminDash/flash') ?>
+
 <div id="ctr" align="center">
   <div class="login">
     <div class="login-form">
@@ -10,7 +12,7 @@
           <?php if(isset($form['_csrf_token'])): ?>
             <?php echo $form['_csrf_token']->render(); ?> 
 			    <?php endif; ?>
-          <div class="inputlabel"><?php echo $form['username']->renderLabel(__('Username', array(), 'sf_admin_dash')); ?>:</div>
+          <div class="inputlabel"><?php echo $form['username']->renderLabel(__('Username/E-mail Address', array(), 'sf_admin_dash')); ?>:</div>
           <div>
             <?php echo $form['username']->renderError(); ?>
             <?php echo $form['username']->render(array('class' => 'inputbox')); ?>
@@ -19,9 +21,10 @@
           <div>
             <?php echo $form['password']->renderError(); ?>
             <?php echo $form['password']->render(array('class' => 'inputbox')); ?>
+            <?php echo link_to('Forgotten?', '@sf_guard_forgot_password') ?>
           </div>
           <div class="inputlabel">
-            <?php echo $form['remember']->renderLabel(__('Remember?', array(), 'sf_admin_dash')); ?>
+            <?php echo $form['remember']->renderLabel(__('Remember me?', array(), 'sf_admin_dash')); ?>
             <?php echo $form['remember']->render(array('class' => 'inputcheck')); ?>
           </div>
           <div align="left"><input type="submit" name="submit" class="button clr" value="<?php echo __('Login', array(), 'sf_admin_dash'); ?>" /></div>

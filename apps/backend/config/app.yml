@@ -6,12 +6,19 @@ all:
     name: Bristol Old Vic
     website: http://www.bristololdvic.org.uk
 
+  sf_guard_plugin:
+    default_from_email: no-reply@bristololdvic.org
+
   developer:
     name: Steve Lacey
     website: http://www.stevelacey.net
 
   data:
     date_format: "F Y"
+
+  forms:
+    min_production_character_forms: 5
+    min_production_character_blank_forms: 2
 
   sf_admin_dash:
     site: Bristol Old Vic Archive
@@ -21,22 +28,22 @@ all:
         items:
           Productions:
             url: production
-            image: addedit
+            image: production
           Companies:
             url: company
-            image: impressions
+            image: companies
           Collaborations:
             url: collaboration
-            image: support
+            image: collaboration
           Funders:
             url: funder
-            image: generic
+            image: funder
           Genres:
             url: genre
-            image: categories
+            image: genre
           Types:
             url: type
-            image: mediamanager
+            image: types
           Venues:
             url: venue
             image: frontpage
@@ -47,18 +54,24 @@ all:
             image: language
           Departments:
             url: department
-            image: folder-icon
+            image: departments
           Roles:
             url: role
-            image: users
+            image: roles
           Staff / Creative:
             url: staff
             image: addusers
-      Users:
-        items:
           Users:
             url: user
             image: users
+      Documentation:
+        items:
+           User Manual:
+             url: docs/user-manual.pdf
+             image: manual
+           Technical Document:
+             url: docs/technical-document.pdf
+             image: technical
 
   sfImageTransformPlugin:
     default_adapter: ImageMagick # GD or ImageMagick

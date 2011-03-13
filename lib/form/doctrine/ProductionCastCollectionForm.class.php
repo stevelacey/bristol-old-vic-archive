@@ -19,9 +19,14 @@ class ProductionCastCollectionForm extends sfForm {
       $this->embedForm($character->getName(), new CharacterForm($character));
     }
 
-    for($i=$characters->count()+1; $i<=$characters->count()+10; $i++) {
+    $min = sfConfig::get('app_forms_min_production_character_forms');
+    $min_blank = sfConfig::get('app_forms_min_production_character_blank_forms');
+
+    $forms_to_render = $characters->count() + $min_blank > $min ? $characters->count() + $min_blank : $min;
+
+    for($i=$characters->count()+1; $i<=$forms_to_render; $i++) {
       $character = new Character();
-      $character->setProduction($production);;
+      $character->setProduction($production);
       $this->embedForm('Character '.$i, new CharacterForm($character));
     }
     

@@ -21,8 +21,8 @@ generator:
           - type
           - venue
           - start_at
-          - end_at
           - company
+          - collaboration
         fields:
           start_at:
             label: Performance start
@@ -39,6 +39,8 @@ generator:
           - layout_id
           - company_id
           - collaboration_id
+          - created_at
+          - complete
       form:
         display: 
           "Basic Details":
@@ -57,10 +59,12 @@ generator:
              - matinee_performance_time
              - evening_performance_time
              - various_performance_times
+             - seating
           "Ticket Prices":
-             - adult_ticket_price
-             - child_ticket_price
-             - student_ticket_price
+             - full_ticket_min_price
+             - full_ticket_max_price
+             - concessionary_ticket_min_price
+             - concessionary_ticket_max_price
           "Images":
              - images
           "Staff":
@@ -71,6 +75,7 @@ generator:
              - donations
           "Notes":
              - notes
+             - complete
       edit:
         title: %%name%%
       new:     ~

@@ -7,9 +7,28 @@ body {
   padding: 0;
 }
 
+.logo {
+  display: block;
+  margin-top: 50px;
+}
+
+.login {
+  margin-top: 40px;
+}
+
+.login-tagline {
+  font-family: Georgia;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: normal;
+  color: #acacac;
+  letter-spacing: 0.2em;
+}
+
 .company .sf_admin_form,
 .performer .sf_admin_form,
 .funder .sf_admin_form,
+.role .sf_admin_form,
 .staff .sf_admin_form,
 .venue .sf_admin_form {
   width: 65%;
@@ -19,6 +38,7 @@ body {
 .company .sf_admin_data,
 .performer .sf_admin_data,
 .funder .sf_admin_data,
+.role .sf_admin_data,
 .staff .sf_admin_data,
 .venue .sf_admin_data {
   width: 35%;
@@ -102,6 +122,10 @@ body {
   line-height: 2em;
 }
 
+div.helper p{
+    font-style:italic;
+    color:#797979;
+}
 #sf_admin_theme_footer {
   height: 20px;
   padding: 10px 30px;
