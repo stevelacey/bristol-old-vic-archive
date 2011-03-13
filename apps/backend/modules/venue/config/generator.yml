@@ -22,7 +22,22 @@ generator:
       filter:
         display:
           - name
-      form:    ~
+      form:
+       display:
+        "Basic Details":
+          - name
+          - email
+          - telephone
+          - mobile
+          - address_line_1
+          - address_line_2
+          - address_line_3
+          - address_line_4
+          - post_code
+          - notes
+        "Layouts":
+          - layouts
       edit:
         title: %%name%%
+
       new:     ~

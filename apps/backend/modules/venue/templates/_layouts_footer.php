@@ -1,0 +1,1 @@
+<p class="help_message">Please note: After saving the form, 2 more empty layout fields will display, if required. Useful if you need to add more than 3 layouts for a venue. </p>
