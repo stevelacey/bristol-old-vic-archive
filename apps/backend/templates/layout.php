@@ -9,8 +9,10 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <div id="sf_admin_theme_wrapper">
     <?php include_component('sfAdminDash','header'); ?>
     <?php echo $sf_content ?>
+    </div>
     <?php include_partial('sfAdminDash/footer'); ?>
   </body>
 </html>
