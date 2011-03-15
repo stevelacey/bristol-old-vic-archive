@@ -35,6 +35,10 @@ abstract class BaseDepartment extends sfDoctrineRecord
         parent::setUp();
         $this->hasMany('Role as Roles', array(
              'local' => 'id',
-             'foreign' => 'department_id'));
+             'foreign' => 'department_id',
+             'onDelete' => 'cascade',
+             'cascade' => array(
+             0 => 'delete',
+             )));
     }
 }

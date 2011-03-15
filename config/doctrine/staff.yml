@@ -41,6 +41,20 @@ ProductionStaff:
       local: staff_id
       foreign: id
 
+Department:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+  relations:
+    Roles:
+      class: Role
+      local: id
+      foreign: department_id
+      type: many
+      onDelete: cascade
+      cascade: [delete]
+
 Role:
   columns:
     name:
@@ -64,9 +78,3 @@ Role:
       foreign: role_id
       onDelete: cascade
       cascade: [delete]
-
-Department:
-  columns:
-    name:
-      type: string(255)
-      notnull: true
