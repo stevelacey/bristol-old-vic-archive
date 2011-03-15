@@ -42,24 +42,27 @@ Production:
       local: type_id
       foreign: id
       foreignAlias: Productions
+      onDelete: set null
     Genre:
       local: genre_id
       foreign: id
       foreignAlias: Productions
+      onDelete: set null
     Layout:
       local: layout_id
       foreign: id
       foreignAlias: Productions
       onDelete: set null
-      cascade: [delete]
     Company:
       local: company_id
       foreign: id
       foreignAlias: Productions
+      onDelete: set null
     Collaboration:
       local: collaboration_id
       foreign: id
       foreignAlias: Productions
+      onDelete: set null
     Shot:
       class: Image
       local: shot_image_id

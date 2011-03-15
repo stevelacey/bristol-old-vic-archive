@@ -224,27 +224,28 @@ abstract class BaseProduction extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Type', array(
              'local' => 'type_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'set null'));
 
         $this->hasOne('Genre', array(
              'local' => 'genre_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'set null'));
 
         $this->hasOne('Layout', array(
              'local' => 'layout_id',
              'foreign' => 'id',
-             'onDelete' => 'set null',
-             'cascade' => array(
-             0 => 'delete',
-             )));
+             'onDelete' => 'set null'));
 
         $this->hasOne('Company', array(
              'local' => 'company_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'set null'));
 
         $this->hasOne('Collaboration', array(
              'local' => 'collaboration_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'set null'));
 
         $this->hasOne('Image as Shot', array(
              'local' => 'shot_image_id',
