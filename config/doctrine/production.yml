@@ -80,6 +80,11 @@ Production:
       refClass: ProductionStaff
       local: production_id
       foreign: role_id
+    ProductionStaff:
+      local: id
+      foreign: production_id
+      onDelete: cascade
+      cascade: [delete]
 
 Type:
   columns:

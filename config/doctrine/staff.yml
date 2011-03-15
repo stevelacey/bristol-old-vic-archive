@@ -13,6 +13,11 @@ Staff:
       refClass: ProductionStaff
       local: staff_id
       foreign: role_id
+    ProductionStaff:
+      local: id
+      foreign: staff_id
+      onDelete: cascade
+      cascade: [delete]
 
 ProductionStaff:
   columns:
@@ -54,6 +59,11 @@ Role:
       refClass: ProductionStaff
       local: role_id
       foreign: staff_id
+    ProductionStaff:
+      local: id
+      foreign: role_id
+      onDelete: cascade
+      cascade: [delete]
 
 Department:
   columns:
