@@ -24,7 +24,7 @@ if ($sf_user->isAuthenticated()): ?>
   </div>
 
   <?php if($sf_context->getConfiguration()->getEnvironment() != 'live') : ?>
-    <div id="sf_admin_environment_flash" class="<?php echo ProjectConfiguration::getEnvironment() ?>">
+    <div id="sf_admin_environment_flash" class="<?php echo $sf_context->getConfiguration()->getEnvironment() ?>">
       You are on the <?php echo $sf_context->getConfiguration()->getEnvironment() ?> environment, perhaps you were looking for <a href="http://archive.bristololdvic.org.uk">the live archive</a>?
     </div>
   <?php endif ?>
