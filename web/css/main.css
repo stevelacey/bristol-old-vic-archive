@@ -12,6 +12,41 @@ body {
   margin-top: 50px;
 }
 
+#sf_admin_environment_flash {
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+
+  padding: 10px 0;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+
+  -webkit-background-size: 50px 50px;
+  -moz-background-size: 50px 50px;
+  background-size: 50px 50px;
+}
+
+#sf_admin_environment_flash a {
+  color: #FFF;
+}
+
+#sf_admin_environment_flash a:hover, #sf_admin_environment_flash a:focus {
+  text-decoration: none;
+}
+
+#sf_admin_environment_flash.demo {
+  background-color: #0AE;
+}
+
+#sf_admin_environment_flash.dev {
+  background-color: #F90;
+}
+
 .login {
   margin-top: 40px;
 }

@@ -23,6 +23,12 @@ if ($sf_user->isAuthenticated()): ?>
     <a href='<?php echo url_for(sfAdminDash::getProperty('dashboard_url')); ?>'><?php echo image_tag(sfAdminDash::getProperty('web_dir').'/images/header_text', array('alt' => 'Home')); ?></a>
   </div>
 
+  <?php if(ProjectConfiguration::getEnvironment() != 'live') : ?>
+    <div id="sf_admin_environment_flash" class="<?php echo ProjectConfiguration::getEnvironment() ?>">
+      You are on the <?php echo ProjectConfiguration::getEnvironment() ?> environment, perhaps you were looking for <a href="http://archive.bristololdvic.org.uk">the live archive</a>?
+    </div>
+  <?php endif ?>
+
   <div id='sf_admin_menu'>    
     <?php include_partial('sfAdminDash/menu', array('items' => $items, 'categories' => $categories)); ?>
     
