@@ -51,7 +51,11 @@ abstract class BaseFunder extends sfDoctrineRecord
 
         $this->hasMany('Donation as Donations', array(
              'local' => 'id',
-             'foreign' => 'funder_id'));
+             'foreign' => 'funder_id',
+             'onDelete' => 'cascade',
+             'cascade' => array(
+             0 => 'delete',
+             )));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);

@@ -96,6 +96,13 @@ Production:
       type: many
       onDelete: cascade
       cascade: [delete]
+    Donations:
+      class: Donation
+      local: id
+      foreign: production_id
+      type: many
+      onDelete: cascade
+      cascade: [delete]
 
 Type:
   columns:
