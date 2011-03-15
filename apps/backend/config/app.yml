@@ -66,6 +66,7 @@ all:
           Users:
             url: user
             image: users
+            credentials: admin
       Documentation:
         items:
            User Manual:

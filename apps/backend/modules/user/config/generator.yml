@@ -27,7 +27,7 @@ generator:
           - first_name
           - last_name
       form:
-        class: sfGuardUserAdminForm
+        class: sfGuardUserForm
         display:
           - first_name
           - last_name
@@ -35,6 +35,7 @@ generator:
           - username
           - password
           - password_again
+          - is_super_admin
           - is_active
       edit:
         title: %%name%%
