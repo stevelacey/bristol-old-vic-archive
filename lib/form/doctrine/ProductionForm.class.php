@@ -27,6 +27,9 @@ class ProductionForm extends BaseProductionForm {
     $this->widgetSchema['evening_performance_time']->setLabel('Evening');
     $this->widgetSchema['various_performance_times']->setLabel('Various times');
 
+    /* Helps */
+    $this->widgetSchema->setHelp('complete', 'Use this checkbox to assign whether or not this production\'s data is up-to-date.');
+
     /* Collection Forms */
     $this->embedForm('images', new ProductionImageCollectionForm(null, array('production' => $this->getObject())));
     $this->embedForm('staff', new ProductionStaffCollectionForm(null, array('production' => $this->getObject())));

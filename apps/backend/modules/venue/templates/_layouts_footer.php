@@ -1,1 +1,1 @@
-<p class="help_message">Please note: After saving the form, 2 more empty layout fields will display, if required. Useful if you need to add more than 3 layouts for a venue. </p>
+<p class="help_message">Please note: After saving the form, <?php echo sfConfig::get('app_forms_min_venue_layout_blank_forms') ?> extra blank fields will be added if you need to add more layouts.</p>
