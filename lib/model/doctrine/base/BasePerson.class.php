@@ -44,7 +44,11 @@ abstract class BasePerson extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Image', array(
              'local' => 'image_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'cascade',
+             'cascade' => array(
+             0 => 'delete',
+             )));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);

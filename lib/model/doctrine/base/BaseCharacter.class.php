@@ -9,27 +9,21 @@
  * @property enum $gender
  * @property integer $performer_id
  * @property integer $production_id
- * @property integer $image_id
  * @property Performer $Performer
  * @property Production $Production
- * @property Image $Image
  * 
  * @method string     getName()          Returns the current record's "name" value
  * @method enum       getGender()        Returns the current record's "gender" value
  * @method integer    getPerformerId()   Returns the current record's "performer_id" value
  * @method integer    getProductionId()  Returns the current record's "production_id" value
- * @method integer    getImageId()       Returns the current record's "image_id" value
  * @method Performer  getPerformer()     Returns the current record's "Performer" value
  * @method Production getProduction()    Returns the current record's "Production" value
- * @method Image      getImage()         Returns the current record's "Image" value
  * @method Character  setName()          Sets the current record's "name" value
  * @method Character  setGender()        Sets the current record's "gender" value
  * @method Character  setPerformerId()   Sets the current record's "performer_id" value
  * @method Character  setProductionId()  Sets the current record's "production_id" value
- * @method Character  setImageId()       Sets the current record's "image_id" value
  * @method Character  setPerformer()     Sets the current record's "Performer" value
  * @method Character  setProduction()    Sets the current record's "Production" value
- * @method Character  setImage()         Sets the current record's "Image" value
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -65,10 +59,6 @@ abstract class BaseCharacter extends sfDoctrineRecord
              'notnull' => true,
              'length' => 20,
              ));
-        $this->hasColumn('image_id', 'integer', 20, array(
-             'type' => 'integer',
-             'length' => 20,
-             ));
 
         $this->option('orderBy', 'name asc');
     }
@@ -82,10 +72,6 @@ abstract class BaseCharacter extends sfDoctrineRecord
 
         $this->hasOne('Production', array(
              'local' => 'production_id',
-             'foreign' => 'id'));
-
-        $this->hasOne('Image', array(
-             'local' => 'image_id',
              'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();

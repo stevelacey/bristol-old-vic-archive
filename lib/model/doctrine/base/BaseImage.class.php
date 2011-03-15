@@ -7,20 +7,17 @@
  * 
  * @property string $title
  * @property string $path
- * @property Doctrine_Collection $Character
  * @property Doctrine_Collection $Person
  * @property Doctrine_Collection $Production
  * @property Doctrine_Collection $Layout
  * 
  * @method string              getTitle()      Returns the current record's "title" value
  * @method string              getPath()       Returns the current record's "path" value
- * @method Doctrine_Collection getCharacter()  Returns the current record's "Character" collection
  * @method Doctrine_Collection getPerson()     Returns the current record's "Person" collection
  * @method Doctrine_Collection getProduction() Returns the current record's "Production" collection
  * @method Doctrine_Collection getLayout()     Returns the current record's "Layout" collection
  * @method Image               setTitle()      Sets the current record's "title" value
  * @method Image               setPath()       Sets the current record's "path" value
- * @method Image               setCharacter()  Sets the current record's "Character" collection
  * @method Image               setPerson()     Sets the current record's "Person" collection
  * @method Image               setProduction() Sets the current record's "Production" collection
  * @method Image               setLayout()     Sets the current record's "Layout" collection
@@ -50,10 +47,6 @@ abstract class BaseImage extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Character', array(
-             'local' => 'id',
-             'foreign' => 'image_id'));
-
         $this->hasMany('Person', array(
              'local' => 'id',
              'foreign' => 'image_id'));

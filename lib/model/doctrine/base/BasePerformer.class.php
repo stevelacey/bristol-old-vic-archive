@@ -40,6 +40,10 @@ abstract class BasePerformer extends Person
         parent::setUp();
         $this->hasMany('Character as Characters', array(
              'local' => 'id',
-             'foreign' => 'performer_id'));
+             'foreign' => 'performer_id',
+             'onDelete' => 'cascade',
+             'cascade' => array(
+             0 => 'delete',
+             )));
     }
 }

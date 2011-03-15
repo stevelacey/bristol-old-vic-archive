@@ -16,7 +16,7 @@ class CharacterForm extends BaseCharacterForm {
     $this->validatorSchema['performer_id']->setOption('required', false);
 
     unset(
-      $this['production_id'], $this['image_id'],
+      $this['production_id'],
       $this['created_at'], $this['updated_at']
     );
   }

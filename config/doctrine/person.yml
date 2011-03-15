@@ -12,3 +12,5 @@ Person:
     Image:
       local: image_id
       foreign: id
+      onDelete: cascade
+      cascade: [delete]

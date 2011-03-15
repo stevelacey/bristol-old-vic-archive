@@ -38,9 +38,9 @@
  * @property Doctrine_Collection $Staff
  * @property Doctrine_Collection $Roles
  * @property ProductionStaff $ProductionStaff
+ * @property Doctrine_Collection $Characters
  * @property Doctrine_Collection $Funders
  * @property Doctrine_Collection $Donations
- * @property Doctrine_Collection $Characters
  * 
  * @method string              getName()                           Returns the current record's "name" value
  * @method integer             getTypeId()                         Returns the current record's "type_id" value
@@ -75,9 +75,9 @@
  * @method Doctrine_Collection getStaff()                          Returns the current record's "Staff" collection
  * @method Doctrine_Collection getRoles()                          Returns the current record's "Roles" collection
  * @method ProductionStaff     getProductionStaff()                Returns the current record's "ProductionStaff" value
+ * @method Doctrine_Collection getCharacters()                     Returns the current record's "Characters" collection
  * @method Doctrine_Collection getFunders()                        Returns the current record's "Funders" collection
  * @method Doctrine_Collection getDonations()                      Returns the current record's "Donations" collection
- * @method Doctrine_Collection getCharacters()                     Returns the current record's "Characters" collection
  * @method Production          setName()                           Sets the current record's "name" value
  * @method Production          setTypeId()                         Sets the current record's "type_id" value
  * @method Production          setGenreId()                        Sets the current record's "genre_id" value
@@ -111,9 +111,9 @@
  * @method Production          setStaff()                          Sets the current record's "Staff" collection
  * @method Production          setRoles()                          Sets the current record's "Roles" collection
  * @method Production          setProductionStaff()                Sets the current record's "ProductionStaff" value
+ * @method Production          setCharacters()                     Sets the current record's "Characters" collection
  * @method Production          setFunders()                        Sets the current record's "Funders" collection
  * @method Production          setDonations()                      Sets the current record's "Donations" collection
- * @method Production          setCharacters()                     Sets the current record's "Characters" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -249,11 +249,19 @@ abstract class BaseProduction extends sfDoctrineRecord
 
         $this->hasOne('Image as Shot', array(
              'local' => 'shot_image_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'cascade',
+             'cascade' => array(
+             0 => 'delete',
+             )));
 
         $this->hasOne('Image as SetDesign', array(
              'local' => 'set_design_image_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'cascade',
+             'cascade' => array(
+             0 => 'delete',
+             )));
 
         $this->hasMany('Staff', array(
              'refClass' => 'ProductionStaff',
@@ -273,16 +281,20 @@ abstract class BaseProduction extends sfDoctrineRecord
              0 => 'delete',
              )));
 
+        $this->hasMany('Character as Characters', array(
+             'local' => 'id',
+             'foreign' => 'production_id',
+             'onDelete' => 'cascade',
+             'cascade' => array(
+             0 => 'delete',
+             )));
+
         $this->hasMany('Funder as Funders', array(
              'refClass' => 'Donation',
              'local' => 'production_id',
              'foreign' => 'funder_id'));
 
         $this->hasMany('Donation as Donations', array(
-             'local' => 'id',
-             'foreign' => 'production_id'));
-
-        $this->hasMany('Character as Characters', array(
              'local' => 'id',
              'foreign' => 'production_id'));
 

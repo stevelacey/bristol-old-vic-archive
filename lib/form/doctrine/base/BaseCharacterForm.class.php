@@ -20,7 +20,6 @@ abstract class BaseCharacterForm extends BaseFormDoctrine
       'gender'        => new sfWidgetFormChoice(array('choices' => array('Male' => 'Male', 'Female' => 'Female'))),
       'performer_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Performer'), 'add_empty' => false)),
       'production_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Production'), 'add_empty' => false)),
-      'image_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'add_empty' => true)),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
     ));
@@ -31,7 +30,6 @@ abstract class BaseCharacterForm extends BaseFormDoctrine
       'gender'        => new sfValidatorChoice(array('choices' => array(0 => 'Male', 1 => 'Female'))),
       'performer_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Performer'))),
       'production_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Production'))),
-      'image_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Image'), 'required' => false)),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),
     ));

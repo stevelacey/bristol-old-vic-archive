@@ -7,6 +7,14 @@ Performer:
       type: enum
       values: [Male, Female]
       notnull: true
+  relations:
+    Characters:
+      class: Character
+      local: id
+      foreign: performer_id
+      type: many
+      onDelete: cascade
+      cascade: [delete]
 
 Character:
   actAs:
@@ -25,7 +33,6 @@ Character:
     production_id:
       type: integer(20)
       notnull: true
-    image_id: integer(20)
   options:
     orderBy: name asc
   relations:
@@ -37,6 +44,3 @@ Character:
       local: production_id
       foreign: id
       foreignAlias: Characters
-    Image:
-      local: image_id
-      foreign: id

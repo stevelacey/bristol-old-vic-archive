@@ -67,10 +67,14 @@ Production:
       class: Image
       local: shot_image_id
       foreign: id
+      onDelete: cascade
+      cascade: [delete]
     SetDesign:
       class: Image
       local: set_design_image_id
       foreign: id
+      onDelete: cascade
+      cascade: [delete]
     Staff:
       refClass: ProductionStaff
       local: production_id
@@ -83,6 +87,13 @@ Production:
     ProductionStaff:
       local: id
       foreign: production_id
+      onDelete: cascade
+      cascade: [delete]
+    Characters:
+      class: Character
+      local: id
+      foreign: production_id
+      type: many
       onDelete: cascade
       cascade: [delete]
 
