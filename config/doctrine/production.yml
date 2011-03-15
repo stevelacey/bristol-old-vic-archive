@@ -50,6 +50,8 @@ Production:
       local: layout_id
       foreign: id
       foreignAlias: Productions
+      onDelete: set null
+      cascade: [delete]
     Company:
       local: company_id
       foreign: id

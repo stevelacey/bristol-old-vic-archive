@@ -65,7 +65,11 @@ abstract class BaseLayout extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Venue', array(
              'local' => 'venue_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'cascade',
+             'cascade' => array(
+             0 => 'delete',
+             )));
 
         $this->hasOne('Image', array(
              'local' => 'image_id',

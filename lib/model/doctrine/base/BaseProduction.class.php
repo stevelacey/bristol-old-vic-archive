@@ -232,7 +232,11 @@ abstract class BaseProduction extends sfDoctrineRecord
 
         $this->hasOne('Layout', array(
              'local' => 'layout_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'set null',
+             'cascade' => array(
+             0 => 'delete',
+             )));
 
         $this->hasOne('Company', array(
              'local' => 'company_id',

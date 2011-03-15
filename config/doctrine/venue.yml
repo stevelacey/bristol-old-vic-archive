@@ -37,6 +37,8 @@ Layout:
       local: venue_id
       foreign: id
       foreignAlias: Layouts
+      onDelete: cascade
+      cascade: [delete]
     Image:
       local: image_id
       foreign: id
