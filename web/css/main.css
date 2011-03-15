@@ -147,6 +147,27 @@ body {
   padding-bottom: 5px;
 }
 
+/* float clearing for IE6 */
+* html #sf_admin_content {
+  height: 1%;
+  overflow: visible;
+}
+
+/* float clearing for IE7 */
+*+html #sf_admin_content {
+  min-height: 1%;
+}
+
+/* float clearing for everyone else */
+#sf_admin_content:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
 .sf_admin_data ul, .sf_admin_data p {
   padding-bottom: 10px;
 }
