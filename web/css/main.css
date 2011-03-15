@@ -50,7 +50,7 @@ body {
 }
 
 .login {
-  margin-top: 40px;
+  margin: 40px 0 150px;
 }
 
 .login-tagline {
@@ -61,6 +61,22 @@ body {
   color: #acacac;
   letter-spacing: 0.2em;
 }
+
+.flash_notice, .flash_error {
+  text-align:center;
+  padding-top:10px;
+}
+
+.flash_notice {
+  color:#55AE3A;
+  font-size:0.9em;
+}
+
+.flash_error {
+  color:#D43D1A;
+  font-size:0.9em;
+}
+
 
 .company .sf_admin_form,
 .performer .sf_admin_form,
@@ -84,7 +100,7 @@ body {
 }
 
 #sf_admin_container {
-  padding-bottom:20px;
+  padding-bottom: 50px;
 }
 
 #sf_admin_container textarea {
@@ -135,6 +151,27 @@ body {
   padding-bottom: 5px;
 }
 
+/* float clearing for IE6 */
+* html #sf_admin_content {
+  height: 1%;
+  overflow: visible;
+}
+
+/* float clearing for IE7 */
+*+html #sf_admin_content {
+  min-height: 1%;
+}
+
+/* float clearing for everyone else */
+#sf_admin_content:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
 .sf_admin_data ul, .sf_admin_data p {
   padding-bottom: 10px;
 }
@@ -183,9 +220,9 @@ p.help_message {
 
 #sf_admin_theme_footer {
   height: 20px;
-  padding: 0px 30px 0px;
+  padding: 15px 30px;
   position: relative;
-	margin-top: -20px; /* negative value of footer height */
+	margin-top: -50px; /* negative value of footer outer height */
 	clear:both;
   
 }
@@ -210,19 +247,4 @@ p.help_message {
 #sf_admin_theme_footer a {
   color: #333;
   text-decoration: none;
-}
-
-.flash_notice, .flash_error {
-  text-align:center;
-  padding-top:10px;
-}
-
-.flash_notice {
-  color:#55AE3A;
-  font-size:0.9em;
-}
-
-.flash_error {
-  color:#D43D1A;
-  font-size:0.9em;
 }

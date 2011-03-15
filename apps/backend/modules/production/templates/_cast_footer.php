@@ -1,1 +1,1 @@
-<p class="help_message">Please note: After saving the form, 2 more empty character fields will display, if required.</p>
+<p class="help_message">Please note: After saving the form, <?php echo sfConfig::get('app_forms_min_production_character_blank_forms') ?> extra blank fields will be added if you need to add more characters.</p>

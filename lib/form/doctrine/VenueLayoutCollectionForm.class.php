@@ -15,7 +15,7 @@ class VenueLayoutCollectionForm extends sfForm {
 
     $layouts = $venue->getLayouts()->getData();
 
-    for($i=0; $i<2; $i++) {
+    for($i=0; $i<sfConfig::get('app_forms_min_venue_layout_blank_forms'); $i++) {
       $layouts[] = new Layout();
     }
 
