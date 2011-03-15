@@ -1,1 +1,1 @@
-<p class="help_message">Please note: After saving the form, 2 more empty character fields will display, if required. Useful if you need to add more than 8 characters. </p>
+<p class="help_message">Please note: After saving the form, 2 more empty character fields will display, if required.</p>
