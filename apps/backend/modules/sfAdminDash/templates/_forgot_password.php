@@ -25,7 +25,7 @@
     <div class="login-text">
       <div class="ctr"><img alt="Security" src="<?php echo image_path(sfAdminDash::getProperty('web_dir', '/sfAdminDashPlugin').'/images/login_security.png'); ?>" /></div>
       <p><?php echo __('Do not worry, we can help you get back in to your account safely!', null, 'sf_guard') ?></p>
-      <p><?php echo __('Fill out the form below to request an e-mail with information on how to reset your password.', null, 'sf_guard') ?></p>
+      <p><?php echo __('Fill out the form on the right to request an e-mail with information on how to reset your password.', null, 'sf_guard') ?></p>
     </div>
     <div class="clr"></div>
   </div>
