@@ -23,6 +23,12 @@ if ($sf_user->isAuthenticated()): ?>
     <a href='<?php echo url_for(sfAdminDash::getProperty('dashboard_url')); ?>'><?php echo image_tag(sfAdminDash::getProperty('web_dir').'/images/header_text', array('alt' => 'Home')); ?></a>
   </div>
 
+  <?php if($sf_context->getConfiguration()->getEnvironment() != 'live') : ?>
+    <div id="sf_admin_environment_flash" class="<?php echo $sf_context->getConfiguration()->getEnvironment() ?>">
+      You are on the <?php echo $sf_context->getConfiguration()->getEnvironment() ?> environment, perhaps you were looking for <a href="http://archive.bristololdvic.org.uk">the live archive</a>?
+    </div>
+  <?php endif ?>
+
   <div id='sf_admin_menu'>    
     <?php include_partial('sfAdminDash/menu', array('items' => $items, 'categories' => $categories)); ?>
     
@@ -54,7 +60,12 @@ if ($sf_user->isAuthenticated()): ?>
 
   <div align="center">
     <?php echo link_to(image_tag(image_path(sfAdminDash::getProperty('web_dir', '/sfAdminDashPlugin').'/images/bov.png'), array('alt' => 'Bristol Old Vic')), '@homepage', array('class' => 'logo', 'title' => 'Bristol Old Vic')) ?>
-    <h2 class="login-tagline">Archive</h2>
+    <h2 class="login-tagline">
+      <?php if($sf_context->getConfiguration()->getEnvironment() != 'live'): ?>
+        <?php echo ucfirst($sf_context->getConfiguration()->getEnvironment()) ?>
+      <?php endif ?>
+      Archive
+    </h2>
   </div>
 
 <?php endif // if user is authenticated ?>
