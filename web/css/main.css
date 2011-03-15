@@ -125,6 +125,10 @@ body {
   color: #C64934;
 }
 
+.content td {
+  width:370px;
+}
+
 #sf_admin_container .sf_admin_data h3 {
   margin-top: 10px;
   border-bottom: solid 1px #efefef;
