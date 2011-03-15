@@ -1,4 +1,5 @@
 $(function() {
+  $('.sf_admin_form form').dirtyForms();
   fancybox();
 });
 
