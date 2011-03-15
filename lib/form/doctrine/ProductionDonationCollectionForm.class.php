@@ -15,7 +15,7 @@ class ProductionDonationCollectionForm extends sfForm {
 
     $donations = $production->getDonations()->getData();
 
-    for($i=0; $i<2; $i++) {
+    for($i=0; $i<sfConfig::get('app_forms_min_production_donation_blank_forms'); $i++) {
       $donations[] = new Donation();
     }
 

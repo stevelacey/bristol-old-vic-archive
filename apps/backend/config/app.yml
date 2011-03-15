@@ -19,6 +19,8 @@ all:
   forms:
     min_production_character_forms: 5
     min_production_character_blank_forms: 2
+    min_production_donation_blank_forms: 2
+    min_venue_layout_blank_forms: 2
 
   sf_admin_dash:
     site: Bristol Old Vic Archive
