@@ -16,7 +16,7 @@ class ProjectConfiguration extends sfProjectConfiguration {
   public function getEnvironment() {
     if (strstr($_SERVER['HTTP_HOST'], 'archive.bristololdvic.org.uk')) {
       return 'live';
-    } else if (strstr($_SERVER['HTTP_HOST'], 'bristololdvic.stevelacey.net')) {
+    } else if (strstr($_SERVER['HTTP_HOST'], 'bristololdvic.demo.stevelacey.net')) {
       return 'demo';
     } else {
       return 'dev';
