@@ -9,20 +9,33 @@
  * @property integer $department_id
  * @property Department $Department
  * @property Doctrine_Collection $Staff
- * @property ProductionStaff $ProductionStaff
  * @property Doctrine_Collection $Production
  * 
  * @method string              getName()            Returns the current record's "name" value
  * @method integer             getDepartmentId()    Returns the current record's "department_id" value
  * @method Department          getDepartment()      Returns the current record's "Department" value
  * @method Doctrine_Collection getStaff()           Returns the current record's "Staff" collection
- * @method ProductionStaff     getProductionStaff() Returns the current record's "ProductionStaff" value
+ * @method Doctrine_Collection getProductionStaff() Returns the current record's "ProductionStaff" collection
  * @method Doctrine_Collection getProduction()      Returns the current record's "Production" collection
  * @method Role                setName()            Sets the current record's "name" value
  * @method Role                setDepartmentId()    Sets the current record's "department_id" value
  * @method Role                setDepartment()      Sets the current record's "Department" value
  * @method Role                setStaff()           Sets the current record's "Staff" collection
- * @method Role                setProductionStaff() Sets the current record's "ProductionStaff" value
+ * @method Role                setProductionStaff() Sets the current record's "ProductionStaff" collection
+ * @method Role                setProduction()      Sets the current record's "Production" collectionStaff
+ * @property Doctrine_Collection $Production
+ * 
+ * @method string              getName()            Returns the current record's "name" value
+ * @method integer             getDepartmentId()    Returns the current record's "department_id" value
+ * @method Department          getDepartment()      Returns the current record's "Department" value
+ * @method Doctrine_Collection getStaff()           Returns the current record's "Staff" collection
+ * @method Doctrine_Collection getProductionStaff() Returns the current record's "ProductionStaff" collection
+ * @method Doctrine_Collection getProduction()      Returns the current record's "Production" collection
+ * @method Role                setName()            Sets the current record's "name" value
+ * @method Role                setDepartmentId()    Sets the current record's "department_id" value
+ * @method Role                setDepartment()      Sets the current record's "Department" value
+ * @method Role                setStaff()           Sets the current record's "Staff" collection
+ * @method Role                setProductionStaff() Sets the current record's "ProductionStaff" collection
  * @method Role                setProduction()      Sets the current record's "Production" collection
  * 
  * @package    bristol-old-vic-archive
@@ -60,7 +73,7 @@ abstract class BaseRole extends sfDoctrineRecord
              'local' => 'role_id',
              'foreign' => 'staff_id'));
 
-        $this->hasOne('ProductionStaff', array(
+        $this->hasMany('ProductionStaff', array(
              'local' => 'id',
              'foreign' => 'role_id',
              'onDelete' => 'cascade',

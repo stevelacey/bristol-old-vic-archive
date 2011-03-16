@@ -7,14 +7,14 @@
  * 
  * @property Doctrine_Collection $Productions
  * @property Doctrine_Collection $Roles
- * @property ProductionStaff $ProductionStaff
+ * @property Doctrine_Collection $ProductionStaff
  * 
  * @method Doctrine_Collection getProductions()     Returns the current record's "Productions" collection
  * @method Doctrine_Collection getRoles()           Returns the current record's "Roles" collection
- * @method ProductionStaff     getProductionStaff() Returns the current record's "ProductionStaff" value
+ * @method Doctrine_Collection getProductionStaff() Returns the current record's "ProductionStaff" collection
  * @method Staff               setProductions()     Sets the current record's "Productions" collection
  * @method Staff               setRoles()           Sets the current record's "Roles" collection
- * @method Staff               setProductionStaff() Sets the current record's "ProductionStaff" value
+ * @method Staff               setProductionStaff() Sets the current record's "ProductionStaff" collection
  * 
  * @package    bristol-old-vic-archive
  * @subpackage model
@@ -42,7 +42,7 @@ abstract class BaseStaff extends Person
              'local' => 'staff_id',
              'foreign' => 'role_id'));
 
-        $this->hasOne('ProductionStaff', array(
+        $this->hasMany('ProductionStaff', array(
              'local' => 'id',
              'foreign' => 'staff_id',
              'onDelete' => 'cascade',

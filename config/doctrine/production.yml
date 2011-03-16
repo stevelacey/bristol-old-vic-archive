@@ -87,6 +87,7 @@ Production:
     ProductionStaff:
       local: id
       foreign: production_id
+      type: many
       onDelete: cascade
       cascade: [delete]
     Characters:

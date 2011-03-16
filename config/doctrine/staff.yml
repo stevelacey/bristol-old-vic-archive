@@ -16,6 +16,7 @@ Staff:
     ProductionStaff:
       local: id
       foreign: staff_id
+      type: many
       onDelete: cascade
       cascade: [delete]
 
@@ -76,5 +77,6 @@ Role:
     ProductionStaff:
       local: id
       foreign: role_id
+      type: many
       onDelete: cascade
       cascade: [delete]

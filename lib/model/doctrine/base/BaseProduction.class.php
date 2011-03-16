@@ -37,7 +37,7 @@
  * @property Image $SetDesign
  * @property Doctrine_Collection $Staff
  * @property Doctrine_Collection $Roles
- * @property ProductionStaff $ProductionStaff
+ * @property Doctrine_Collection $ProductionStaff
  * @property Doctrine_Collection $Characters
  * @property Doctrine_Collection $Donations
  * @property Doctrine_Collection $Funders
@@ -74,7 +74,7 @@
  * @method Image               getSetDesign()                      Returns the current record's "SetDesign" value
  * @method Doctrine_Collection getStaff()                          Returns the current record's "Staff" collection
  * @method Doctrine_Collection getRoles()                          Returns the current record's "Roles" collection
- * @method ProductionStaff     getProductionStaff()                Returns the current record's "ProductionStaff" value
+ * @method Doctrine_Collection getProductionStaff()                Returns the current record's "ProductionStaff" collection
  * @method Doctrine_Collection getCharacters()                     Returns the current record's "Characters" collection
  * @method Doctrine_Collection getDonations()                      Returns the current record's "Donations" collection
  * @method Doctrine_Collection getFunders()                        Returns the current record's "Funders" collection
@@ -110,7 +110,7 @@
  * @method Production          setSetDesign()                      Sets the current record's "SetDesign" value
  * @method Production          setStaff()                          Sets the current record's "Staff" collection
  * @method Production          setRoles()                          Sets the current record's "Roles" collection
- * @method Production          setProductionStaff()                Sets the current record's "ProductionStaff" value
+ * @method Production          setProductionStaff()                Sets the current record's "ProductionStaff" collection
  * @method Production          setCharacters()                     Sets the current record's "Characters" collection
  * @method Production          setDonations()                      Sets the current record's "Donations" collection
  * @method Production          setFunders()                        Sets the current record's "Funders" collection
@@ -273,7 +273,7 @@ abstract class BaseProduction extends sfDoctrineRecord
              'local' => 'production_id',
              'foreign' => 'role_id'));
 
-        $this->hasOne('ProductionStaff', array(
+        $this->hasMany('ProductionStaff', array(
              'local' => 'id',
              'foreign' => 'production_id',
              'onDelete' => 'cascade',
