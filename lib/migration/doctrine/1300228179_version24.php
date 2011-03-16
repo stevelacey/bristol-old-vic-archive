@@ -24,34 +24,10 @@ class Version24 extends Doctrine_Migration_Base
              'onUpdate' => '',
              'onDelete' => 'cascade',
              ));
-        $this->addIndex('production', 'production_shot_image_id', array(
-             'fields' => 
-             array(
-              0 => 'shot_image_id',
-             ),
-             ));
-        $this->addIndex('production', 'production_set_design_image_id', array(
-             'fields' => 
-             array(
-              0 => 'set_design_image_id',
-             ),
-             ));
     }
 
     public function down()
     {
-        $this->removeIndex('production', 'production_shot_image_id', array(
-             'fields' =>
-             array(
-              0 => 'shot_image_id',
-             ),
-             ));
-        $this->removeIndex('production', 'production_set_design_image_id', array(
-             'fields' =>
-             array(
-              0 => 'set_design_image_id',
-             ),
-             ));
         $this->dropForeignKey('production', 'production_shot_image_id_image_id');
         $this->dropForeignKey('production', 'production_set_design_image_id_image_id');
         $this->createForeignKey('production', 'production_shot_image_id_image_id', array(

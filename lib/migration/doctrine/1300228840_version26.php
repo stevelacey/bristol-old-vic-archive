@@ -33,46 +33,10 @@ class Version26 extends Doctrine_Migration_Base
              'onUpdate' => '',
              'onDelete' => 'cascade',
              ));
-        $this->addIndex('performer', 'performer_image_id', array(
-             'fields' => 
-             array(
-              0 => 'image_id',
-             ),
-             ));
-        $this->addIndex('person', 'person_image_id', array(
-             'fields' => 
-             array(
-              0 => 'image_id',
-             ),
-             ));
-        $this->addIndex('staff', 'staff_image_id', array(
-             'fields' => 
-             array(
-              0 => 'image_id',
-             ),
-             ));
     }
 
     public function down()
     {
-        $this->removeIndex('performer', 'performer_image_id', array(
-             'fields' =>
-             array(
-              0 => 'image_id',
-             ),
-             ));
-        $this->removeIndex('person', 'person_image_id', array(
-             'fields' =>
-             array(
-              0 => 'image_id',
-             ),
-             ));
-        $this->removeIndex('staff', 'staff_image_id', array(
-             'fields' => 
-             array(
-              0 => 'image_id',
-             ),
-             ));
         $this->dropForeignKey('performer', 'performer_image_id_image_id');
         $this->dropForeignKey('person', 'person_image_id_image_id');
         $this->dropForeignKey('staff', 'staff_image_id_image_id');
