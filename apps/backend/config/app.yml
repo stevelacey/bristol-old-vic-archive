@@ -72,8 +72,8 @@ all:
            User Manual:
              url: docs/user-manual.pdf
              image: manual
-           Technical Document:
-             url: docs/technical-document.pdf
+           Tech Document:
+             url: docs/technical-documentation.pdf
              image: technical
 
   sfImageTransformPlugin:
