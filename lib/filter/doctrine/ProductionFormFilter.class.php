@@ -12,5 +12,6 @@ class ProductionFormFilter extends BaseProductionFormFilter {
   public function configure() {
     $this->widgetSchema['start_at'] = new sfWidgetFormFilterDateUK();
     $this->widgetSchema['end_at'] = new sfWidgetFormFilterDateUK();
+    $this->widgetSchema['created_at'] = new sfWidgetFormFilterDateUK();
   }
 }
