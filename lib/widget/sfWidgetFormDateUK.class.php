@@ -39,5 +39,13 @@ class sfWidgetFormDateUK extends sfWidgetFormDate {
   protected function configure($options = array(), $attributes = array()) {
     parent::configure($options, $attributes);
     $this->addOption('format', '%day%/%month%/%year%');
+
+    $years = array();
+    
+    foreach(range(2000, date('Y')) as $year) {
+      $years[$year] = $year;
+    }
+
+    $this->addOption('years', $years);
   }
 }
