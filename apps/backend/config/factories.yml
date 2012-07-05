@@ -12,6 +12,10 @@ all:
       generate_shortest_url:            true
       extra_parameters_as_query_string: true
 
+  user:
+    param:
+      timeout: 86400
+
   view_cache_manager:
     class: sfViewCacheManager
     param:
